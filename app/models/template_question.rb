@@ -1,0 +1,2 @@
+class TemplateQuestion < ApplicationRecord
+end
