@@ -10,7 +10,7 @@ class CollaboratorsController < ApplicationController
   # only the goal owner can add collaborators to his goals
   def create
     @collaborator = Collaborator.new
-    @user = User.find_by_email(params[:collaborator][:user])
+    @user = User.find_by_email(collaborator_params[:user])
 
     # goal_owner input user_id
     # @user = User.find(collaborator_params)
@@ -65,6 +65,6 @@ class CollaboratorsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def collaborator_params
-    params.require(:collaborator).permit(:email)
+    params.require(:collaborator).permit(:user)
   end
 end
