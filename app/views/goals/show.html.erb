@@ -1,32 +1,14 @@
-<h1>Goals#show</h1>
-<p>Find me in app/views/goals/show.html.erb</p>
-
-<%# <div class="goals-cards-container">
-  <div class="card-container">
-    <%# <% @goals.each do |goal| %>
-  <%# <div class="card">
-        <%= goal.description %>
-  <%# <% end %>
-  <%# <div class="card-body"> %>
-  <%# <h5 class="card-title"><%= link_to goal.name, goal_path(goal.id) %>
-  <%# <p class="card-text"><%= goal.description %>
-  <%# </div>
-    </div> %>
-  <%# <% end %>
-  <%# </div>
-</div> %>
-  <%# <div class="container">
+<p><%= @goal.name %></p>
+<p><%= @goal.description %></p>
+<h4>Hello</h4>
+<div class="container">
   <div class="row">
-    <div class="col-12 col-lg-3">
-    </div>
-    <div class="col-12 col-lg-3">
-    </div>
-    <div class="col-12 col-lg-3">
-    </div>
-    <div class="col-12 col-lg-3">
-    </div>
+    <% @goal.answers.each do |answer| %>
+      <div class="col-12 col-lg-3">
+        <%= answer.content %>
+      </div>
+    <% end %>
   </div>
-</div> %>
-
+</div>
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
 <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>

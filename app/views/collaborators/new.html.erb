@@ -1,0 +1,10 @@
+Add collaborators to your goal!
+
+<h1>New collaborator</h1>
+<%= simple_form_for [@goal, @collaborator] do |f| %>
+  <%= f.input :user, as: :text, input_html: { value: @user.nil? ? "" : @user.email } %>
+  <%#= f.simple_fields_for :users do |ff| %>
+    <%#= ff.input :email %>
+  <%# end %>
+  <%= f.submit "Add User", class: "btn btn-primary" %>
+<% end %>
