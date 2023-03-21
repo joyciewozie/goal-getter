@@ -10,9 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_073826) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_100040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "goal_id", null: false
+    t.bigint "template_question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_answers_on_goal_id"
+    t.index ["template_question_id"], name: "index_answers_on_template_question_id"
+  end
+
+  create_table "collaborators", force: :cascade do |t|
+    t.bigint "goal_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_collaborators_on_goal_id"
+    t.index ["user_id"], name: "index_collaborators_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "answer_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_comments_on_answer_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "goal_type", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "status", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
+  create_table "highlights", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "answer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_highlights_on_answer_id"
+  end
+
+  create_table "template_questions", force: :cascade do |t|
+    t.text "title", null: false
+    t.string "goal_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +77,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_073826) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.string "gender", null: false
+    t.string "city", null: false
+    t.integer "age", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "goals"
+  add_foreign_key "answers", "template_questions"
+  add_foreign_key "collaborators", "goals"
+  add_foreign_key "collaborators", "users"
+  add_foreign_key "comments", "answers"
+  add_foreign_key "comments", "users"
+  add_foreign_key "goals", "users"
+  add_foreign_key "highlights", "answers"
 end
