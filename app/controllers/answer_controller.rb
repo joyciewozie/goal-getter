@@ -5,6 +5,17 @@ class AnswerController < ApplicationController
     @answer = Answer.new
   end
 
+  def create
+    @answer = Answer.new(answer_params)
+    @answer.goal = @goal
+    # @goal.user = current_user
+    if @answer.save
+      redirect_to goal_path(@goal.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def answer_params
