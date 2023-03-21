@@ -1,5 +1,5 @@
-class AnswerController < ApplicationController
-  before_action :set_flat, only: %i[new, create]
+class AnswersController < ApplicationController
+  before_action :set_goal, only: %i[new create]
 
   def new
     @answer = Answer.new
