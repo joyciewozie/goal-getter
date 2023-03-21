@@ -9,8 +9,8 @@
 puts 'Destroying all users'
 User.destroy_all
 puts 'Creating user'
-user_one = User.create!(email: "jack@live.com", password: "123456", name: "Jack", gender: "male", city: "Southampton", age: "25")
-user_two = User.create!(email: "rose@live.com", password: "123456", name: "Rose", gender: "female", city: "Southampton", age: "24")
+user_one = User.create!(email: "jack@live.com", password: "123456", name: "Jack", gender: "Male", city: "Southampton", age: "25")
+user_two = User.create!(email: "rose@live.com", password: "123456", name: "Rose", gender: "Female", city: "Southampton", age: "24")
 
 puts 'Destroying all goals'
 Goal.destroy_all
@@ -47,4 +47,3 @@ puts 'Destroying all comments'
 Comment.destroy_all
 puts 'Creating comment'
 comment = Comment.create!(content: "Great choice!", answer_id: answer_one.id, user_id: user_two.id)
-

@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :goals
   has_many :comments
+
+  GENDER = ['Fairy', 'Female', 'Male', 'Non-binary', 'Transgender', 'Prefer not to say']
+
+  validates :name, :email, :password, :gender, :city, presence: true
+  validates :gender, inclusion: { in: GENDER }
 end
