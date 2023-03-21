@@ -8,6 +8,7 @@
   <%# Modal %>
   <div data-modal-target="modal" class="goal-modal position-fixed w-100 h-100 bg-white top-0 start-0 bg-opacity-75">
     <div class="container">
+      <i data-action="click->modal#closeModal" class="fa fa-times fa-2x"></i>
       <%= simple_form_for([@goal, @collaborator]) do |f| %>
         <%= f.input :user, as: :text %>
       <% end %>

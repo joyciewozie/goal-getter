@@ -11,10 +11,17 @@ export default class extends Controller {
   showModal() {
     this.modalTarget.classList.add("show")
 
-    window.addEventListener('keyup', e => {
-      if(e.ke = "Escape") {
-        this.modalTarget.classList.remove("show")
-      }
-    }, {once: true})
+    window.addEventListener('keyup', this.keyDispatcher.bind(this))
+  }
+
+  keyDispatcher(e) {
+    if(e.key == "Escape") {
+      this.closeModal()
+    }
+  }
+
+  closeModal() {
+    window.removeEventListener("keyup", this.keyDispatcher)
+    this.modalTarget.classList.remove("show")
   }
 }
