@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :goals
   has_many :comments
+
+  validates :name, :email, :password, :gender, :city, presence: true
 end
