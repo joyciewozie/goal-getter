@@ -5,6 +5,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
+    @collaborator = Collaborator.new
   end
 
   def new

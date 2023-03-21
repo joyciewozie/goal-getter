@@ -12,3 +12,5 @@
 </div>
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
 <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+
+<%= render 'collaborators' %>
