@@ -1,15 +1,11 @@
-<p><%= @goal.name %></p>
-<p><%= @goal.description %></p>
-<a class="btn btn-flat" href="#">View and edit all thoughts</a>
-<br />
+<p>Goal name: <%= @goal.name %></p>
+<p>About my goal: <%= @goal.description %></p>
+<h4>Insights</h4>
 <div class="container">
   <div class="row">
-    <%# <% @goal.answers.each do |answer| %>
-      <%# <div class="col-12 col-lg-3"> %>
-      <%# <%= answer.content %>
-      <%# </div> %>
-      <div class="col-12 col-lg-12">
-        <p>Answer 1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+    <% @goal.insights.each do |insight| %>
+      <div class="col-12 col-lg-3">
+        <%= insight.name %>
       </div>
     </div>
     <div class="row">
@@ -28,5 +24,6 @@
       </div>
     </div>
   </div>
-  <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-  <%= link_to "Write your way",  new_goal_answer_path(@goal.id) %>
+</div>
+<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+<%= link_to "New Insight",  goal_insight_path(@goal.id)  %>

@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :set_goal, only: %i[]
+  before_action :set_goal, only: %i[create]
   def index
     @goals = Goal.all
   end
