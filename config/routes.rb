@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :collaborators
     resources :comments
     resources :highlights, except: [:index]
+    get :insight
   end
 
   resources :users
