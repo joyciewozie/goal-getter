@@ -1,14 +1,14 @@
-<p><%= @goal.name %></p>
-<p><%= @goal.description %></p>
-<h4>Hello</h4>
+<p>Goal name: <%= @goal.name %></p>
+<p>About my goal: <%= @goal.description %></p>
+<h4>Insights</h4>
 <div class="container">
   <div class="row">
-    <% @goal.answers.each do |answer| %>
+    <% @goal.insights.each do |insight| %>
       <div class="col-12 col-lg-3">
-        <%= answer.content %>
+        <%= insight.name %>
       </div>
     <% end %>
   </div>
 </div>
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-<%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+<%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
