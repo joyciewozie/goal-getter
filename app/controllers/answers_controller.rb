@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:content)
+    params.require(:answer).permit(:content, :template_question_id)
   end
 
   def set_goal
