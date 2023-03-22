@@ -17,6 +17,11 @@ Goal.destroy_all
 puts 'Creating goal'
 goal = Goal.create!(goal_type: "career", name: "Change jobs", description: "I'm bored at work and need a change.", status: "in_progress", user_id: user_one.id)
 
+puts 'Destroying all insights'
+Insight.destroy_all
+puts 'Creating insight'
+insight = Insight.create!(name: "Job search", summary: "Narrowing down the job search be filtering roles and companies", goal_id: goal.id)
+
 puts 'Destroying all template_questions'
 TemplateQuestion.destroy_all
 puts 'Creating template_question'
@@ -28,10 +33,10 @@ template_question_four = TemplateQuestion.create!(title: "What size of company a
 puts 'Destroying all answers'
 Answer.destroy_all
 puts 'Creating answer'
-answer_one = Answer.create!(content: "Software Developer", goal_id: goal.id, template_question: template_question_one)
-answer_two = Answer.create!(content: "Junior Java Developer", goal_id: goal.id, template_question: template_question_two)
-answer_three = Answer.create!(content: "$4,000 to $6,000", goal_id: goal.id, template_question: template_question_three)
-answer_four = Answer.create!(content: "50+ employees", goal_id: goal.id, template_question: template_question_four)
+answer_one = Answer.create!(content: "Software Developer", insight_id: insight.id, template_question: template_question_one)
+answer_two = Answer.create!(content: "Junior Java Developer", insight_id: insight.id, template_question: template_question_two)
+answer_three = Answer.create!(content: "$4,000 to $6,000", insight_id: insight.id, template_question: template_question_three)
+answer_four = Answer.create!(content: "50+ employees", insight_id: insight.id, template_question: template_question_four)
 
 puts 'Destroying all highlights'
 Highlight.destroy_all
