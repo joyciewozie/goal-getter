@@ -1,1 +1,19 @@
 <h1>Goals#all</h1>
+<div class="container">
+  <div class="row">
+    <% @goals.each do |goal| %>
+      <div class="col-12 col-lg-3">
+        <%= goal.goal_type %>
+      </div>
+      <div class="col-12 col-lg-3">
+        <%= goal.name %>
+      </div>
+      <div class="col-12 col-lg-3">
+        <%= goal.description %>
+      </div>
+      <div class="col-12 col-lg-3">
+        <%= goal.status %>
+      </div>
+    <% end %>
+  </div>
+</div>

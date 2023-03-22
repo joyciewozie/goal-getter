@@ -1,14 +1,26 @@
 <p><%= @goal.name %></p>
 <p><%= @goal.description %></p>
-<h4>Hello</h4>
+<a class="btn btn-flat" href="#">View and edit all thoughts</a>
+<br />
 <div class="container">
   <div class="row">
-    <% @goal.answers.each do |answer| %>
+    <%# <% @goal.answers.each do |answer| %>
+      <%# <div class="col-12 col-lg-3"> %>
+      <%# <%= answer.content %>
+      <%# </div> %>
       <div class="col-12 col-lg-3">
-        <%= answer.content %>
+        <p>Answer 1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
       </div>
-    <% end %>
+      <div class="col-12 col-lg-3">
+        <p>Answer 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+      </div>
+      <div class="col-12 col-lg-3">
+        <p>Answer 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+      </div>
+      <div class="col-12 col-lg-3">
+        <p>Answer 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+      </div>
+    </div>
   </div>
-</div>
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-<%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+  <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+  <%= link_to "Write your way",  new_goal_answer_path(@goal.id) %>
