@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+  before_action :set_goal, only: %i[create]
   def index
     @goals = Goal.all
   end
@@ -33,7 +34,16 @@ class GoalsController < ApplicationController
     redirect_to goal_path(@goal.id)
   end
 
+  def insight
+    @goal = Goal.find(params[:goal_id])
+    @answers = TemplateQuestion.where(goal_type: @goal.goal_type).map { |tq| Answer.new(template_question: tq) }
+  end
+
   private
+
+  def set_goal
+    @goal = Goal.find(params[:id])
+  end
 
   def goal_params
     params.require(:goal).permit(:goal_type, :name, :description, :status)

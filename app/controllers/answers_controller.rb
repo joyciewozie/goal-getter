@@ -7,19 +7,13 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    @answer.goal = @goal
-    # @goal.user = current_user
-    if @answer.save
-      redirect_to goal_path(@goal.id)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @answer.save!
   end
 
   private
 
   def answer_params
-    params.require(:answer).permit(:content)
+    params.require(:answer).permit(:content, :template_question_id)
   end
 
   def set_goal

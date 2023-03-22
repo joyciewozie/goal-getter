@@ -1,14 +1,26 @@
-<p><%= @goal.name %></p>
-<p><%= @goal.description %></p>
-<h4>Hello</h4>
+<p>Goal name: <%= @goal.name %></p>
+<p>About my goal: <%= @goal.description %></p>
+<h4>Insights</h4>
+<% @goal.insights.each do |insight| %>
+  <div class="col-12 col-lg-3">
+  <%= insight.name %>
+<% end %>
 <div class="container">
-  <div class="row">
-    <% @goal.answers.each do |answer| %>
-      <div class="col-12 col-lg-3">
-        <%= answer.content %>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <p>Answer 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
       </div>
-    <% end %>
-  </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <p>Answer 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <p>Answer 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+      </div>
+    </div>
 </div>
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
 <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
@@ -18,3 +30,4 @@
 <%= render 'show_collaborators' %>
 
 <%= render 'show_insights' %>
+<%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
