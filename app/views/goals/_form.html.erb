@@ -1,7 +1,8 @@
 <%= simple_form_for goal do |f| %>
-<%= f.input :goal_type %>
-<%= f.input :status %>
-<%= f.input :name, label: "What do you want to call your goal?" %>
-<%= f.input :description, label: desc_label %>
-<%= f.submit %>
+  <%= f.input :goal_type %>
+  <%= f.input :status %>
+  <%= f.input :name, label: "What do you want to call your goal?" %>
+  <%= f.input :description, label: desc_label %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
 <% end %>
