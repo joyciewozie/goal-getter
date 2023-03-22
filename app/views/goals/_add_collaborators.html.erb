@@ -19,7 +19,7 @@
       <hr>
       <div>
         <%= simple_form_for([@goal, @collaborator], html: { id: "simple-form"}) do |f| %>
-          <%= f.input :user, as: :text, input_html: { value: @user.nil? ? "" : @user.email } %>
+          <%= f.input :user, as: :text, placeholder: 'tom@email.com', input_html: { value: @user.nil? ? "" : @user.email } %>
           <%= f.submit "Add User", class: "btn btn-primary modal-submit-btn" %>
         <% end %>
       </div>

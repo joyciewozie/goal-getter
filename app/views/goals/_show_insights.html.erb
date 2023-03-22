@@ -1,0 +1,22 @@
+<div data-controller="insight">
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-primary" data-action="click->insight#showInsights">Show Insights</a>
+    </div>
+  </div>
+
+  <%# Insights Modal %>
+  <%# Background dark sheet %>
+  <div data-insight-target="insights" class="insight-bg position-fixed w-100 h-100 top-0 start-0">
+  </div>
+  <div data-insight-target="popleft" class="modal-popleft position-fixed w-100 h-100 top-0 start-0">
+    <div class="container insights-screen">
+      <div class="modal-title">
+        <p><strong>Insights</strong></p>
+        <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
+      </div>
+      <hr>
+      Insights goes here
+    </div>
+  </div>
+</div>
