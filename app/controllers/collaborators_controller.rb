@@ -18,9 +18,10 @@ class CollaboratorsController < ApplicationController
     # goal_id assigned to collaborator instance
     @collaborator.goal = @goal
     if @collaborator.save
-      redirect_to goal_collaborators_path
+      redirect_to goal_path(@goal.id), notice: "Collaborator added!"
     else
-      render :new, status: :unprocessable_entity
+      render status: :unprocessable_entity
+      # render "../views/goals/_collaborators.html.erb ", status: :unprocessable_entity
     end
   end
 

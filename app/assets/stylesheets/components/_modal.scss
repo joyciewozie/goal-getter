@@ -1,8 +1,61 @@
-.goal-modal {
+.modal-bg {
+  transform: translateY(100%);
+
+  &.show{
+    transform: translateY(0);
+    background-color: white;
+    opacity: 0.75;
+  }
+}
+
+
+.modal-popup {
   transform: translateY(100%);
   transition: 300ms;
 
   &.show{
     transform: translateY(0);
   }
+}
+
+.modal-screen {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transition: 300ms;
+  transform: translate(-50%, -50%) !important;
+  max-width: 800px;
+
+  background-color: white;
+  border: 1px blue solid;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-close {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.modal-title p {
+  font-size: 20px;
+  margin:0;
+}
+
+#simple-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-submit-btn {
+  flex-grow: 1;
+  border-radius: 10px;
 }
