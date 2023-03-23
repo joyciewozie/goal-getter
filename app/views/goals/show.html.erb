@@ -1,9 +1,37 @@
 <p>Goal name: <%= @goal.name %></p>
 <p>About my goal: <%= @goal.description %></p>
-<h4>Insights</h4>
-<% @goal.insights.each do |insight| %>
-  <div class="col-12 col-lg-3">
-    <%= insight.name %>
+<div class="container-xxl">
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @goal.name %></h2>
+      </div>
+    </div>
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+</div>
+
+<%= link_to "New Insight",  new_goal_insight_path(@goal) %>
+
+<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+
+<%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+
+<div class="d-flex p-3 container border shadow">
+  <div class="insight-card">
+    <%= link_to "New Insight",  new_goal_insight_path(@goal.id)  %>
+  </div>
+
+  <% @goal.insights.each do |insight| %>
+    <div class="insight-card">
+      <%= render 'show_insights', insight: insight %>
+    </div>
   <% end %>
   <div class="card-container">
     <div class="row">

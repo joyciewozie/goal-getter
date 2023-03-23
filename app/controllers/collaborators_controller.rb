@@ -24,7 +24,6 @@ class CollaboratorsController < ApplicationController
     # To be done
   end
 
-
   private
 
   def set_goal
@@ -32,9 +31,9 @@ class CollaboratorsController < ApplicationController
   end
 
   def check_owner
-    if @goal.user != current_user
-      redirect_to root_path, alert: 'This goal does not belong to you!'
-    end
+    return unless @goal.user != current_user
+
+    redirect_to root_path, alert: 'This goal does not belong to you!'
   end
 
   # Only allow a list of trusted parameters through.
