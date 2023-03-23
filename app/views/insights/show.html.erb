@@ -1,18 +1,31 @@
 <div class="insights-container">
 
+<h1><%= @insight.name%></h1>
+<p><%= @insight.summary%></p>
+
+<div class="title">
 <p>Find your insights for: <%= @goal.description %></p>
+<img src="https://images.unsplash.com/photo-1676477242103-552c19a3e935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
 
-<p>Word: <%= @insight.name%></p>
+</div>
 
-<p>Intention: <%= @insight.summary%></p>
 
-<% @answers.each do |answer| %>
-  <h2><%= answer.template_question.id %> <%= answer.template_question.title %></h2>
-  <%= simple_form_for([@goal, @insight, answer]) do |f| %>
+<% if @answer.nil? %>
+  <% @insight.answers.each do |answer| %>
+   <h3><%= answer.template_question.title %></h3>
+    <%= answer.content %>
+    <hr>
+  <% end %>
+<% else %>
+  <h2><%= @answer.template_question.id %> <%= @answer.template_question.title %></h2>
+  <%= simple_form_for([@goal, @insight, @answer]) do |f| %>
     <%= f.input :content %>
     <%= f.association :template_question, as: :hidden %>
   <%= f.submit %>
   <% end %>
 <% end %>
+
+
+
 
 </div>

@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<%= link_to "New Insight",  goal_insight_path(@goal) %>
+<%= link_to "New Insight",  new_goal_insight_path(@goal) %>
 
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
 
@@ -25,7 +25,7 @@
 
 <div class="d-flex p-3 container border shadow">
   <div class="insight-card">
-    <%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
+    <%= link_to "New Insight",  new_goal_insight_path(@goal.id)  %>
   </div>
 
   <% @goal.insights.each do |insight| %>
