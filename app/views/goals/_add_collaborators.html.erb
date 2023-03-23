@@ -1,0 +1,28 @@
+<div data-controller="modal">
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-success" data-action="click->modal#showModal">Add Collaborators</a>
+    </div>
+  </div>
+
+  <%# Modal %>
+  <%# Background white sheet %>
+  <div data-modal-target="modal" class="modal-bg position-fixed w-100 h-100 top-0 start-0">
+  </div>
+    <%# Form for adding collaborators %>
+  <div data-modal-target="popup" class="modal-popup position-fixed w-100 h-100 top-0 start-0">
+    <div class="container modal-screen">
+      <div class="modal-title">
+        <p><strong>Add Collaborators</strong></p>
+        <i data-action="click->modal#closeModal" class="fa fa-times fa-2x modal-close"></i>
+      </div>
+      <hr>
+      <div>
+        <%= simple_form_for([@goal, @collaborator], html: { id: "simple-form"}) do |f| %>
+          <%= f.input :user, as: :text, placeholder: 'tom@email.com', input_html: { value: @user.nil? ? "" : @user.email } %>
+          <%= f.submit "Add User", class: "btn btn-primary modal-submit-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

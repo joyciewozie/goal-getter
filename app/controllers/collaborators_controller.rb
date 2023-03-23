@@ -2,9 +2,9 @@ class CollaboratorsController < ApplicationController
   before_action :set_goal, :check_owner
 
   # GET /goals/:goal_id/collaborators (goal_collaborators)
-  def index
-    @collaborator = Collaborator.all
-  end
+  # def index
+  #   @collaborator = @goal.collaborators
+  # end
 
   # POST /goals/:goal_id/collaborators
   # only the goal owner can add collaborators to his goals
@@ -18,32 +18,33 @@ class CollaboratorsController < ApplicationController
     # goal_id assigned to collaborator instance
     @collaborator.goal = @goal
     if @collaborator.save
-      redirect_to goal_collaborators_path
+      redirect_to goal_path(@goal.id), notice: "Collaborator added!"
     else
-      render :new, status: :unprocessable_entity
+      redirect_to goal_path(@goal.id), notice: "Try again!"
+      # render "../views/goals/_collaborators.html.erb ", status: :unprocessable_entity
     end
   end
 
-  # GET /goals/:goal_id/collaborators/:id (goal_collaborator)
-  def show
+  # # GET /goals/:goal_id/collaborators/:id (goal_collaborator)
+  # def show
 
-  end
+  # end
 
 
-  # PUT /goals/:goal_id/collaborators/:id (goal_collaborator)
-  def update
+  # # PUT /goals/:goal_id/collaborators/:id (goal_collaborator)
+  # def update
 
-  end
+  # end
 
-  # GET /goals/:goal_id/collaborators/new (new_goal_collaborator)
-  def new
-    @collaborator = Collaborator.new
-  end
+  # # GET /goals/:goal_id/collaborators/new (new_goal_collaborator)
+  # def new
+  #   @collaborator = Collaborator.new
+  # end
 
-  # GET /goals/:goal_id/collaborators/:id/edit (edit_goal_collaborator)
-  def edit
+  # # GET /goals/:goal_id/collaborators/:id/edit (edit_goal_collaborator)
+  # def edit
 
-  end
+  # end
 
 
   def destroy
