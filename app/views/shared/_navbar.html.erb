@@ -1,14 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
         <ul class="navbar-nav me-auto nav-link">
+          #todo ICON
+        </ul>
+    <div class="collapse navbar-collapse nav-user" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto nav-link">
           <li class="nav-item active">
             <%= link_to "Goal", goals_path , class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Highlight", root_path, class: "nav-link" %>
           </li>
-      </ul>
-    <div class="collapse navbar-collapse nav-user" id="navbarSupportedContent">
+        </ul>
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
