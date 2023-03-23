@@ -1,25 +1,24 @@
-<p>Goal name: <%= @goal.name %></p>
-<p>About my goal: <%= @goal.description %></p>
-<div class="container-xxl">
+<div class="container-xxl d-flex flex-row">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%# <img src="./assets/images/job_change.jpg" /> %>
+    <%= image_tag "job_change.jpg" %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @goal.name %></h2>
       </div>
     </div>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
+  <div>
+    <div class="card-goal image margin" style="">
+      <p><%= @goal.description %></p>
+    </div>
+    <div class="card-goal" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <p><%= @goal.status %></p>
+    </div>
   </div>
 </div>
 
-<%= link_to "New Insight",  new_goal_insight_path(@goal) %>
-
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+<%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
 
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
 
@@ -33,46 +32,14 @@
       <%= render 'show_insights', insight: insight %>
     </div>
   <% end %>
-  <div class="card-container">
-    <div class="row">
-      <%# <% @goal.insights.each do |insight| %>
-        <%# <div class="col-12 col-lg-3"> %>
-        <%# <%= insight.name %>
-        <%# </div>  %>
-        <%# </div> %>
-        <div class="card">
-          <%# <% @goal.photos.each do |photo| %>
-            <% if @goal.photo.attached? %>
-              <%# <%= cl_image_tag @goal.photo.key, class: "card-img-top", :cloud_name => 'dcakea82q' %>
-              <%= cl_image_tag @goal.photo.key, height: 300, width: 400, crop: :fill %>
-            <%else%>
-              No photo
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to @goal.name, goal_path(@goal) %></h5>
-              <p class="card-text"><%= @goal.description %></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <p>Answer 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <p>Answer 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <p>Answer 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%= link_to "New Insight",  goal_insight_path(@goal) %>
-      <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-      <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id) %>
-      <%= render 'add_collaborators' %>
-      <%= render 'show_collaborators' %>
-      <%= render 'show_insights' %>
+</div>
+
+
+<%# Collaborators flow %>
+
+<div class="d-flex p-3 container border shadow">
+  <%= render 'add_collaborators' %>
+  <%= render 'show_collaborators' %>
+</div>
+
+<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
