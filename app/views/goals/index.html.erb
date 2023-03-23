@@ -1,19 +1,11 @@
 <h1>Goals#all</h1>
 <div class="container">
-  <div class="row">
-    <% @goals.each do |goal| %>
-      <div class="row">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= goal.name %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= goal.name %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <% @goals.each do |goal| %>
+    <div class="card-category mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <h2><%= goal.name %></h2>
+      <p><%= goal.description %></p>
+    </div>
+  <% end %>
 </div>
 <%= cl_image_tag("0wrv493qt76z7dtocmheatqw81eo",
       width: 400, height: 300, crop: :fill) %>
