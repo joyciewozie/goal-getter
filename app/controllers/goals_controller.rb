@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @collaborator = Collaborator.new
     @collaborators = @goal.collaborators
+    @insights = @goal.insights
   end
 
   def new
