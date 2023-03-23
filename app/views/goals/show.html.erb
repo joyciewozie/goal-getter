@@ -23,4 +23,13 @@
     </div>
 </div>
 <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-<%= link_to "New Insight",  new_goal_insight_path(@goal.id)  %>
+
+
+<%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+
+<%= render 'add_collaborators' %>
+
+<%= render 'show_collaborators' %>
+
+<%= render 'show_insights' %>
+
