@@ -1,7 +1,11 @@
 <p>Find your insights for: <%= @goal.description %></p>
 
+<p>Word: <%= @insight.name%></p>
+
+<p>Intention: <%= @insight.summary%></p>
+
 <% @answers.each do |answer| %>
-  <h2><%= answer.template_question.title %></h2>
+  <h2><%= answer.template_question.id %> <%= answer.template_question.title %></h2>
   <%= simple_form_for([@goal, @insight, answer]) do |f| %>
     <%= f.input :content %>
     <%= f.association :template_question, as: :hidden %>
