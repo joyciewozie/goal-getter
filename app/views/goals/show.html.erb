@@ -1,6 +1,7 @@
 <div class="container-xxl d-flex flex-row">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%# <img src="./assets/images/job_change.jpg" /> %>
+    <%= image_tag "job_change.jpg" %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @goal.name %></h2>
@@ -8,18 +9,16 @@
     </div>
   </div>
   <div>
-    <div class="card-goal" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="card-goal image margin" style="">
       <p><%= @goal.description %></p>
     </div>
     <div class="card-goal" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
+      <p><%= @goal.status %></p>
     </div>
   </div>
 </div>
 
-<%= link_to "New Insight",  goal_insight_path(@goal) %>
-
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+<%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
 
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
 
@@ -42,3 +41,5 @@
   <%= render 'add_collaborators' %>
   <%= render 'show_collaborators' %>
 </div>
+
+<%= link_to "Edit",  edit_goal_path(@goal.id)  %>

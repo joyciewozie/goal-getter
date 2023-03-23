@@ -1,7 +1,6 @@
 .card-trip {
     overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin: 25px;
   }
   
@@ -15,6 +14,7 @@
     font-size: 98px;
     font-weight: bold;
     font-family: "Bebas Neue";
+    margin-top: 20px;
   }
 
   .card-goal {
@@ -23,18 +23,26 @@
     height: 245px;
     width: 435px;
     display: flex;
-    justify-content: end;
-    align-items: center;
+    justify-content: baseline;
+    align-items: last baseline;
     color: white;
     font-size: 24px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin: 25px;
     font-family: 'Playfair Display';
+    margin-bottom: 50px;
   }
-  
+
+  .card-goal p {
+    margin: 6px;
+  }
+
+  .card-goal.image {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/assets/find-new-job.jpg")
+  }
   // .card-trip p {
   //   font-size: 12px;
   //   opacity: .7;
