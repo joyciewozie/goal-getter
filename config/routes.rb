@@ -8,12 +8,22 @@ Rails.application.routes.draw do
   root 'goals#index'
 
   resources :goals do
-    resources :answers, except: [:edit, :update]
     resources :collaborators
     resources :comments
     resources :highlights, except: [:index]
+    resources :insights, only: %i[new create show] do
+      resources :answers, only: [:create]
+    end
     get :insight
+    # GET insights/:insight_id/answers -> "insights#answers"
   end
+
+  # resources :insights, only: %i[show] do
+  #   get :answers
+  # end
+
+  # route: GET insights/:insight_id/answers --> "insights#answers"
+  # route: POST insights/:insight_id/donkey -> insights#donkey
 
   resources :users
   resources :highlights, only: [:index]

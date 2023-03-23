@@ -1,0 +1,10 @@
+
+<div class="d-flex">
+<% @collaborators.each do |collab| %>
+  <div class="avatar-card">
+    <p><strong><%= collab.user.name %></strong></p>
+    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+    <p><%= collab.user.email %></p>
+  </div>
+<% end %>
+</div>
