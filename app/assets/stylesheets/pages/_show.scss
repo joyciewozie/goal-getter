@@ -72,6 +72,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 32px;
 }
 
 .new-goal-form {
@@ -83,6 +84,7 @@ body {
 .new-goal-image {
   width: 50%;
   height: 100vh;
+  border-radius: 32px;
   opacity: 0.9;
   text-align: right;
   border: 0;
