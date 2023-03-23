@@ -1,12 +1,14 @@
 
-  <div align="center" class="pt-2">
-    <p><strong><%= insight.name %></strong></p>
-    <p><%= insight.summary %></p>
-  </div>
   <div data-controller="insight">
-    <div class="container" style="padding-bottom: 1rem;">
+    <div class="container insight-top">
       <%# <div class="d-flex justify-content-end"> %>
-        <a class="btn btn-primary" data-action="click->insight#showInsights">Show More
+        <a data-action="click->insight#showInsights">
+          <img class="insight-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+
+          <div align="left" class="p-2">
+            <p><strong><%= insight.name %></strong></p>
+            <p><%= insight.summary %></p>
+          </div>
         </a>
       <%# </div> %>
     </div>
