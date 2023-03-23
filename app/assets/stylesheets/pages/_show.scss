@@ -27,9 +27,9 @@
 }
 
 #form-button {
-  background-color: #C41B92 !important;
-  text-align: right;
-  border: 0;
+  background-color: #1e898b !important;
+  border: none;
+  text-align: center;
 }
 
 body {
@@ -37,14 +37,24 @@ body {
 }
 
 .new-goal-container {
-  width: 56%;
-  margin: 40px auto;
-  border: #08C1C4 solid 4px;
-  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-goal-form {
   padding: 64px;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-goal-image {
+  width: 50%;
+  height: 100vh;
+  opacity: 0.9;
+  text-align: right;
+  border: 0;
 }
 
 .new-goal-header {
   font-family: 'Playfair Display SC', serif;
 }
-
