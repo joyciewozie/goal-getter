@@ -5,7 +5,7 @@
   <div class="col-12 col-lg-3">
     <%= insight.name %>
   <% end %>
-  <div class="container">
+  <div class="card-container">
     <div class="row">
       <%# <% @goal.insights.each do |insight| %>
         <%# <div class="col-12 col-lg-3"> %>
@@ -44,7 +44,7 @@
       </div>
       <%= link_to "New Insight",  goal_insight_path(@goal) %>
       <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-      <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+      <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id) %>
       <%= render 'add_collaborators' %>
       <%= render 'show_collaborators' %>
       <%= render 'show_insights' %>
