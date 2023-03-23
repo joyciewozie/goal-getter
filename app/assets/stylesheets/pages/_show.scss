@@ -32,6 +32,10 @@
   border: 0;
 }
 
+body {
+  background-color: rgb(250, 250, 250);
+}
+
 .new-goal-container {
   width: 56%;
   margin: 40px auto;
@@ -44,6 +48,3 @@
   font-family: 'Playfair Display SC', serif;
 }
 
-.form {
-  font-family: 'Public Sans', sans-serif;
-}

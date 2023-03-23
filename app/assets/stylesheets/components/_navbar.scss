@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #C7C7C7;
+  background: #FFFFFF;
   height: 70px;
 }
 
@@ -13,11 +13,13 @@
 }
 
 .navbar {
-  font-size: 30px;
+  font-size: 24px;
+  color: #FFFFFF;
 }
 
 .nav-link {
   padding-right: 30px;
+  color: #08C1C4;
 }
 
 .nav-link .nav-item{
@@ -27,4 +29,8 @@
 .nav-user {
   padding-right: 50px;
   padding-bottom: 12px;
+}
+
+.svgicon {
+  fill: #08C1C4;
 }
