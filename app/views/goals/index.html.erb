@@ -1,24 +1,32 @@
-<h1>Goals#all</h1>
+<div>
+  <p>Goals#all</p>
+</div>
+<%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://https://console.cloudinary.com/console/c-8e6e46c2824f02dbffd1c83d2b5726/media_library/search/asset/6cf728791ef45fc2dcb00a1b4cc9b553/manage?q=&context=manage.jpg)">
+  Goals Getter
+</div> %>
 <div class="container">
   <div class="row">
     <% @goals.each do |goal| %>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.goal_type %>
+      <div class="col-12 col-lg-12">
         <a class="btn btn-flat" href="#"><%= goal.goal_type %></a>
       </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.name %>
-        <a class="btn btn-flat" href="#"><%= goal.name %></a>
+      <br />
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <a class="btn btn-flat" href="#"><%= goal.name %></a>
+        </div>
       </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.description %>
-        <a class="btn btn-flat" href="#"><%= goal.description %></a>
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <a class="btn btn-flat" href="#"><%= goal.description %></a>
+        </div>
       </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.status %>
-        <a class="btn btn-flat" href="#"><%= goal.status %></a>
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <a class="btn btn-flat" href="#"><%= goal.status %></a>
+        </div>
+        <div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-
+    </div>
+    <%# <a class="btn btn-flat" href="#"> %>
