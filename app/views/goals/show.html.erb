@@ -3,57 +3,48 @@
 <h4>Insights</h4>
 <% @goal.insights.each do |insight| %>
   <div class="col-12 col-lg-3">
-  <%= insight.name %>
-<% end %>
-<div class="container">
-
-  <div class="row">
-    <%# <% @goal.insights.each do |insight| %>
-      <%# <div class="col-12 col-lg-3"> %>
-      <%# <%= insight.name %>
-      <%# </div>  %>
-      <%# </div> %>
-      <div class="card">
-        <%# <% @goal.photos.each do |photo| %>
-          <% if @goal.photo.attached? %>
-            <%# <%= cl_image_tag @goal.photo.key, class: "card-img-top", :cloud_name => 'dcakea82q' %>
-            <%= cl_image_tag @goal.photo.key, height: 300, width: 400, crop: :fill %>
-          <%else%>
-            No photo
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to @goal.name, goal_path(@goal) %></h5>
-            <p class="card-text"><%= @goal.description %></p>
+    <%= insight.name %>
+  <% end %>
+  <div class="container">
+    <div class="row">
+      <%# <% @goal.insights.each do |insight| %>
+        <%# <div class="col-12 col-lg-3"> %>
+        <%# <%= insight.name %>
+        <%# </div>  %>
+        <%# </div> %>
+        <div class="card">
+          <%# <% @goal.photos.each do |photo| %>
+            <% if @goal.photo.attached? %>
+              <%# <%= cl_image_tag @goal.photo.key, class: "card-img-top", :cloud_name => 'dcakea82q' %>
+              <%= cl_image_tag @goal.photo.key, height: 300, width: 400, crop: :fill %>
+            <%else%>
+              No photo
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to @goal.name, goal_path(@goal) %></h5>
+              <p class="card-text"><%= @goal.description %></p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-12">
-            <p>Answer 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <p>Answer 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-12">
-            <p>Answer 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <p>Answer 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-12">
-            <p>Answer 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <p>Answer 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries……………………</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <%= link_to "New Insight",  goal_insight_path(@goal) %>
-
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-
-
-<%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
-
-<%= render 'add_collaborators' %>
-
-<%= render 'show_collaborators' %>
-
-<%= render 'show_insights' %>
-
-
+      <%= link_to "New Insight",  goal_insight_path(@goal) %>
+      <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+      <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+      <%= render 'add_collaborators' %>
+      <%= render 'show_collaborators' %>
+      <%= render 'show_insights' %>
