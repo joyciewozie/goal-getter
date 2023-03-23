@@ -4,7 +4,6 @@
   <%= simple_form_for([@goal, @insight, answer]) do |f| %>
     <%= f.input :content %>
     <%= f.association :template_question, as: :hidden %>
-    <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
 <% end %>
