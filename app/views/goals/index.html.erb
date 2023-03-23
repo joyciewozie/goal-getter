@@ -7,29 +7,19 @@
 <div class="container">
   <div class="row">
     <% @goals.each do |goal| %>
-      <div class="col-12 col-lg-12">
-        <a class="btn btn-flat" href="#"><%= goal.goal_type %></a>
-      </div>
-      <br />
       <div class="row">
-        <div class="col-12 col-lg-12">
-          <a class="btn btn-flat" href="#"><%= goal.name %></a>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= goal.name %>
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-12">
-          <a class="btn btn-flat" href="#"><%= goal.description %></a>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= goal.name %>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-12">
-          <a class="btn btn-flat" href="#"><%= goal.status %></a>
-        </div>
-        <div>
-        <% end %>
       </div>
       <%# <% end %>
     </div>
   </div>
   <%= cl_image_tag("0wrv493qt76z7dtocmheatqw81eo",
       width: 400, height: 300, crop: :fill) %>
+  <%# <a class="btn btn-flat" href="#"></a> %>
