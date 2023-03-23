@@ -1,53 +1,72 @@
 
-<p><strong><%= insight.name %></strong></p>
-<p><%= insight.summary %></p>
-<div data-controller="insight">
-  <div class="container">
-    <div class="d-flex justify-content-end">
-      <a class="btn btn-primary" data-action="click->insight#showInsights">Show More
-      </a>
+  <div align="center" class="pt-2">
+    <p><strong><%= insight.name %></strong></p>
+    <p><%= insight.summary %></p>
+  </div>
+  <div data-controller="insight">
+    <div class="container" style="padding-bottom: 1rem;">
+      <%# <div class="d-flex justify-content-end"> %>
+        <a class="btn btn-primary" data-action="click->insight#showInsights">Show More
+        </a>
+      <%# </div> %>
     </div>
-  </div>
 
-  <%# Insights Modal %>
-  <div data-insight-target="insights" class="insight-bg position-fixed w-100 h-100 top-0 start-0">
-  </div>
-  <div data-insight-target="popleft" class="modal-popleft position-fixed w-100 h-100 top-0 start-0">
-    <div class="container insights-screen">
-      <%# To style %>
-      <div class="modal-title">
-        <p><strong>Answers and Comments</strong></p>
-        <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
-      </div>
-      <hr>
-
-      <%# div for each qn, ans and comment %>
-      <% insight.answers.each do |answer| %>
-        <div class="d-flex flex-column">
-          <%# qn and answer div %>
-          <div class="d-flex">
-            <div class="d-flex flex-column border p-2">
-              <div class="border insight-question">
-                <%= answer.template_question.title %>
-              </div>
-
-              <div class="border insight-answer">
-                <%= answer.content %>
-              </div>
-            </div>
-
-            <%# comments div %>
-            <div class="d-flex flex-column border p-2">
-              <% answer.comments.each do |comment| %>
-                <div class="border insight-comment">
-                  <%= comment.content %>
-                </div>
-              <% end %>
-            </div>
-          </div>
+    <%# Insights Modal %>
+    <div data-insight-target="insights" class="insight-bg position-fixed w-100 h-100 top-0 start-0">
+    </div>
+    <div data-insight-target="popleft" class="modal-popleft position-fixed w-100 h-100 top-0 start-0">
+      <div class="container insights-screen">
+        <%# To style %>
+        <div class="insight-title">
+          <p><strong>Answers and Comments</strong></p>
+          <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
         </div>
-      <% end %>
+        <hr>
 
+        <div class="d-flex flex-column border insight-content">
+          <% insight.answers.each do |answer| %>
+            <%# div for each qn, ans and comment %>
+            <div class="container m-2">
+              <div class="row">
+                <%# qn and answer div %>
+                <div class="col-8">
+                  <div class="d-flex flex-column border p-2 fs-5">
+                    <div class="border insight-question">
+                      <%= answer.template_question.title %>
+                    </div>
+
+                    <div class="border insight-answer">
+                      <%= answer.content %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="d-flex flex-column border p-2 fs-6">
+                    <% answer.comments.each do |comment| %>
+                      <div class="insight-comment-box">
+                        <div class="insight-user">
+                          <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+                          <p class="mb-0"><%= comment.user.name %></p>
+                        </div>
+                        <div class="insight-comment">
+                          <%= comment.content %>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <%# <div class="insight-row"> %>
+
+              <%# comments div %>
+            <%# </div> %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
