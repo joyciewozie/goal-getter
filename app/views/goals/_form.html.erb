@@ -1,8 +1,10 @@
 <%= simple_form_for goal do |f| %>
-  <%= f.input :goal_type %>
-  <%= f.input :status %>
-  <%= f.input :name, label: "What do you want to call your goal?" %>
+  <%= f.input :goal_type, label: "What type of goal do you want to work on?", as: :radio_buttons, collection: ["career", "health", "romance"] %>
+  <%= f.input :status, label: "Where are you with your goal now? Be honest with yourself, this is a no-judgement space. ", as: :radio_buttons, collection: ["still thinking about it", "working on it", "closing to completing", "completed"] %>
+  <%= f.input :name, label: "What do you want to call this goal?" %>
   <%= f.input :description, label: desc_label %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <div class="d-flex justify-content-end">
+  <%= f.submit "Add", class: "btn btn-primary", id: "form-button" %>
+  </div>
 <% end %>
