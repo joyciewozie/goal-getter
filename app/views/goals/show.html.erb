@@ -24,7 +24,6 @@
 <%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
 
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
-
 <div class="d-flex p-3 container border shadow">
   <div class="insight-new">
     <%= link_to goal_insight_path(@goal.id) do %>
@@ -41,10 +40,7 @@
     <% end %>
   </div>
 </div>
-
-
 <%# Collaborators flow %>
-
 <div class="d-flex p-3 container border shadow">
   <%= render 'add_collaborators' %>
   <%= render 'show_collaborators' %>
