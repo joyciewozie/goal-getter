@@ -2,20 +2,16 @@
 <div class="container">
   <div class="row">
     <% @goals.each do |goal| %>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.goal_type %>
-        <a class="btn btn-flat" href="#"><%= goal.goal_type %></a>
-      </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.name %>
+      <div class="row">
         <a class="btn btn-flat" href="#"><%= goal.name %></a>
       </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.description %>
-        <a class="btn btn-flat" href="#"><%= goal.description %></a>
+      <div class="row">
+        <a class="btn btn-flat" href="#"><%= goal.name %></a>
       </div>
-      <div class="col-12 col-lg-3">
-        <%# <%= goal.status %>
+      <div class="row">
+        <a class="btn btn-flat" href="#"><%= goal.name %></a>
+      </div>
+      <div class="row">
         <a class="btn btn-flat" href="#"><%= goal.status %></a>
       </div>
     <% end %>
