@@ -3,10 +3,6 @@
 <h4>Insights</h4>
 
 <%# Bing to style the top part %>
-<% @goal.insights.each do |insight| %>
-  <div class="col-12 col-lg-3">
-  <%= insight.name %>
-<% end %>
 <div class="container">
 
   <div class="row">
@@ -47,16 +43,18 @@
     </div>
     <%= link_to "New Insight",  goal_insight_path(@goal) %>
 
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
-
+  <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+</div>
 
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %> %>
 
+<%# Insights flow %>
 
+<div class="d-flex p-3 container border shadow">
+  <div class="insight-card">
+    <%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
+  </div>
 
-
-<div class="d-flex mt-3">
-  <%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
   <% @goal.insights.each do |insight| %>
     <div class="insight-card">
       <%= render 'show_insights', insight: insight %>
@@ -65,11 +63,9 @@
 </div>
 
 
-
-
 <%# Collaborators flow %>
 
-
-<%= render 'add_collaborators' %>
-
-<%= render 'show_collaborators' %>
+<div class="d-flex p-3 container border shadow">
+  <%= render 'add_collaborators' %>
+  <%= render 'show_collaborators' %>
+</div>

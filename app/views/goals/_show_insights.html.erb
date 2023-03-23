@@ -4,7 +4,7 @@
 <div data-controller="insight">
   <div class="container">
     <div class="d-flex justify-content-end">
-      <a class="btn btn-primary" data-action="click->insight#showInsights">Show Answers
+      <a class="btn btn-primary" data-action="click->insight#showInsights">Show More
       </a>
     </div>
   </div>
@@ -26,20 +26,20 @@
         <div class="d-flex flex-column">
           <%# qn and answer div %>
           <div class="d-flex">
-            <div class="d-flex flex-column">
-              <div class="question">
+            <div class="d-flex flex-column border p-2">
+              <div class="border insight-question">
                 <%= answer.template_question.title %>
               </div>
 
-              <div class="answer">
+              <div class="border insight-answer">
                 <%= answer.content %>
               </div>
             </div>
 
             <%# comments div %>
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column border p-2">
               <% answer.comments.each do |comment| %>
-                <div class="content">
+                <div class="border insight-comment">
                   <%= comment.content %>
                 </div>
               <% end %>
