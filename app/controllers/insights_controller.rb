@@ -38,7 +38,7 @@ class InsightsController < ApplicationController
   private
 
   def insight_params
-    params.require(:insight).permit(:name, :summary, :goal_id)
+    params.require(:insight).permit(:name, :summary, :goal_id, :status, :photo)
   end
 
   def set_goal
