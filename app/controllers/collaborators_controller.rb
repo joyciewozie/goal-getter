@@ -1,11 +1,6 @@
 class CollaboratorsController < ApplicationController
   before_action :set_goal, :check_owner
 
-  # GET /goals/:goal_id/collaborators (goal_collaborators)
-  # def index
-  #   @collaborator = @goal.collaborators
-  # end
-
   # POST /goals/:goal_id/collaborators
   # only the goal owner can add collaborators to his goals
   def create
@@ -25,30 +20,8 @@ class CollaboratorsController < ApplicationController
     end
   end
 
-  # # GET /goals/:goal_id/collaborators/:id (goal_collaborator)
-  # def show
-
-  # end
-
-
-  # # PUT /goals/:goal_id/collaborators/:id (goal_collaborator)
-  # def update
-
-  # end
-
-  # # GET /goals/:goal_id/collaborators/new (new_goal_collaborator)
-  # def new
-  #   @collaborator = Collaborator.new
-  # end
-
-  # # GET /goals/:goal_id/collaborators/:id/edit (edit_goal_collaborator)
-  # def edit
-
-  # end
-
-
   def destroy
-
+    # To be done
   end
 
 
