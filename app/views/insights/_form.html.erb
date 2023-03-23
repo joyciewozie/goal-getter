@@ -1,0 +1,8 @@
+<%= simple_form_for [goal, insight] do |f| %>
+  <%= f.input :name, label: "Write a word that comes to mind for this insights session" %>
+  <%= f.input :summary, label: "Set an intention for this session" %>
+  <%= f.input :photo, as: :file %>
+  <div class="d-flex justify-content-center">
+  <%= f.submit "Start an insights session", class: "btn btn-primary", id: "form-button" %>
+  </div>
+<% end %>

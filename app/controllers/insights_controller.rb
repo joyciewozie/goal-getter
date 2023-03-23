@@ -4,21 +4,12 @@ class InsightsController < ApplicationController
   def show
     @insight = Insight.find(params[:id])
     @goal = @insight.goal
-    @answers = TemplateQuestion.where(goal_type: @goal.goal_type).map { |tq| Answer.new(template_question: tq) }
-    # @unaswers = @answers.select {|answer| answer.content.nil?}
-    # @answers = [@unaswered.sample]
-    @answers_order = @answers.sort_by { |answer| answer.template_question_id }
-    @answers = [@answers_order.sample]
-    # if @answers.template_question_id = 4
-    #   redirect_to goal_path(@goal.id)
-    # end
-    # answers = TemplateQuestion
-             #  .where(goal_type: @goal.goal_type)
-               # @insight.answers.pluck(:template_question_id) returns an array of template question id that has been answered
-             #  .where.not(id: @insight.answers.pluck(:template_question_id))
-             #  .map { |tq| Answer.new(template_question: tq) }
+    answers = TemplateQuestion.where(goal_type: @goal.goal_type)
+              # @insight.answers.pluck(:template_question_id) returns an array of template question id that has been answered
+              .where.not(id: @insight.answers.pluck(:template_question_id))
+              .map { |tq| Answer.new(template_question: tq) }
 
-   # @answer = answers.first
+@answer = answers.first
   end
 
   # def answers

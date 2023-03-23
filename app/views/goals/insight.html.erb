@@ -1,6 +1,5 @@
 <% @answers.each do |answer| %>
   <h2><%= answer.template_question.title %></h2>
-  raise
   <%= simple_form_for([@goal, answer]) do |f| %>
     <%= f.input :content %>
     <%= f.input :photo, as: :file %>

@@ -1,13 +1,17 @@
-<p>Goal name: <%= @goal.name %></p>
-<p>About my goal: <%= @goal.description %></p>
+<div class="goal-show-container">
 
 <div class="container-xxl d-flex flex-row">
   <div class="card-trip">
     <%# <img src="./assets/images/job_change.jpg" /> %>
-    <%= image_tag "job_change.jpg" %>
+    <% if @goal.photo.attached?%>
+        <%= cl_image_tag @goal.photo.key, class: "img-fluid" %>
+    <% else %>
+        <%= cl_image_tag "goal-page.jpeg", class: "img-fluid" %>
+     <% end %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @goal.name %></h2>
+        <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
       </div>
     </div>
   </div>
@@ -26,7 +30,7 @@
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
 <div class="d-flex p-3 container border shadow">
   <div class="insight-new">
-    <%= link_to goal_insight_path(@goal.id) do %>
+    <%= link_to new_goal_insight_path(@goal.id) do %>
       <i class="fa-regular fa-square-plus"></i>
       <span> Add Insight</span>
     <% end %>
@@ -40,10 +44,11 @@
     <% end %>
   </div>
 </div>
+<br>
 <%# Collaborators flow %>
 <div class="d-flex p-3 container border shadow">
   <%= render 'add_collaborators' %>
   <%= render 'show_collaborators' %>
 </div>
 
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+</div>
