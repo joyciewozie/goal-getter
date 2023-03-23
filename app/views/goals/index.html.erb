@@ -1,5 +1,10 @@
-<h1>Goals#all</h1>
-<div class="container">
+<div>
+  <p>Goals#all</p>
+</div>
+<%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://https://console.cloudinary.com/console/c-8e6e46c2824f02dbffd1c83d2b5726/media_library/search/asset/6cf728791ef45fc2dcb00a1b4cc9b553/manage?q=&context=manage.jpg)">
+  Goals Getter
+</div> %>
+<div class=" card_container">
   <div class="row">
     <% @goals.each do |goal| %>
       <div class="row">
@@ -14,7 +19,5 @@
       </div>
     <% end %>
   </div>
-</div>
-<%= cl_image_tag("0wrv493qt76z7dtocmheatqw81eo",
-      width: 400, height: 300, crop: :fill) %>
-<%# <a class="btn btn-flat" href="#"></a> %>
+  <%# <a class="btn btn-flat" href="#"></a> %>
+  <%= cl_image_tag("0wrv493qt76z7dtocmheatqw81eo", width: 400, height: 300, crop: :fill) %>
