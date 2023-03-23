@@ -1,9 +1,10 @@
+<p>Find your insights for: <%= @goal.description %></p>
+
 <% @answers.each do |answer| %>
   <h2><%= answer.template_question.title %></h2>
-  <%= simple_form_for([@goal, answer]) do |f| %>
+  <%= simple_form_for([@goal, @insight, answer]) do |f| %>
     <%= f.input :content %>
-    <%= f.input :photo, as: :file %>
     <%= f.association :template_question, as: :hidden %>
-    <%= f.submit %>
+  <%= f.submit %>
   <% end %>
 <% end %>
