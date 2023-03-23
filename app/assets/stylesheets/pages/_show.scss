@@ -27,7 +27,23 @@
 }
 
 #form-button {
-  background-color: #3594af !important;
+  background-color: #C41B92 !important;
   text-align: right;
   border: 0;
+}
+
+.new-goal-container {
+  width: 56%;
+  margin: 40px auto;
+  border: #08C1C4 solid 4px;
+  border-radius: 25px;
+  padding: 64px;
+}
+
+.new-goal-header {
+  font-family: 'Playfair Display SC', serif;
+}
+
+.form {
+  font-family: 'Public Sans', sans-serif;
 }
