@@ -1,7 +1,7 @@
 <p>Create a new insight</p>
-
 <%= simple_form_for [@goal, @insight] do |f| %>
-<%= f.input :name, label: "Write a word that comes to mind for this insights session" %>
-<%= f.input :summary, label: "Set an intention for this session" %>
-<%= f.submit %>
+  <%= f.input :name, label: "Write a word that comes to mind for this insights session" %>
+  <%= f.input :summary, label: "Set an intention for this session" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
 <% end %>

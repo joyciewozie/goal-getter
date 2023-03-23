@@ -1,36 +1,49 @@
 <p>Goal name: <%= @goal.name %></p>
 <p>About my goal: <%= @goal.description %></p>
-<div class="container-xxl">
+
+<div class="container-xxl d-flex flex-row">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%# <img src="./assets/images/job_change.jpg" /> %>
+    <%= image_tag "job_change.jpg" %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @goal.name %></h2>
       </div>
     </div>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
+  <div>
+    <div class="card-goal image margin">
+      <p><%= @goal.description %></p>
+    </div>
+    <div class="card-goal image_two">
+      <p><%= @goal.status %></p>
+    </div>
   </div>
 </div>
-<%= link_to "New Insight",  goal_insight_path(@goal) %>
-<%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+
+<%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
+
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
 <div class="d-flex p-3 container border shadow">
-  <div class="insight-card">
-    <%= link_to "New Insight",  goal_insight_path(@goal.id)  %>
+  <div class="insight-new">
+    <%= link_to goal_insight_path(@goal.id) do %>
+      <i class="fa-regular fa-square-plus"></i>
+      <span> Add Insight</span>
+    <% end %>
   </div>
-  <% @goal.insights.each do |insight| %>
-    <div class="insight-card">
-      <%= render 'show_insights', insight: insight %>
-    </div>
-  <% end %>
+
+  <div class="insight-scroll">
+    <% @goal.insights.each do |insight| %>
+      <div class="insight-card">
+        <%= render 'show_insights', insight: insight %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <%# Collaborators flow %>
 <div class="d-flex p-3 container border shadow">
   <%= render 'add_collaborators' %>
   <%= render 'show_collaborators' %>
 </div>
+
+<%= link_to "Edit",  edit_goal_path(@goal.id)  %>

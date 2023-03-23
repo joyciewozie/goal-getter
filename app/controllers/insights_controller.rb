@@ -12,6 +12,13 @@ class InsightsController < ApplicationController
     # if @answers.template_question_id = 4
     #   redirect_to goal_path(@goal.id)
     # end
+    # answers = TemplateQuestion
+             #  .where(goal_type: @goal.goal_type)
+               # @insight.answers.pluck(:template_question_id) returns an array of template question id that has been answered
+             #  .where.not(id: @insight.answers.pluck(:template_question_id))
+             #  .map { |tq| Answer.new(template_question: tq) }
+
+   # @answer = answers.first
   end
 
   # def answers
@@ -26,7 +33,7 @@ class InsightsController < ApplicationController
   # POST (/goals/:goal_id/insights)
   def create
     @insight = Insight.new(insight_params)
-    @goal = @insight.goal
+    @insight.goal = @goal
     if @insight.save
       # error in redirecting
       redirect_to goal_insight_path(@goal.id, @insight.id)
@@ -39,6 +46,7 @@ class InsightsController < ApplicationController
 
   def insight_params
     params.require(:insight).permit(:name, :summary, :goal_id, :photo)
+
   end
 
   def set_goal
