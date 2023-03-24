@@ -59,7 +59,7 @@ answer_eight = Answer.create!(content: "If the signal is too strict, the bot may
 
 puts 'Destroying all highlights'
 puts 'Creating highlight'
-highlight = Highlight.create!(text: "Developer", goal_id: goal.id)
+highlight = Highlight.create!(text: "Because", goal_id: goal.id)
 
 puts 'Destroying all collaborators'
 puts 'Creating collaborator'
