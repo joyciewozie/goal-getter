@@ -1,6 +1,5 @@
 class Highlight < ApplicationRecord
-  belongs_to :answer
-  has_one :goal, through: :answer
+  belongs_to :goal
 
   validates :text, presence: true
 end

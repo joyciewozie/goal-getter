@@ -6,7 +6,7 @@
   end
 
   def create
-    highlight = Highlight.new(highlights_params)
+    highlight = Highlight.create!(highlights_params)
 
     render :json => highlight
   end
@@ -14,6 +14,6 @@
   private
 
   def highlights_params
-    params.require(:highlight).permit(:text, :answer_id)
+    params.require(:highlight).permit(:text, :goal_id)
   end
 end
