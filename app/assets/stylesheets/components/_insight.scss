@@ -1,4 +1,3 @@
-
 .insight-top {
 
   &:hover {
@@ -40,11 +39,9 @@
   left: 50%;
   transform: translate(-50%, -50%) !important;
   background-color: white;
-
   border: 1px blue solid;
   padding: 20px;
   border-radius: 10px;
-
 }
 
 .insight-title {
@@ -59,9 +56,6 @@
   overflow-y: scroll;
 }
 
-
-
-
 .insight-new {
   display: flex;
   align-items: center;
@@ -73,7 +67,6 @@
 .insight-add {
   display: block;
 }
-
 
 .insight-scroll {
   overflow-x: scroll;
@@ -95,19 +88,15 @@
 //   background-color: black;
 // }
 
-
 .insight-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   // border: 1px solid grey;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   margin: 5px;
-
   width: 30wh;
-
   background-color: white;
 
   &:hover {
@@ -123,13 +112,11 @@
 }
 
 
-.insight-question {
+// .insight-question {
+// }
 
-}
-
-.insight-answer {
-
-}
+// .insight-answer {
+// }
 
 .insight-comment-box {
   display: flex;
@@ -139,11 +126,23 @@
 
 .insight-user {
   padding: 4px;
-
-
 }
 
 .insight-comment {
   flex-grow: 1;
   padding: 4px;
+}
+
+.insight-index-card {
+  margin: 50px;
+}
+
+.photo-insight-index {
+  max-height: 420px;
+  max-width: 720px;
+  margin: 25px;
+}
+
+.insight-title.index-page {
+  margin-top: 25px;
 }
