@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :goals
+  has_many :goals, dependent: :destroy
   has_many :comments
 
   GENDER = ['Fairy', 'Female', 'Male', 'Non-binary', 'Transgender', 'Prefer not to say']
