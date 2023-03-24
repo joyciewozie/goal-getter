@@ -3,7 +3,7 @@ class CollaboratorsController < ApplicationController
 
   def index
     @user = current_user
-    @collaborators = Collaborator.where(user: current_user)
+    @collaborators = Collaborator.where(accepted: true, user: current_user)
   end
 
   # POST /goals/:goal_id/collaborators
