@@ -1,9 +1,16 @@
-<h1>Goals I am collaborating on</h1>
+<div class="collaborator-container-index">
+<h1>Hi <%= @user.name %>,</h1>
+<br>
 
-<p>Hi <%= @user.name %></p>
-<%= @collaborator %>
-<p>My user id: <%= @user.id %></p>
-<% @collaborators.each do |collaborator|%>
-  <p>Goal name: <%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) %></p>
-  <p>Goal owner: <%= collaborator.goal.user.name %></p>
-<% end %>
+<h2>Goals you are collaborating on:</h2>
+<br>
+<div class="d-flex">
+  <% @collaborators.each do |collab| %>
+    <div class="avatar-card">
+      <p><%= collab.goal.user.name %></p>
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+      <p class="goal-link"><strong><%= link_to collab.goal.name, goal_path(collab.goal.id) %></strong></p>
+    </div>
+  <% end %>
+  </div>
+</div>
