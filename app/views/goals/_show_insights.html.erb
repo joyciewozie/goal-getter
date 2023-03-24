@@ -23,12 +23,15 @@
       <div class="container insights-screen">
         <%# To style %>
         <div class="insight-title">
-          <p><strong><%= insight.name %></strong></p>
+          <div>
+            <p class="m-0 p-0"><strong><%= insight.name %></strong></p>
+            <p class="fs-6 m-0 p-0 fst-italic underline">Highlight specific text to save for future reference</p>
+          </div>
           <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
         </div>
         <hr>
 
-        <div class="d-flex flex-column border insight-content">
+        <div data-controller="highlight" data-highlight-goal-value="<%= @goal.id %>" data-action="mouseup->highlight#selectText" class="d-flex flex-column border insight-content">
           <% insight.answers.each do |answer| %>
             <%# div for each qn, ans and comment %>
             <div class="container m-2">

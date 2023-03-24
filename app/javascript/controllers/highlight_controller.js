@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="highlight"
 export default class extends Controller {
   static values = {
-    answer: String,
+    goal: String,
     text: String
   }
 
@@ -33,7 +33,7 @@ export default class extends Controller {
 
       document.body.insertAdjacentHTML(
         "beforeend",
-        '<div data-controller="highlight" data-highlight-answer-value="' + this.answerValue + '" data-highlight-text-value="' + saveText +'" id="tooltip" style="position:absolute; top: ' +
+        '<div data-controller="highlight" data-highlight-goal-value="' + this.goalValue + '" data-highlight-text-value="' + saveText +'" id="tooltip" style="position:absolute; top: ' +
           posY +
           "px; left: " +
           posX +
@@ -44,7 +44,7 @@ export default class extends Controller {
 
   saveText() {
     console.log(JSON.stringify({
-      "answer_id": this.answerValue,
+      "goal_id": this.goalValue,
       "text": this.textValue
     }))
     fetch("/highlights", {
@@ -52,7 +52,7 @@ export default class extends Controller {
       headers: {
         "Content-Type": "application/json"},
       body: JSON.stringify({
-        "answer_id": this.answerValue,
+        "goal_id": this.goalValue,
         "text": this.textValue
       })
     }).then((response)=>response.json())
