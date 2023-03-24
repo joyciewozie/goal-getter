@@ -1,0 +1,46 @@
+<div class="goal-card insight-index-card">
+<% @insights.each do |insight| %>
+    <div class="insight-title index-page">
+        <p><strong><%= insight.name %></strong></p>
+        <p><%= insight.summary %></p>
+    </div>
+    <div class="d-flex flex-row">
+        <div div class="col-lg-5">
+            <% insight.answers.each do |answer| %>
+            <%# qn and answer div %>
+                <div class="d-flex flex-column border p-2 fs-5">
+                    <div class="border insight-question">
+                        <%= answer.template_question.title %>
+                    </div>
+                    <div class="border insight-answer">
+                        <%= answer.content %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div div class="col-lg-3">
+            <% insight.answers.each do |answer| %>
+                <% answer.comments.each do |comment| %>
+                    <div class="d-flex flex-column border p-2 fs-6">
+                        <div class="insight-comment-box">
+                            <div class="insight-user">
+                                <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+                                <p class="mb-0"><%= comment.user.name %></p>
+                            </div>
+                            <div class="insight-comment">
+                                <%= comment.content %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %> 
+        </div>
+        <div div class="col-lg-4">
+            <% if insight.photo.attached?%>
+                <%= cl_image_tag insight.photo.key, class: "answer-photo" %>
+            <% else %>
+                <%= image_tag "https://images.unsplash.com/photo-1676477242103-552c19a3e935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", class: "answer-photo" %>
+            <% end %>
+        </div>
+    </div>
+<% end %>
