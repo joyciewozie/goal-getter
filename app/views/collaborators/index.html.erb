@@ -1,1 +1,16 @@
 Showing all collaborators here.
+</ul>
+<ul class="navbar-nav me-auto">
+  <% if @collaborator_not_accepted? %>
+    <li class="nav-item dropdown">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <%= link_to "Accepted", "#", class: "dropdown-item" %>
+        <%= link_to "Rejected", "#", class: "dropdown-item" %>
+      </div>
+    </li>
+  <% else %>
+    <li class="nav-item">
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+  <% end %>
+</ul>
