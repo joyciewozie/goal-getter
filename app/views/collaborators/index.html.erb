@@ -1,1 +1,43 @@
-<h1>Goals I am collaborating on</h1>
+<div class="collaborator-container-index">
+<h1>Hi <%= @user.name %>,</h1>
+<br>
+
+<h2>Goals you are collaborating on:</h2>
+<br>
+<div class="d-flex">
+  <% @collaborators.each do |collab| %>
+    <div class="avatar-card">
+      <p><%= collab.goal.user.name %></p>
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+      <p class="goal-link"><strong><%= link_to collab.goal.name, goal_path(collab.goal.id) %></strong></p>
+    </div>
+  <% end %>
+  </div>
+
+<div class="d-flex">
+  <% @collaborators.each do |collaborator| %>
+    <div class="avatar-card">
+      <% if collaborator.accepted == false %>
+        <%# <% if collaborator.user.name == current_user%>
+        <%# <% if @collaborator.user = @user %>
+        <%# <% if @collaborator.goal = @goal %>
+        <p><strong><%= collaborator.goal.user.name %></strong></p>
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+        <p><%= collaborator.goal.name %></p>
+        <p><%= collaborator.goal.description %></p>
+        <p><%= collaborator.goal.user.email %></p>
+        <%= simple_form_for collaborator do |f| %>
+          <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+          <%= f.submit "Accept", class: "btn btn-primary" %>
+        <% end %>
+        <%# <%= link_to "goals"%>
+      <% else %>
+        <p>Accepted</p>
+        <p><strong><%= collaborator.goal.user.name %></strong></p>
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+        <p><%= collaborator.goal.user.email %></p>
+        <%= link_to "Goal", goal_path(collaborator.goal) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

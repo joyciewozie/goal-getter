@@ -1,5 +1,9 @@
 class InsightsController < ApplicationController
   before_action :set_goal, only: %i[show new create]
+  
+  def index
+    @insights = Insight.all
+  end
 
   def show
     @insight = Insight.find(params[:id])
@@ -8,8 +12,7 @@ class InsightsController < ApplicationController
               # @insight.answers.pluck(:template_question_id) returns an array of template question id that has been answered
               .where.not(id: @insight.answers.pluck(:template_question_id))
               .map { |tq| Answer.new(template_question: tq) }
-
-@answer = answers.first
+    @answer = answers.first
   end
 
   # def answers
@@ -37,7 +40,6 @@ class InsightsController < ApplicationController
 
   def insight_params
     params.require(:insight).permit(:name, :summary, :goal_id, :photo)
-
   end
 
   def set_goal
