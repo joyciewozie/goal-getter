@@ -2,10 +2,9 @@ class CollaboratorsController < ApplicationController
   before_action :set_goal, :check_owner, only: %i[create]
 
   def index
-    @collaborators = Collaborator.where(user: current_user)
-
     @user = current_user
-    @collaborators = Collaborator.where(user: current_user)
+    @collaborators_accepted = Collaborator.where(accepted: true, user: current_user)
+    @collaborators = Collaborator.where(accepted: false, user: current_user)
 
   end
 

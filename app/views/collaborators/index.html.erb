@@ -5,7 +5,7 @@
 <h2>Goals you are collaborating on:</h2>
 <br>
 <div class="d-flex">
-  <% @collaborators.each do |collab| %>
+  <% @collaborators_accepted.each do |collab| %>
     <div class="avatar-card">
       <p><%= collab.goal.user.name %></p>
       <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
@@ -13,8 +13,11 @@
     </div>
   <% end %>
   </div>
+  <br>
 
+<h2>Goals requesting your collaboration:</h2>
 <div class="d-flex">
+  <br>
   <% @collaborators.each do |collaborator| %>
     <div class="avatar-card">
       <% if collaborator.accepted == false %>
@@ -31,12 +34,7 @@
           <%= f.submit "Accept", class: "btn btn-primary" %>
         <% end %>
         <%# <%= link_to "goals"%>
-      <% else %>
-        <p>Accepted</p>
-        <p><strong><%= collaborator.goal.user.name %></strong></p>
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-        <p><%= collaborator.goal.user.email %></p>
-        <%= link_to "Goal", goal_path(collaborator.goal) %>
+
       <% end %>
     </div>
   <% end %>
