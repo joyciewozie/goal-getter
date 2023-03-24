@@ -3,6 +3,10 @@ class CollaboratorsController < ApplicationController
 
   def index
     @collaborators = Collaborator.where(user: current_user)
+
+    @user = current_user
+    @collaborators = Collaborator.where(user: current_user)
+
   end
 
   def create
