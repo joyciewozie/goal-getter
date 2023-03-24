@@ -1,8 +1,14 @@
 class CollaboratorsController < ApplicationController
-  before_action :set_goal, :check_owner
+  before_action :set_goal, :check_owner, only: %i[create]
 
-  # POST /goals/:goal_id/collaborators
-  # only the goal owner can add collaborators to his goals
+  def index
+    @collaborators = Collaborator.where(user: current_user)
+
+    @user = current_user
+    @collaborators = Collaborator.where(user: current_user)
+
+  end
+
   def create
     @collaborator = Collaborator.new
     @user = User.find_by_email(collaborator_params[:user])
@@ -18,6 +24,13 @@ class CollaboratorsController < ApplicationController
       redirect_to goal_path(@goal.id), notice: "Try again!"
       # render "../views/goals/_collaborators.html.erb ", status: :unprocessable_entity
     end
+  end
+
+  def update
+    @collaborator = Collaborator.find(params[:id])
+    @collaborator.accepted = (params[:collaborator][:accepted] == "true")
+    @collaborator.save
+    redirect_to collaborators_path
   end
 
   def destroy
