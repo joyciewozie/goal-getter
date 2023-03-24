@@ -2,7 +2,9 @@ class CollaboratorsController < ApplicationController
   before_action :set_goal, :check_owner, only: %i[create]
 
   def index
-    @collaborators = Collaborator.all
+    @user = current_user
+    # @collaborators = Collaborator.where(user: current_user)
+    @collaborators = Collaborator.where(accepted: true, user: current_user)
   end
 
   # POST /goals/:goal_id/collaborators

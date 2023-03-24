@@ -1,6 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "components/card_category";
+@import "components/avatar";
+@import "components/card_product";
 
 .link {
   font-family: 'Playfair Display SC', serif;
@@ -14,4 +16,31 @@
 
 #description {
   font-family: 'Dancing Script', cursive;
+}
+
+// collaborators#index
+.collaborator-container-index {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.collaborator-container-index h1{
+  font-family: 'Playfair Display', serif;
+}
+
+.collaborator-container-index h2{
+  font-family: 'Playfair Display', serif;
+}
+
+.collaborator-container-index p {
+  font-family: 'Public Sans', sans-serif;
+}
+
+.goal-link {
+  color: black !important;
+}
+
+.card-collaborator {
+  border: black solid 1px;
+  text-align: center;
 }
