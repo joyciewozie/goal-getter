@@ -28,26 +28,27 @@
         </div>
         <hr>
 
-        <div class="d-flex flex-column border insight-content">
+        <div class="d-flex flex-column insight-content">
           <% insight.answers.each do |answer| %>
             <%# div for each qn, ans and comment %>
             <div class="container m-2">
               <div class="row">
                 <%# qn and answer div %>
                 <div class="col-8">
-                  <div class="d-flex flex-column border p-2 fs-5">
-                    <div class="border insight-question">
+                  <div class="d-flex flex-column p-2 fs-5">
+                    <div class="insight-question">
                       <%= answer.template_question.title %>
                     </div>
 
-                    <div class="border insight-answer">
+                    <div class="insight-answer">
                       <%= answer.content %>
                     </div>
+                    <%= link_to "Add comment", new_goal_comment_path(@goal.id) %>
                   </div>
                 </div>
 
                 <div class="col-4">
-                  <div class="d-flex flex-column border p-2 fs-6">
+                  <div class="d-flex flex-column p-2 fs-6">
                     <% answer.comments.each do |comment| %>
                       <div class="insight-comment-box">
                         <div class="insight-user">
