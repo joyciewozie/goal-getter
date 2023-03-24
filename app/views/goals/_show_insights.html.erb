@@ -1,9 +1,9 @@
 
   <div data-controller="insight">
     <div class="container insight-top">
-      <%# <div class="d-flex justify-content-end"> %>
+      <% # <div class="d-flex justify-content-end"> %>
         <a data-action="click->insight#showInsights">
-          <% if insight.photo.attached?%>
+          <% if insight.photo.attached? %>
             <%= cl_image_tag insight.photo.key, class: "insight-img" %>
           <% else %>
             <%= image_tag "https://source.unsplash.com/random/?moutain", class: "insight-img" %>
@@ -13,15 +13,15 @@
             <p id='insight-summary'><%= insight.summary %></p>
           </div>
         </a>
-      <%# </div> %>
+      <% # </div> %>
     </div>
 
-    <%# Insights Modal %>
+    <% # Insights Modal %>
     <div data-insight-target="insights" class="insight-bg position-fixed w-100 h-100 top-0 start-0">
     </div>
     <div data-insight-target="popleft" class="modal-popleft position-fixed w-100 h-100 top-0 start-0">
       <div class="container insights-screen">
-        <%# To style %>
+        <% # To style %>
         <div class="insight-title">
           <div>
             <p class="m-0 p-0"><strong><%= insight.name %></strong></p>
@@ -32,25 +32,27 @@
         <hr>
 
         <div data-controller="highlight" data-highlight-goal-value="<%= @goal.id %>" data-action="mouseup->highlight#selectText" class="d-flex flex-column border insight-content">
+        <div class="d-flex flex-column insight-content">
           <% insight.answers.each do |answer| %>
-            <%# div for each qn, ans and comment %>
+            <% # div for each qn, ans and comment %>
             <div class="container m-2">
               <div class="row">
-                <%# qn and answer div %>
+                <% # qn and answer div %>
                 <div class="col-8">
-                  <div class="d-flex flex-column border p-2 fs-5">
-                    <div class="border insight-question">
+                  <div class="d-flex flex-column p-2 fs-5">
+                    <div class="insight-question">
                       <%= answer.template_question.title %>
                     </div>
 
-                    <div class="border insight-answer">
+                    <div class="insight-answer">
                       <%= answer.content %>
                     </div>
+                    <%= link_to "Add comment", new_goal_comment_path(@goal.id) %>
                   </div>
                 </div>
 
                 <div class="col-4">
-                  <div class="d-flex flex-column border p-2 fs-6">
+                  <div class="d-flex flex-column p-2 fs-6">
                     <% answer.comments.each do |comment| %>
                       <div class="insight-comment-box">
                         <div class="insight-user">
@@ -68,13 +70,13 @@
               </div>
             </div>
 
-            <%# <div class="insight-row"> %>
+            <% # <div class="insight-row"> %>
 
-              <%# comments div %>
-            <%# </div> %>
+              <% # comments div %>
+            <% # </div> %>
           <% end %>
         </div>
-
+      </div>
       </div>
     </div>
   </div>

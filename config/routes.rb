@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     # GET insights/:insight_id/answers -> "insights#answers"
   end
 
-  resources :collaborators, only: [:index]
+  resources :collaborators, only: [:index, :update]
 
   # resources :insights, only: %i[show] do
   #   get :answers
