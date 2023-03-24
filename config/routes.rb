@@ -28,6 +28,6 @@ Rails.application.routes.draw do
   # route: POST insights/:insight_id/donkey -> insights#donkey
 
   resources :users
-  resources :highlights, only: [:index]
+  resources :highlights, only: %i[index create]
   resources :template_questions
 end
