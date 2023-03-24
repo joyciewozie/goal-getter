@@ -1,11 +1,27 @@
-<% @collaborators.each do |collaborator| %>
-  <% if collaborator.accepted == false %>
-    <%# <a href= "/collaborators/<%= collaborator.id %>
-    <a class="btn btn-primary" href="#">Accepted</a>
-    <a class="btn btn-primary" href="#">Rejected</a>
-  <% else %>
-    <%# <%= link_to "Login", new_user_session_path%>
-    do nothing.
+<div class="d-flex">
+  <% @collaborators.each do |collaborator| %>
+    <div class="avatar-card">
+      <% if collaborator.accepted == false %>
+        <%# <% if collaborator.user.name == current_user%>
+        <%# <% if @collaborator.user = @user %>
+        <%# <% if @collaborator.goal = @goal %>
+        <p><strong><%= collaborator.goal.user.name %></strong></p>
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+        <p><%= collaborator.goal.name %></p>
+        <p><%= collaborator.goal.description %></p>
+        <p><%= collaborator.goal.user.email %></p>
+        <%= simple_form_for collaborator do |f| %>
+          <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+          <%= f.submit "Accept", class: "btn btn-primary" %>
+        <% end %>
+        <%# <%= link_to "goals"%>
+      <% else %>
+        <p>Accepted</p>
+        <p><strong><%= collaborator.goal.user.name %></strong></p>
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+        <p><%= collaborator.goal.user.email %></p>
+        <%= link_to "Goal", goal_path(collaborator.goal) %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-<%# <h1>Goals I am collaborating on</h1>
+</div>
