@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/card_category";
+
+.link {
+  font-family: 'Playfair Display SC', serif;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+#description {
+  font-family: 'Dancing Script', cursive;
+}

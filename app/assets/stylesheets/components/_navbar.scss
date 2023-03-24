@@ -19,7 +19,8 @@
 
 .nav-link {
   padding-right: 30px;
-  color: #08C1C4;
+  font-family: 'Playfair Display', serif;
+  color: #1E898B;
 }
 
 .nav-link .nav-item{
@@ -31,6 +32,13 @@
   padding-bottom: 12px;
 }
 
-.svgicon {
-  fill: #08C1C4;
+
+//.svgicon {
+//  fill: #08C1C4;
+// }
+
+.navbar-brand svg path {
+  fill: #1E898B;
+  // fill: currentColor;
 }
+

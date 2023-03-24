@@ -1,0 +1,25 @@
+.new-insight-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 32px;
+}
+
+.new-insight-form {
+  width: 50%;
+  padding: 64px;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-insight-image {
+  width: 50%;
+  height: 100vh;
+  border-radius: 32px;
+  opacity: 0.8;
+  text-align: right;
+  border: 0;
+}
+
+.new-insight-header {
+  font-family: 'Playfair Display SC', serif;
+}

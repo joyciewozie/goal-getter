@@ -1,27 +1,36 @@
 <div class="insights-container">
 
-    <h1><%= @insight.name%></h1>
-    <p><%= @insight.summary%></p>
+     <h2><%= link_to @goal.name, goal_path(@goal.id), id: "goal-link" %></h2>
+     <p><%= @goal.description %></p>
 
-    <div class="details-container">
-    <h2><%= @goal.description %></h2>
+    <div class="insights-details-container">
+      <h1><%= @insight.name%></h1>
+
       <div class="photo-qn-ans">
-        <img class="answer-photo" src="https://images.unsplash.com/photo-1676477242103-552c19a3e935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+        <% if @insight.photo.attached?%>
+          <%= cl_image_tag @insight.photo.key, class: "answer-photo" %>
+        <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1676477242103-552c19a3e935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", class: "answer-photo" %>
+        <% end %>
+        <br>
+        <br>
         <% if @answer.nil? %>
           <% @insight.answers.each do |answer| %>
-          <p><%= answer.template_question.title %></p>
-            <%= answer.content %>
+          <h4><strong><%= answer.template_question.title %></strong></h4>
+          <p><%= answer.content %></p>
             <hr>
           <% end %>
         <% else %>
           <h5 class="question"><%= @answer.template_question.title %></h5>
+          <div id="insight-answer-form-text">
           <%= simple_form_for([@goal, @insight, @answer]) do |f| %>
             <%= f.input :content, label: "Free write your thoughts. Let your intuition guide you, write out whatever comes to mind" %>
             <%= f.association :template_question, as: :hidden %>
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-center">
             <%= f.submit "Next", class: "btn btn-primary", id: "form-button" %>
             </div>
           <% end %>
+          </div>
         <% end %>
       </div>
     </div>

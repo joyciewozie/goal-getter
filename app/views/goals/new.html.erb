@@ -1,6 +1,8 @@
 <div class="new-goal-container">
-<div class=form>
-<h5 style="text-align: center" class="new-goal-header">Add a new goal</h5>
-  <%= render "form", goal: @goal, desc_label: "What do you want from this goal? Don't worry, this can be changed later so write whatever comes to mind." %>
-</div>
+  <div class="new-goal-form">
+  <h5 style="text-align: center" class="new-goal-header">New goal</h5>
+  <br>
+    <%= render "form", goal: @goal, desc_label: "What do you want from this goal? Don't worry, this can be changed later, write what comes to mind." %>
+  </div>
+  <%= image_tag "new-goal.jpeg", class: "new-goal-image" %>
 </div>

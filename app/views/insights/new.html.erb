@@ -1,7 +1,8 @@
-<p>Create a new insight</p>
-<%= simple_form_for [@goal, @insight] do |f| %>
-  <%= f.input :name, label: "Write a word that comes to mind for this insights session" %>
-  <%= f.input :summary, label: "Set an intention for this session" %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="new-insight-container">
+  <div class="new-insight-form">
+  <h5 style="text-align: center" class="new-insight-header">New insight</h5>
+  <br>
+  <%= render "form", goal: @goal, insight: @insight %>
+  </div>
+  <%= image_tag "new-insight.jpeg", class: "new-insight-image" %>
+</div>
