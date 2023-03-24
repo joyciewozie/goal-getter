@@ -61,9 +61,11 @@ highlight = Highlight.create!(text: "Developer", answer_id: answer_one.id)
 puts 'Destroying all collaborators'
 Collaborator.destroy_all
 puts 'Creating collaborator'
-collaborator_one = Collaborator.create!(goal_id: goal.id, user_id: user_one.id)
-collaborator_two = Collaborator.create!(goal_id: goal.id, user_id: user_two.id)
-collaborator_three = Collaborator.create!(goal_id: goal.id, user_id: user_three.id)
+# collaborator_one = Collaborator.create!(goal: goal, user: user_one)
+collaborator_two = Collaborator.create!(goal: goal, user: user_two, accepted: true)
+collaborator_three = Collaborator.create!(goal: goal, user: user_three, accepted: true)
+collaborator_four = Collaborator.create!(goal: goal, user: user_four)
+
 
 puts 'Destroying all comments'
 Comment.destroy_all
