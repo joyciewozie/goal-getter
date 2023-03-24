@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :collaborators, except: [:index]
     resources :comments
     resources :highlights, except: [:index]
-    resources :insights, only: %i[new create show] do
+    resources :insights, only: %i[new create show index] do
       resources :answers, only: [:create]
     end
     get :insight

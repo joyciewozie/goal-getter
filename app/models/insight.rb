@@ -1,6 +1,6 @@
 class Insight < ApplicationRecord
   belongs_to :goal
-  has_many :answers
+  has_many :answers, dependent: :destroy
   has_one_attached :photo
 
   validates :name, presence: true
