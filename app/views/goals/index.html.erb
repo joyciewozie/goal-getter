@@ -1,14 +1,19 @@
-<h1>Goals#all</h1>
-<div class="container">
-  <% @goals.each do |goal| %>
-    <a href= "/goals/<%= goal.id %>">
-      <div class="card-category mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <h2><%= goal.name %></h2>
-        <p><%= goal.description %></p>
+<div class="all-goals-container">
+  <div class="container">
+    <div class="goal-card">
+    <% @goals.each do |goal| %>
+      <a href= "/goals/<%= goal.id %>">
+      <div class="card-category mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        <% if goal.photo.attached?%>
+          url(<%= cl_image_path goal.photo.key %>)"
+      <% else %>
+          no photo
+      <% end %>
+      ></a>
+        <h2><%= link_to goal.name, goal_path(goal.id), class: "link" %></h2>
+        <p id="description"><%= goal.description %></p>
       </div>
-    </a>
-  <% end %>
+    <% end %>
+    </div>
+  </div>
 </div>
-<%= cl_image_tag("0wrv493qt76z7dtocmheatqw81eo",
-      width: 400, height: 300, crop: :fill) %>
-<%# <a class="btn btn-flat" href="#"></a> %>

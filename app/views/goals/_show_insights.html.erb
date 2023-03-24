@@ -3,11 +3,14 @@
     <div class="container insight-top">
       <%# <div class="d-flex justify-content-end"> %>
         <a data-action="click->insight#showInsights">
-          <img class="insight-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-
+          <% if insight.photo.attached?%>
+            <%= cl_image_tag insight.photo.key, class: "insight-img" %>
+          <% else %>
+            <%= image_tag "https://source.unsplash.com/random/?moutain", class: "insight-img" %>
+          <% end %>
           <div align="left" class="p-2">
-            <p><strong><%= insight.name %></strong></p>
-            <p><%= insight.summary %></p>
+            <h5 id='insight-name'><strong><%= insight.name %></strong></h5>
+            <p id='insight-summary'><%= insight.summary %></p>
           </div>
         </a>
       <%# </div> %>
@@ -20,7 +23,7 @@
       <div class="container insights-screen">
         <%# To style %>
         <div class="insight-title">
-          <p><strong>Answers and Comments</strong></p>
+          <p><strong><%= insight.name %></strong></p>
           <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
         </div>
         <hr>

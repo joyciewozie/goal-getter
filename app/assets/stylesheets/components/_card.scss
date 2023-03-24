@@ -3,17 +3,18 @@
     // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin: 25px;
   }
-  
+
   .card-trip img {
     height: 400px;
     width: 720px;
     object-fit: cover;
+    border-radius: 5px;
   }
-  
+
   .card-trip h2 {
     font-size: 98px;
     font-weight: bold;
-    font-family: "Bebas Neue";
+    font-family: 'Playfair Display', serif;
     margin-top: 20px;
   }
 
@@ -52,8 +53,8 @@
   //   opacity: .7;
   //   margin: 0;
   // }
-  
-  
+
+
   // .card-trip .card-trip-infos {
   //   padding: 16px;
   //   display: flex;
@@ -61,13 +62,10 @@
   //   align-items: flex-end;
   //   position: relative;
   // }
-  
+
   // .card-trip-infos .card-trip-user {
   //   position: absolute;
   //   right: 16px;
   //   top: -20px;
   //   width: 40px;
   // }
-  
-
-  
