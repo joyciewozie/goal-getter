@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'goals#index'
 
   resources :goals do
-    resources :collaborators
+    resources :collaborators, except: [:index]
     resources :comments
     resources :highlights, except: [:index]
     resources :insights, only: %i[new create show] do
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get :insight
     # GET insights/:insight_id/answers -> "insights#answers"
   end
+
+  resources :collaborators, only: [:index]
 
   # resources :insights, only: %i[show] do
   #   get :answers

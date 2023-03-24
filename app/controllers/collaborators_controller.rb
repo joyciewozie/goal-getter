@@ -1,5 +1,9 @@
 class CollaboratorsController < ApplicationController
-  before_action :set_goal, :check_owner
+  before_action :set_goal, :check_owner, only: %i[create]
+
+  def index
+    @collaborators = Collaborator.all
+  end
 
   # POST /goals/:goal_id/collaborators
   # only the goal owner can add collaborators to his goals
