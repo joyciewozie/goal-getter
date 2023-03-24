@@ -53,7 +53,7 @@ export default class extends Controller {
         "Content-Type": "application/json"},
       body: JSON.stringify({
         "goal_id": this.goalValue,
-        "text": this.textValue
+        "text": this.textValue,
       })
     }).then((response)=>response.json())
     .then((data)=>{
