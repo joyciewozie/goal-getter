@@ -1,4 +1,10 @@
+.underline {
+  background-image: linear-gradient(transparent 0%, transparent calc(80%), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
+}
+
+
 .insight-top {
+  max-width: 300px;
 
   &:hover {
     cursor: pointer;
@@ -6,8 +12,8 @@
 }
 
 .insight-img {
-  max-width: 200px;
-  max-height: 200px;
+  max-height: 300px;
+  max-width: 300px;
   object-fit: cover;
   padding-bottom: 1rem;
 }
@@ -33,15 +39,15 @@
 }
 
 .insights-screen {
-  border: 1px solid black;
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) !important;
   background-color: white;
   border: 1px blue solid;
   padding: 20px;
   border-radius: 10px;
+  max-height: 80%;
 }
 
 .insight-title {
