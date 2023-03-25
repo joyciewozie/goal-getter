@@ -5,8 +5,7 @@ class CollaboratorsController < ApplicationController
     @collaborators = Collaborator.where(user: current_user)
 
     @user = current_user
-    @collaborators = Collaborator.where(user: current_user)
-
+    # @collaborators = Collaborator.where(user: current_user)
   end
 
   def create
