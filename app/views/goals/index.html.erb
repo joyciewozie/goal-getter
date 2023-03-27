@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/demo-new-insight.jpg">
   <div class="container">
     <h2><%=current_user.name %></h2>
     <%# <a class="btn btn-flat" href="#"> %>
@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="container py-5">
-  <div class="row gx-3 gy-5">
+  <div class="row gx-3 gy-3">
     <h4 id="A"> Goals </h4>
     <%= link_to "Add new goal", new_goal_path %>
     <%= render @goals %>
