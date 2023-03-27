@@ -15,6 +15,6 @@
   private
 
   def highlights_params
-    params.require(:highlight).permit(:text, :goal_id)
+    params.require(:highlight).permit(:text, :goal_id, :answer_id)
   end
 end

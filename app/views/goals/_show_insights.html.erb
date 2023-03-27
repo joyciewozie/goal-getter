@@ -31,7 +31,7 @@
         </div>
         <hr>
 
-        <div data-controller="highlight" data-highlight-goal-value="<%= @goal.id %>" data-action="mouseup->highlight#selectText" class="d-flex flex-column border insight-content">
+        <div data-controller="highlight" class="d-flex flex-column border insight-content">
         <div class="d-flex flex-column insight-content">
           <% insight.answers.each do |answer| %>
             <% # div for each qn, ans and comment %>
@@ -44,7 +44,10 @@
                       <%= answer.template_question.title %>
                     </div>
 
-                    <div class="insight-answer">
+                    <div data-action="mouseup->highlight#selectText"
+                     data-controller="highlight"
+                    data-highlight-goal-value="<%= @goal.id %>"
+                    data-highlight-answer-value="<%= answer.id %>" class="insight-answer">
                       <%= answer.content %>
                     </div>
                     <%= link_to "Add comment", new_goal_comment_path(@goal.id) %>

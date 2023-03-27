@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static values = {
     goal: String,
-    text: String
+    text: String,
+    answer: String
   }
 
   connect() {
@@ -30,10 +31,11 @@ export default class extends Controller {
 
       const posX = event.clientX;
       const posY = event.clientY - 20 + scrollTop;
-
+      console.log(this.answerValue)
+      console.log(this.goalValue)
       document.body.insertAdjacentHTML(
         "beforeend",
-        '<div data-controller="highlight" data-highlight-goal-value="' + this.goalValue + '" data-highlight-text-value="' + saveText +'" id="tooltip" style="position:absolute; top: ' +
+        '<div data-controller="highlight" data-highlight-answer-value="' + this.answerValue + '" data-highlight-goal-value="' + this.goalValue + '" data-highlight-text-value="' + saveText +'" id="tooltip" style="position:absolute; top: ' +
           posY +
           "px; left: " +
           posX +
@@ -45,16 +47,18 @@ export default class extends Controller {
   saveText() {
     console.log(JSON.stringify({
       "goal_id": this.goalValue,
+      "answer_id": this.answerValue,
       "text": this.textValue
     }))
     fetch("/highlights", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"},
-      body: JSON.stringify({
-        "goal_id": this.goalValue,
-        "text": this.textValue,
-      })
+        body: JSON.stringify({
+          "goal_id": this.goalValue,
+          "answer_id": this.answerValue,
+          "text": this.textValue,
+        })
     }).then((response)=>response.json())
     .then((data)=>{
       window.alert("bookmark saved")
