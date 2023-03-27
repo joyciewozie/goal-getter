@@ -1,3 +1,5 @@
+require "open-uri"
+
 class GoalsController < ApplicationController
   def index
     @goals = Goal.all.where(user: current_user)
