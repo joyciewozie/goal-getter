@@ -15,8 +15,10 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.new(goal_params)
+    @goal = Goal.new(goal_params_new)
     @goal.user = current_user
+    photo_url = Unsplash::Photo.random(count: 1, query: "#{@goal.name}", orientation: "landscape")[0].urls.regular
+    @goal.photo.attach(io: URI.open(photo_url), filename: "image-#{Time.now.strftime("%s%L")}.png")
     if @goal.save
       redirect_to goal_path(@goal)
     else
@@ -40,6 +42,10 @@ class GoalsController < ApplicationController
   end
 
   private
+
+  def goal_params_new
+    params.require(:goal).permit(:goal_type, :name, :description, :status)
+  end
 
   def goal_params
     params.require(:goal).permit(:goal_type, :name, :description, :status, :photo)

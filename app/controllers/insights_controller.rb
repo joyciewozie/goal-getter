@@ -31,28 +31,15 @@ class InsightsController < ApplicationController
     @insight = Insight.new(insight_params_new)
     @insight.goal = @goal
     # do api call to get image
-    # @insight.photo = Unsplash::Photo.random(count: 1, query: "#{@insight.name}", orientation: landscape)
-    photo = Unsplash::Photo.random(count: 1, query: "#{@insight.name}", orientation: "landscape")[0]
-    photo_url = photo.urls.regular
-    photo_name = photo.id
-    # search_results = Unsplash::Photo.search("cats")
-    # @insight.photo = URI.open(photo)
+    photo_url = Unsplash::Photo.random(count: 1, query: "#{@insight.name}", orientation: "landscape")[0].urls.regular
     @insight.photo.attach(io: URI.open(photo_url), filename: "image-#{Time.now.strftime("%s%L")}.png")
-    # attach photo to insight
     if @insight.save
-      # error in redirecting
       redirect_to goal_insight_path(@goal.id, @insight.id)
     else
       raise
       render :new, status: :unprocessable_entity
     end
   end
-
-
-  # file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-  # article = Article.new(title: "NES", body: "A great console")
-  # article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  # article.save
 
   private
 
