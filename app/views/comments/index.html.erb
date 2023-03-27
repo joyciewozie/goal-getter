@@ -1,10 +1,19 @@
 Goal: <%= @goal.name %>
 <br>
+
 <% @insight.answers.each do |answer| %>
-  <%= answer.content %>
-  <%= simple_form_for([@goal, @insight, @comment]) do |f| %>
-    <%= f.input :content %>
-    <%= f.button :submit %>
-  <% end %>
-  <br>
+<div class="comment-container">
+  <!-- Left div-->
+  <div class = "left-comment-container">
+      <%= answer.content %>
+      <%= simple_form_for([@goal, @insight, @comment]) do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit %>
+      <% end %>
+  </div>
+  <!-- Right div-->
+  <div class="right-comment-container">
+    <p>blah blah blah</p>
+  </div>
+</div>
 <% end  %>
