@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   resources :goals do
     resources :collaborators, except: [:index]
-    resources :comments
     resources :highlights, except: [:index]
     resources :insights, only: %i[new create show index] do
       resources :answers, only: [:create]
+      resources :comments
     end
     get :insight
     # GET insights/:insight_id/answers -> "insights#answers"

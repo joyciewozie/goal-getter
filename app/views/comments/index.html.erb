@@ -1,6 +1,10 @@
-<%= simple_form_for [@goal, @comment] do |f| %>
-  <%= f.input :content%>
-  <div class="d-flex justify-content-center">
-  <%= f.submit "Add", class: "btn btn-primary", id: "form-button" %>
-  </div>
-<% end %>
+Goal: <%= @goal.name %>
+<br>
+<% @insight.answers.each do |answer| %>
+  <%= answer.content %>
+  <%= simple_form_for([@goal, @insight, @comment]) do |f| %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+  <% end %>
+  <br>
+<% end  %>

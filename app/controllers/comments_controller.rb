@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
   def index
     @goal = Goal.find(params[:goal_id])
+    @insight = Insight.find(params[:insight_id])
     @comment = Comment.new
   end
 
   def create
     @goal = Goal.find(params[:goal_id])
     # show all the answers for this goal
-    @answers = Answer.where()
+    @insight = Insight.find(params[:insight_id])
     # add a new comment
     @comment = Comment.new(comment_params)
     @comment.goal = @goal
