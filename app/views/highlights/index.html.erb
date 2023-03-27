@@ -1,7 +1,7 @@
 
-<div class="container">
-  <h1>HIGHLIGHTS</h1>
-  <p>Uncover unconscious themes across your writing by viewing all your highlights</p>
+<div class="container mt-2">
+  <h1 class="heading-font">HIGHLIGHTS</h1>
+  <p class="body-font">Uncover unconscious themes across your writing by viewing all your highlights</p>
   <br>
   <br>
 
@@ -9,17 +9,17 @@
     <div class="container">
       <div class="row">
         <div class="col-9">
-          <span class="underline">
+          <span class="underline body-font">
             <%= highlight.text %>
           </span>
         </div>
 
         <div class="col-3 d-flex flex-column">
-          <div class="mb-2">
+          <div class="mb-2 heading-font">
             <strong><%= highlight.goal.name.upcase%></strong>
           </div>
 
-          <div class="mb-2 fst-italic">
+          <div class="mb-2 fst-italic body-font">
             <%= highlight.updated_at.strftime('%d %b %Y') %>
           </div>
         </div>
