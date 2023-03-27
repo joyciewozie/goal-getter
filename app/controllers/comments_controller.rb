@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
     @insight = Insight.find(params[:insight_id])
     # add a new comment
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
     @comment.insight = @insight
     @insight.goal = @goal
+    @answer = Answer.find(comment_params[:answer_id])
 
     respond_to do |format|
       if @comment.save
@@ -28,6 +30,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :answer_id)
   end
 end

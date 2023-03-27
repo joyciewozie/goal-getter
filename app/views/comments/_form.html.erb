@@ -4,4 +4,7 @@
   }) do |f| %>
   <%= f.input :content %>
   <%= f.button :submit %>
+  <%= f.association :answer, as: :hidden, input_html: {
+    value: answer.id
+  } %>
 <% end %>
