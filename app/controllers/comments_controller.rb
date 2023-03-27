@@ -1,16 +1,22 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new
-    @comment.user = current_user
+    @goal = Goal.find(params[:goal_id])
+    # show all the answers for this goal
+    @answers = Answer.where()
+    # add a new comment
+    @comment = Comment.new(comment_params)
+    @comment.goal = @goal
     if @comment.save
-      redirect_to goal_path(@goal.id), notice: "Comment added!"
+      redirect_to goal_comments_path(@goal.id)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :answer_id, :user_id)
+    params.require(:comment).permit(:content)
   end
 end
