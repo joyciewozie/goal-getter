@@ -13,8 +13,11 @@
   <!-- Right div-->
   <div class="right-comment-container">
     <div data-insert-in-list-target="items">
-      <%= answer.comments %>
-      <p>blah blah blah</p>
+      <% answer.comments.each do |comment| %>
+        <%=  comment.user.name %>
+        <%= comment.content %>
+        <br>
+      <% end %>
     </div>
   </div>
 </div>
