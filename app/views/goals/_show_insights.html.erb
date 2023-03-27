@@ -49,11 +49,11 @@
                       data-highlight-goal-value="<%= @goal.id %>"
                       data-highlight-answer-value="<%= answer.id %>" class="insight-answer">
                       <%= sanitize answer.highlighted_content %>
+                    </div>
 
                     <div class="insight-answer">
                       <%= answer.content %>
                       <%= link_to "View comment(s)", goal_insight_comments_path(@goal.id, insight.id)  %>
-
                     </div>
                   </div>
                 </div>
