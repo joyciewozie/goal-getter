@@ -1,40 +1,41 @@
 <div class="collaborator-container-index">
-<h1>Hi <%= @user.name %>,</h1>
-<br>
-
-<h2>Goals you are collaborating on:</h2>
-<br>
-<div class="d-flex">
-  <% @collaborators_accepted.each do |collab| %>
-    <div class="avatar-card">
-      <p><%= collab.goal.user.name %></p>
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-      <p class="goal-link"><strong><%= link_to collab.goal.name, goal_path(collab.goal.id) %></strong></p>
-    </div>
-  <% end %>
+  <%# <h1>Hi <%= @user.name %>
+  <br>
+  <h2>collaborations:</h2>
+  <br>
+  <div class="d-flex">
+    <% @collaborators_accepted.each do |collab| %>
+      <div class="avatar-card">
+        <p><%= collab.goal.user.name %></p>
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+        <p class="goal-link"><strong><%= link_to collab.goal.name, goal_path(collab.goal.id) %></strong></p>
+      </div>
+    <% end %>
   </div>
   <br>
-
-<h2>Goals requesting your collaboration:</h2>
-<div class="d-flex">
-  <br>
-  <% @collaborators.each do |collaborator| %>
-    <div class="avatar-card">
-      <% if collaborator.accepted == false %>
-        <%# <% if collaborator.user.name == current_user%>
-        <%# <% if @collaborator.user = @user %>
-        <%# <% if @collaborator.goal = @goal %>
-        <p><strong><%= collaborator.goal.user.name %></strong></p>
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-        <p><%= collaborator.goal.name %></p>
-        <p><%= collaborator.goal.description %></p>
-        <p><%= collaborator.goal.user.email %></p>
-        <%= simple_form_for collaborator do |f| %>
-          <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
-          <%= f.submit "Accept", class: "btn btn-primary" %>
-        <% end %>
-        <%# <%= link_to "goals"%>
-
+  <h2>Goals requesting your collaboration:</h2>
+  <div class="d-flex">
+    <br>
+    <% @collaborators.each do |collaborator| %>
+      <div class="avatar-card">
+        <% if collaborator.accepted == false %>
+          <p><strong><%= collaborator.goal.user.name %></strong></p>
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+          <p><%= collaborator.goal.name %></p>
+          <p><%= collaborator.goal.description %></p>
+          <p><%= collaborator.goal.user.email %></p>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <div class="collaborator-container-index">
+      <p><strong><%= collaborator.goal.name %></strong></p>
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+      <p><%= collaborator.goal.name %></p>
+      <p><%= collaborator.goal.description %></p>
+      <%= simple_form_for collaborator do |f| %>
+        <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+        <%= f.submit "Accept", class: "btn btn-primary" %>
       <% end %>
     </div>
   <% end %>
