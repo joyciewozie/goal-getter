@@ -10,7 +10,7 @@ class Answer < ApplicationRecord
   def highlighted_content
     highlighted = content
     highlights.each do |highlight|
-      highlighted = content.gsub(highlight.text, '<span class="underline">' + highlight.text + '</span>')
+      highlighted = content.sub(highlight.text, '<span class="underline">' + highlight.text + '</span>')
     end
     highlighted
   end
