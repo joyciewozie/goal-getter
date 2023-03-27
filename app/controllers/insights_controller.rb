@@ -1,3 +1,5 @@
+require "open-uri"
+
 class InsightsController < ApplicationController
   before_action :set_goal, only: %i[show new create]
   
@@ -26,12 +28,15 @@ class InsightsController < ApplicationController
 
   # POST (/goals/:goal_id/insights)
   def create
-    @insight = Insight.new(insight_params)
+    @insight = Insight.new(insight_params_new)
     @insight.goal = @goal
+    # do api call to get image
+    photo_url = Unsplash::Photo.random(count: 1, query: "#{@insight.name}", orientation: "landscape")[0].urls.regular
+    @insight.photo.attach(io: URI.open(photo_url), filename: "image-#{Time.now.strftime("%s%L")}.png")
     if @insight.save
-      # error in redirecting
       redirect_to goal_insight_path(@goal.id, @insight.id)
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end
@@ -40,6 +45,10 @@ class InsightsController < ApplicationController
 
   def insight_params
     params.require(:insight).permit(:name, :summary, :goal_id, :photo)
+  end
+
+  def insight_params_new
+    params.require(:insight).permit(:name, :summary, :goal_id)
   end
 
   def set_goal

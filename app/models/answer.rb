@@ -6,4 +6,12 @@ class Answer < ApplicationRecord
   has_many :highlights, dependent: :destroy
 
   validates :content, presence: true
+
+  def highlighted_content
+    highlighted = content
+    highlights.each do |highlight|
+      highlighted = content.gsub(highlight.text, '<span class="underline">' + highlight.text + '</span>')
+    end
+    highlighted
+  end
 end

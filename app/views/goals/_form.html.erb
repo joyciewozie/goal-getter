@@ -3,7 +3,7 @@
   <%= f.input :status, label: "Where are you with your goal now? Be honest with yourself, this is a no-judgement space. ", as: :radio_buttons, collection: ["still thinking about it", "working on it", "closing to completing", "completed"] %>
   <%= f.input :name, label: "What do you want to call this goal?" %>
   <%= f.input :description, label: desc_label %>
-  <%= f.input :photo, as: :file %>
+  <%# <%= f.input :photo, as: :file %>
   <div class="d-flex justify-content-center">
   <%= f.submit "Add", class: "btn btn-primary", id: "form-button" %>
   </div>

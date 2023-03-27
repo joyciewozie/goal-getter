@@ -23,3 +23,36 @@
 .new-insight-header {
   font-family: 'Playfair Display SC', serif;
 }
+
+// Login page
+.login-page-container {
+  display: flex;
+  flex-direction: row;
+  padding: 32px;
+}
+
+.login-welcom-text {
+  font-family: 'Playfair Display', serif;
+}
+
+.login-image-container {
+  width: 60%;
+  height: 88vh;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+}
+
+.login-form-container {
+  width: 40%;
+  padding-right: 32px;
+  font-family: 'Playfair Display', serif;
+}
+
+#login-button {
+  width: 100%;
+  background-color: #1E898B !important;
+}

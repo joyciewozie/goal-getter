@@ -43,11 +43,19 @@
 
 
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
-<div class="d-flex p-3 container border shadow">
-  <div class="insight-new">
+<div class="container-xxl d-flex p-3">
+  <div class="insight-new p-2">
+    <div class="heading-font fs-3">
+      Insights
+    </div>
+
+    <div class="body-font fs-6">
+      Get in touch with your inner self through free-writing. Respond to prompts that are designed to inspire you in your goal-setting journey.
+    </div>
+
     <%= link_to new_goal_insight_path(@goal.id) do %>
-      <i class="fa-regular fa-square-plus"></i>
-      <span> Add Insight</span>
+      <p class="body-font mb-3 pb-2 fs-4"> Add Insight</p>
+        <i class="fa-regular fa-square-plus fa-2xl insight-add"></i>
     <% end %>
   </div>
 

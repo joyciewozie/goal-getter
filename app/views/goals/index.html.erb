@@ -1,20 +1,14 @@
-<div class="all-goals-container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/goals-index.jpg">
   <div class="container">
-    <div class="goal-card">
-    <% @goals.each do |goal| %>
-      <a href= "/goals/<%= goal.id %>">
-      <div class="card-category mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        <% if goal.photo.attached?%>
-          url(<%= cl_image_path goal.photo.key %>)"
-        <% else %>
-          no photo
-        <% end %>
-        >
-        <h2><%= link_to goal.name, goal_path(goal.id), class: "link" %></h2>
-        <p id="description"><%= goal.description %></p>
-      </div>
-      </a>
-    <% end %>
-    </div>
+    <h2><%=current_user.name %></h2>
+    <%# <a class="btn btn-flat" href="#"> %>
+    <p>You are a goal getter.</P>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row gx-3 gy-3">
+    <h4 id="A"> Goals </h4>
+    <%= link_to "Add new goal", new_goal_path %>
+    <%= render @goals %>
   </div>
 </div>
