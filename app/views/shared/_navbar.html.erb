@@ -12,18 +12,18 @@
       </ul>
       <div class="collapse navbar-collapse nav-user" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto nav-link">
-          <li class="nav-item active">
-            <%= link_to "New Goal", new_goal_path , class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Highlights", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Collaborations", collaborators_path, class: "nav-link" %>
-          </li>
         </ul>
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "New Goal", new_goal_path , class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Highlights", highlights_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Collaborations", collaborators_path, class: "nav-link" %>
+            </li>
             <li class="nav-item dropdown">
               <%= image_tag "https://source.unsplash.com/random/200x200", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
