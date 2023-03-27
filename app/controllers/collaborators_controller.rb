@@ -3,13 +3,9 @@ class CollaboratorsController < ApplicationController
 
   def index
     @user = current_user
-<<<<<<< HEAD
-    # @collaborators = Collaborator.where(user: current_user)
-=======
     @collaborators_accepted = Collaborator.where(accepted: true, user: current_user)
     @collaborators = Collaborator.where(accepted: false, user: current_user)
 
->>>>>>> 2daafb8cfa6c73749f25d86e4405ee1ace2f8f8f
   end
 
   def create

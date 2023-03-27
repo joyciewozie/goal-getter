@@ -1,0 +1,15 @@
+<div class="col-4">
+  <div class="card-trip-index">
+    <% if goal.photo.attached? %>
+      <%= cl_image_tag goal.photo.key %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= goal.name %></h2>
+        <p><%= goal.description %></p>
+      </div>
+    </div>
+  </div>
+</div>

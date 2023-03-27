@@ -1,8 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "components/card_category";
-@import "components/avatar";
-@import "components/card_product";
+@import "show";
+@import "new";
+
 
 .link {
   font-family: 'Playfair Display SC', serif;
@@ -45,4 +45,8 @@
   text-align: center;
   min-width: 200px;
   max-width: 300px;
+}
+
+#A {
+  font-family: 'Playfair Display SC'
 }
