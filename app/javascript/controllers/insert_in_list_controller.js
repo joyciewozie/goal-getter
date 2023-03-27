@@ -9,4 +9,9 @@ export default class extends Controller {
     console.log(this.itemsTarget)
     console.log(this.formTarget)
   }
+
+  send(event) {
+    event.preventDefault()
+    console.log("TODO: send request in AJAX")
+  }
 }
