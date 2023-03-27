@@ -2,7 +2,8 @@
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    render json: {}
+    @highlights = Highlight.all
+    # render json: {}
   end
 
   def create
@@ -14,6 +15,6 @@
   private
 
   def highlights_params
-    params.require(:highlight).permit(:text, :goal_id)
+    params.require(:highlight).permit(:text, :goal_id, :answer_id)
   end
 end

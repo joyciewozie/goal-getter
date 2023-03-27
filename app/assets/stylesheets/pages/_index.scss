@@ -53,8 +53,9 @@
 
 }
 
-
-// .card-B {
-//   width:406px;
-//   height:362px;
-// }
+// comments#index
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

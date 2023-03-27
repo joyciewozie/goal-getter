@@ -10,6 +10,9 @@ application.register("hello", HelloController)
 import HighlightController from "./highlight_controller"
 application.register("highlight", HighlightController)
 
+import InsertInListController from "./insert_in_list_controller"
+application.register("insert-in-list", InsertInListController)
+
 import InsightController from "./insight_controller"
 application.register("insight", InsightController)
 

@@ -31,41 +31,34 @@
         </div>
         <hr>
 
-        <div data-controller="highlight" data-highlight-goal-value="<%= @goal.id %>" data-action="mouseup->highlight#selectText" class="d-flex flex-column border insight-content">
+        <div data-controller="highlight" class="d-flex flex-column border insight-content">
         <div class="d-flex flex-column insight-content">
           <% insight.answers.each do |answer| %>
             <% # div for each qn, ans and comment %>
             <div class="container m-2">
               <div class="row">
-                <% # qn and answer div %>
                 <div class="col-8">
                   <div class="d-flex flex-column p-2 fs-5">
                     <div class="insight-question">
                       <%= answer.template_question.title %>
                     </div>
 
+
+                    <div data-action="mouseup->highlight#selectText"
+                      data-controller="highlight"
+                      data-highlight-goal-value="<%= @goal.id %>"
+                      data-highlight-answer-value="<%= answer.id %>" class="insight-answer">
+                      <%= sanitize answer.highlighted_content %>
+
                     <div class="insight-answer">
                       <%= answer.content %>
+                      <%= link_to "View comment(s)", goal_insight_comments_path(@goal.id, insight.id)  %>
+
                     </div>
-                    <%= link_to "Add comment", new_goal_comment_path(@goal.id) %>
                   </div>
                 </div>
 
-                <div class="col-4">
-                  <div class="d-flex flex-column p-2 fs-6">
-                    <% answer.comments.each do |comment| %>
-                      <div class="insight-comment-box">
-                        <div class="insight-user">
-                          <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-                          <p class="mb-0"><%= comment.user.name %></p>
-                        </div>
-                        <div class="insight-comment">
-                          <%= comment.content %>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
+
 
               </div>
             </div>
