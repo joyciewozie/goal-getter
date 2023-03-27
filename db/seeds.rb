@@ -7,14 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Clearing previous data'
-User.destroy_all
-Goal.destroy_all
-Insight.destroy_all
-TemplateQuestion.destroy_all
-Answer.destroy_all
-Highlight.destroy_all
-Collaborator.destroy_all
 Comment.destroy_all
+Collaborator.destroy_all
+Highlight.destroy_all
+Answer.destroy_all
+TemplateQuestion.destroy_all
+Insight.destroy_all
+Goal.destroy_all
+User.destroy_all
 
 puts 'Creating user'
 user_one = User.create!(email: "jack@live.com", password: "123456", name: "Jack", gender: "Male", city: "Southampton", age: "25")
@@ -23,7 +23,6 @@ user_three = User.create!(email: "caledon@live.com", password: "123456", name: "
 user_four = User.create!(email: "brock@live.com", password: "123456", name: "Brock", gender: "Male", city: "Southampton", age: "30")
 user_five = User.create!(email: "margaret@live.com", password: "123456", name: "Margaret", gender: "Female", city: "Southampton", age: "35")
 user_six = User.create!(email: "edward@live.com", password: "123456", name: "Edward John Smith", gender: "Male", city: "Southampton", age: "50")
-
 
 puts 'Destroying all goals'
 puts 'Creating goal'
@@ -63,11 +62,9 @@ highlight = Highlight.create!(text: "Because", goal_id: goal.id, answer_id: answ
 
 puts 'Destroying all collaborators'
 puts 'Creating collaborator'
-# collaborator_one = Collaborator.create!(goal: goal, user: user_one)
 collaborator_two = Collaborator.create!(goal: goal, user: user_two, accepted: true)
 collaborator_three = Collaborator.create!(goal: goal, user: user_three, accepted: true)
 collaborator_four = Collaborator.create!(goal: goal, user: user_four)
-
 
 puts 'Destroying all comments'
 puts 'Creating comment'
