@@ -11,11 +11,17 @@ class CommentsController < ApplicationController
     @insight = Insight.find(params[:insight_id])
     # add a new comment
     @comment = Comment.new(comment_params)
-    @comment.goal = @goal
-    if @comment.save
-      redirect_to goal_comments_path(@goal.id)
-    else
-      render :new, status: :unprocessable_entity
+    @comment.insight = @insight
+    @insight.goal = @goal
+
+    respond_to do |format|
+      if @comment.save
+        format.html {redirect_to goal_comments_path(@goal.id)}
+        format.json
+      else
+        format.html {render :new, status: :unprocessable_entity}
+        format.json
+      end
     end
   end
 
