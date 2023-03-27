@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  def index
+    @goal = Goal.find(params[:goal_id])
+    @comment = Comment.new
+  end
 
   def create
     @goal = Goal.find(params[:goal_id])
