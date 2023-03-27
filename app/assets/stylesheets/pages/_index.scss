@@ -46,3 +46,10 @@
   min-width: 200px;
   max-width: 300px;
 }
+
+// comments#index
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
