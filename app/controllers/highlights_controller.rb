@@ -2,7 +2,8 @@
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    render json: {}
+    @highlights = Highlight.all
+    # render json: {}
   end
 
   def create

@@ -1,0 +1,32 @@
+
+<div class="container">
+  <h1>HIGHLIGHTS</h1>
+  <p>Uncover unconscious themes across your writing by viewing all your highlights</p>
+  <br>
+  <br>
+
+  <% @highlights.each do |highlight| %>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <span class="underline">
+            <%= highlight.text %>
+          </span>
+        </div>
+
+        <div class="col-3 d-flex flex-column">
+          <div class="mb-2">
+            <strong><%= highlight.goal.name.upcase%></strong>
+          </div>
+
+          <div class="mb-2 fst-italic">
+            <%= highlight.updated_at.strftime('%d %b %Y') %>
+          </div>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  <% end %>
+
+</div>
