@@ -61,9 +61,9 @@ export default class extends Controller {
         })
     }).then((response)=>response.json())
     .then((data)=>{
-      window.alert("bookmark saved")
       console.log(document.getElementById("tooltip"))
       document.getElementById("tooltip").remove()
+      alert("Text saved! Visit Highlights page to see all highlights")
     });
   }
 }
