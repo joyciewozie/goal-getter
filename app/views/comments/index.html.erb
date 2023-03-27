@@ -1,17 +1,23 @@
-Goal: <%= @goal.name %>
+<%= @goal.name %>
 <br>
 
 <% @insight.answers.each do |answer| %>
 <div class="comment-container" data-controller="insert-in-list">
   <!-- Left div-->
   <div class = "left-comment-container">
+      <%= answer.template_question.title %>
+      <br>
       <%= answer.content %>
-      <%= render "form", goal: @goal, insight: @insight, comment: @comment %>
+      <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment %>
   </div>
   <!-- Right div-->
   <div class="right-comment-container">
     <div data-insert-in-list-target="items">
-    <p>blah blah blah</p>
+      <% answer.comments.each do |comment| %>
+        <%=  comment.user.name %>
+        <%= comment.content %>
+        <br>
+      <% end %>
     </div>
   </div>
 </div>
