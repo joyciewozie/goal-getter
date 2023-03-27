@@ -17,7 +17,8 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params_new)
     @goal.user = current_user
-    photo_url = Unsplash::Photo.random(count: 1, query: "#{@goal.name}", orientation: "landscape")[0].urls.regular
+    # raise
+    photo_url = Unsplash::Photo.random(count: 1, query: "#{@goal.goal_type}", orientation: "landscape")[0].urls.regular
     @goal.photo.attach(io: URI.open(photo_url), filename: "image-#{Time.now.strftime("%s%L")}.png")
     if @goal.save
       redirect_to goal_path(@goal)
