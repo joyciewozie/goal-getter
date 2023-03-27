@@ -1,5 +1,5 @@
 .underline {
-  background-image: linear-gradient(transparent 0%, transparent calc(80%), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
+  background-image: linear-gradient(transparent 0%, transparent calc(65%), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
 }
 
 
@@ -13,7 +13,7 @@
 
 .insight-img {
   max-height: 300px;
-  max-width: 300px;
+  width: 300px;
   object-fit: cover;
   padding-bottom: 1rem;
 }
@@ -64,21 +64,23 @@
 
 .insight-new {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   // border: 1px solid grey;
-  width: 200px;
+  width: 250px;
 }
 
 .insight-add {
   display: block;
+  text-align: center;
 }
 
 .insight-scroll {
   overflow-x: scroll;
-  width: 800px;
+  width: 1000px;
   display: flex;
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 #insight-name {
@@ -101,7 +103,7 @@
   justify-content: space-between;
   // border: 1px solid grey;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin: 5px;
+  margin: 15px;
   width: 30wh;
   background-color: white;
 

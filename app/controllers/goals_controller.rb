@@ -8,6 +8,12 @@ class GoalsController < ApplicationController
     @collaborator = Collaborator.new
     @collaborators = @goal.collaborators
     @insights = @goal.insights
+
+    # select highlights that matches the goal
+    # then retrieve the text field and puts into an array
+    # Highlight.where(goal: goal).pluck(:text)
+
+
   end
 
   def new
