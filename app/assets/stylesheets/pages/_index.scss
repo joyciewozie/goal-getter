@@ -55,8 +55,119 @@
 }
 
 // comments#index
+.comments-index-page {
+  width: 80%;
+  margin: 40px auto;
+  font-family: 'Playfair Display', serif;
+}
+
+.comments-index-page h5 {
+  font-family: 'Playfair Display SC'
+}
+
+.comments-index-page h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: Bold 700;
+}
+
+.comments-index-page p {
+  font-family: 'Playfair Display', serif;
+  font-weight: Regular 400;
+}
+
 .comment-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.left-comment-container {
+  width: 50%;
+  top: 16px;
+  position: sticky;
+  font-size: 16px;
+}
+
+.right-comment-container {
+  width: 40%;
+}
+
+#comment-button {
+  background-color: #1E898B !important;
+  border: none;
+  border-radius: 16px !important;
+}
+
+.comment-form {
+  font-size: 150px;
+}
+
+.comment-header-goal {
+  text-align: center;
+}
+
+#goal-title {
+  font-family: 'Playfair Display SC';
+  text-decoration: none;
+  color: black !important;
+}
+
+#goal-title:hover {
+  text-decoration: underline;
+}
+
+.comment-header-insight {
+  text-align: left;
+}
+
+#insight-title {
+  font-family: 'Playfair Display SC';
+}
+
+.comment-container {
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.comment-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.comment-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#action-text {
+  text-align: center;
+  color: #1E898B;
+}
+
+#action-button {
+  background-color: white !important;
+  border-color: #1E898B !important;
+  border-width: medium;
+  border-radius: 16px !important;
+  color: black;
 }
