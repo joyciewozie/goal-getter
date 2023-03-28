@@ -108,7 +108,13 @@
 }
 
 #goal-title {
-  font-family: 'Playfair Display SC'
+  font-family: 'Playfair Display SC';
+  text-decoration: none;
+  color: black !important;
+}
+
+#goal-title:hover {
+  text-decoration: underline;
 }
 
 .comment-header-insight {

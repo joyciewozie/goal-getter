@@ -1,6 +1,6 @@
 <div class="comments-index-page">
   <div class="comment-header-goal">
-    <h3 id="goal-title"><%= @goal.name%></h3>
+    <h3><%= link_to @goal.name, goal_path(@goal.id), id: "goal-title"%></h3>
     <%= @goal.description %> | <%= @goal.status %>
   </div>
   <br>
