@@ -2,7 +2,11 @@
   <% @collaborators.each do |collab| %>
     <div class="avatar-card">
       <p><strong><%= collab.user.name %></strong></p>
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+      <% if collab.user.photo.attached? %>
+        <%= image_tag collab.user.photo, class: "avatar-large" %>
+      <% else %>              
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+      <% end %>
       <p><%= collab.user.email %></p>
       <p></p>
     </div>
