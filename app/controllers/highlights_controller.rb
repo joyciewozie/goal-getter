@@ -1,4 +1,4 @@
- class HighlightsController < ApplicationController
+class HighlightsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
@@ -7,9 +7,20 @@
   end
 
   def create
-    highlight = Highlight.create!(highlights_params)
+    @goal = Goal.find(highlights_params[:goal_id])
+    @answer = Answer.find(highlights_params[:answer_id])
+    @highlight = Highlight.new(highlights_params)
 
-    render :json => highlight
+    respond_to do |format|
+      if @highlight.save
+        format.html { redirect_to goal_path(@goal) }
+        format.text { render plain: @answer.highlighted_content }
+
+      else
+        format.html { render "goals/show_insights", status: :unprocessable_entity }
+        format.text { render plain: @highlight.errors.full_messages.join }
+      end
+    end
   end
 
   private

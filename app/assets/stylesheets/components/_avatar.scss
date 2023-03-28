@@ -3,10 +3,30 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 56px;
+  width: 100px;
   border-radius: 50%;
-  margin-bottom: 16px;
+  margin: 20px;
+
 }
+
+.profile-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  // position: absolute;
+  // transform: translate(50%, 50%);
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid grey;
+  width: 250px;
+}
+
 
 .avatar-card {
   display: flex;
