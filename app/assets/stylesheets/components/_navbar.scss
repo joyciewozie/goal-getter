@@ -1,7 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #FFFFFF;
-  height: 70px;
+  background: #1E898B;
+  height: 50px;
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,7 +23,7 @@
 .nav-link {
   padding-right: 30px;
   font-family: 'Playfair Display', serif;
-  color: #1E898B;
+  color: #FFFFFF;
 }
 
 .nav-link .nav-item{
@@ -29,7 +32,7 @@
 
 .nav-user {
   padding-right: 50px;
-  padding-bottom: 12px;
+  // padding-bottom: 12px;
 }
 
 
@@ -38,7 +41,7 @@
 // }
 
 .navbar-brand svg path {
-  fill: #1E898B;
+  fill: #FFFFFF;
   // fill: currentColor;
 }
 
