@@ -99,9 +99,7 @@
   border-radius: 16px !important;
 }
 
-.comment-form {
-  font-size: 150px;
-}
+
 
 .comment-header-goal {
   text-align: center;
@@ -153,6 +151,15 @@
   font-size: 12px;
 }
 
+#action-button-comment {
+  background-color: white !important;
+  border-color: #1E898B !important;
+  border-width: medium;
+  border-radius: 16px !important;
+  color: black;
+  margin-right: 16px;
+}
+
 .buttons-container {
   display: flex;
   flex-direction: row;
@@ -161,7 +168,7 @@
 
 #action-text {
   text-align: center;
-  color: #1E898B;
+  color: black;
 }
 
 #action-button {
@@ -172,6 +179,17 @@
   color: black;
 }
 
+
+.inactive {
+  visibility: hidden;
+}
+
+.active {
+  visibility: visible;
+}
+
+.comment-form-inactive {
+  visibility: hidden;
 
 #B {
   font-size: 72px;
@@ -188,5 +206,4 @@
 #D {
   font-size: 36px;
   font-family: 'Playfair Display'
-
 }
