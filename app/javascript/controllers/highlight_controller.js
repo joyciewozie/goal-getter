@@ -4,22 +4,21 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static values = {
     goal: String,
-    text: String,
     answer: String
   }
 
+  static targets = ["content", "tooltip"]
+
   connect() {
-    console.log("I'm here");
+    // console.log(this.element);
   }
 
   selectText() {
 
-    if(document.contains(document.getElementById("tooltip"))) {
-      document.getElementById("tooltip").remove();
-    }
+    this.tooltipTarget.innerHTML = ""
 
-    const saveText = document.getSelection().toString();
-    if (saveText.length > 5) {
+    this.textContent = document.getSelection().toString();
+    if (this.textContent.length > 5) {
       var scrollTop =
         window.pageYOffset !== undefined
           ? window.pageYOffset
@@ -31,39 +30,40 @@ export default class extends Controller {
 
       const posX = event.clientX;
       const posY = event.clientY - 20 + scrollTop;
-      console.log(this.answerValue)
-      console.log(this.goalValue)
-      document.body.insertAdjacentHTML(
-        "beforeend",
-        '<div data-controller="highlight" data-highlight-answer-value="' + this.answerValue + '" data-highlight-goal-value="' + this.goalValue + '" data-highlight-text-value="' + saveText +'" id="tooltip" style="position:absolute; top: ' +
-          posY +
-          "px; left: " +
-          posX +
-          'px;"><div data-action="click->highlight#saveText" class="tooltiptext"><a><i class="fa fa-copy"></i> Save text</a></div></div>'
+      // console.log(this.answerValue)
+      // console.log(this.goalValue)
+      const style = "position:relative"
+      this.tooltipTarget.innerHTML = (
+        `
+        <div id="tooltip" style="${style}">
+          <div data-action="click->highlight#saveText" class="tooltiptext">
+            <a><i class="fa fa-copy"></i> Save text</a>
+          </div>
+        </div>
+        `
       );
     }
   }
 
   saveText() {
-    console.log(JSON.stringify({
-      "goal_id": this.goalValue,
-      "answer_id": this.answerValue,
-      "text": this.textValue
-    }))
     fetch("/highlights", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"},
+        "Content-Type": "application/json",
+        "Accept": "text/plain"
+      },
         body: JSON.stringify({
           "goal_id": this.goalValue,
           "answer_id": this.answerValue,
-          "text": this.textValue,
+          "text": this.textContent,
         })
-    }).then((response)=>response.json())
-    .then((data)=>{
-      console.log(document.getElementById("tooltip"))
-      document.getElementById("tooltip").remove()
-      alert("Text saved! Visit Highlights page to see all highlights")
+    })
+    .then((response) => response.text())
+    .then((data) => {
+      this.tooltipTarget.innerHTML = ""
+      this.contentTarget.innerHTML = data
+      // alert("Text saved! Visit Highlights page to see all highlights");
+
     });
   }
 }
