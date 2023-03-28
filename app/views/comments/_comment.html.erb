@@ -1,1 +1,7 @@
-<p><%= comment.content %></p>
+<div class="comment-card-container">
+  <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+    <div class="comment-text-container">
+      <p><strong><%=  @comment.user.name %></strong></p>
+      <p><%= @comment.content %></p>
+    </div>
+</div>

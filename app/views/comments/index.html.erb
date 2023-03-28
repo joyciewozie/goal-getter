@@ -1,24 +1,42 @@
-<%= @goal.name %>
-<br>
-
-<% @insight.answers.each do |answer| %>
-<div class="comment-container" data-controller="insert-in-list">
-  <!-- Left div-->
-  <div class = "left-comment-container">
-      <%= answer.template_question.title %>
-      <br>
-      <%= answer.content %>
-      <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment %>
+<div class="comments-index-page">
+  <div class="comment-header-goal">
+    <h3 id="goal-title"><%= @goal.name%></h3>
+    <%= @goal.description %> | <%= @goal.status %>
   </div>
-  <!-- Right div-->
-  <div class="right-comment-container">
-    <div data-insert-in-list-target="items">
-      <% answer.comments.each do |comment| %>
-        <%=  comment.user.name %>
-        <%= comment.content %>
+  <br>
+  <br>
+  <div class="comment-header-insight">
+    <h3><%= @goal.user.name %>'s insights inspired by: <%= @insight.name %></h3>
+    <p>Intention: <%= @insight.summary %></p>
+  </div>
+  <hr>
+  <br>
+
+  <% @insight.answers.each do |answer| %>
+  <div class="comment-container" data-controller="insert-in-list">
+    <!-- Left div-->
+    <div class = "left-comment-container">
+        <h5><%= answer.template_question.title %></h5>
+        <p><%= answer.content %></p>
         <br>
-      <% end %>
+        <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment, class: "comment-form" %>
+        <br>
+        <br>
+    </div>
+    <!-- Right div-->
+    <div class="right-comment-container">
+      <div data-insert-in-list-target="items">
+        <% answer.comments.each do |comment| %>
+          <div class="comment-card-container">
+            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="comment-text-container">
+                <p><strong><%=  comment.user.name %></strong></p>
+                <p><%= comment.content %></p>
+              </div>
+          </div>
+          <% end %>
+      </div>
     </div>
   </div>
+  <% end  %>
 </div>
-<% end  %>
