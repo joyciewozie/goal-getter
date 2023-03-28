@@ -15,11 +15,7 @@
         <br>
         <br>
         <% if @answer.nil? %>
-          <% @insight.answers.each do |answer| %>
-          <h4><strong><%= answer.template_question.title %></strong></h4>
-          <p><%= answer.content %></p>
-            <hr>
-          <% end %>
+            <% controller.redirect_to goal_insight_comments_path(@goal.id, @insight.id) %>
         <% else %>
           <h5 class="question"><%= @answer.template_question.title %></h5>
           <div id="insight-answer-form-text">
