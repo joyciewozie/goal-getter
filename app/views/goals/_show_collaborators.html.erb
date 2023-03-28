@@ -1,6 +1,9 @@
   <div class="insight-card border">
-
-    <img class="avatar-large profile-pic mb-2 p-2" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+    <% if collab.user.photo.attached? %>
+      <%= image_tag collab.user.photo, class: "avatar-large" %>
+    <% else %>              
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+    <% end %>
     <div class="profile-text p-2">
       <p class="m-0"><strong><%= collab.user.name %></strong></p>
       <p class="m-0"><%= collab.user.email %></p>
