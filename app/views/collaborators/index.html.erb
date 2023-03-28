@@ -13,17 +13,19 @@
         </div>
       <% end %>
     <% else %>
-      <div class="avatar-card">
-        <p>You have no collaborators</p>
-        <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> %>
-        <%# <p class="goal-link"><strong><%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) ></strong></p> %>
+      <div class="col-4">
+        <div class="card p-0 card-trip-index none-shadow">
+          <p>You have no collaborators</p>
+          <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> %>
+          <%# <p class="goal-link"><strong><%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) ></strong></p> %>
+        </div>
       </div>
     <% end %>
   </div>
   <br>
   <h2 id="D">Goal collaboration requests:</h2>
   <br>
-  <div class="row gx-3 gy-3">
+  <div class="row gx-5 gy-3">
     <% @collaborators.each do |collaborator| %>
       <div class="col-4">
         <div class="card p-0 card-trip-index none-shadow">
@@ -32,7 +34,7 @@
             <h3><%= collaborator.goal.name %></h3>
             <div class="card-user m-0 p-0">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
-              <p class="text-center"><strong><%= collaborator.goal.user.name %></strong></p>
+              <p class="text-center"><%= collaborator.goal.user.name %></p>
             </div>
           </div>
           <div class="card-button m-auto">
