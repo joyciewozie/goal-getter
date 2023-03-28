@@ -2,7 +2,7 @@ require "open-uri"
 
 class InsightsController < ApplicationController
   before_action :set_goal, only: %i[show new create]
-  
+
   def index
     @insights = Insight.all
   end

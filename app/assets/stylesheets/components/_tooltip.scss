@@ -1,11 +1,11 @@
 // Actual tooltip
 .tooltiptext {
-  width: 120px;
-  background-color: lightgrey;
+  width: 150px;
+  background-color: #1e898b;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 5px;
   position: absolute;
   z-index: 1;
   bottom: 150%;
@@ -14,25 +14,26 @@
 
   &:hover {
     cursor: pointer;
-    background-color: grey;
-    border: 1px solid blue;
+    background-color: #1e898b;
+    border: 1px solid white;
+    font-weight: bold;
   }
 }
 
 // For the center arrow
-.tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: lightgrey transparent transparent transparent;
+// .tooltiptext::after {
+//   content: "";
+//   position: absolute;
+//   top: 100%;
+//   left: 50%;
+//   margin-left: -5px;
+//   border-width: 5px;
+//   border-style: solid;
+//   border-color: lightgrey transparent transparent transparent;
 
-  &:hover {
-    cursor: pointer;
-    background-color: grey;
-    border: 1px solid blue;
-  }
-}
+//   &:hover {
+//     cursor: pointer;
+//     background-color: grey;
+//     border: 1px solid blue;
+//   }
+// }

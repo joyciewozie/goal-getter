@@ -14,12 +14,12 @@
 }
 
 .card-trip-index h2 {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   font-family: 'Playfair Display SC';
   margin: 0;
-}
 
+}
 .card-trip-index p {
   font-size: 12px;
   font-family: 'Playfair Display SC';
@@ -54,3 +54,13 @@
 // .card-trip-infos .new-text {
 //   font-size: 24px;
 // }
+
+.card-trip-infos p {
+  font-size: 18px;
+  font-family: 'Playfair Display';
+}
+
+.goal-link {
+  text-decoration: none;
+}
+
