@@ -28,6 +28,9 @@
   }
 }
 
+hr {
+  margin:0;
+}
 
 .modal-popleft {
   transform: translateX(100%);
@@ -48,6 +51,8 @@
   padding: 20px;
   border-radius: 10px;
   max-height: 80%;
+  overflow-y: scroll;
+
 }
 
 .insight-title {
@@ -56,10 +61,6 @@
   font-size: 20px;
   margin:0;
   font-family: 'Playfair Display', serif;
-}
-
-.insight-content {
-  overflow-y: scroll;
 }
 
 .insight-new {
@@ -155,4 +156,13 @@
 
 .insight-title.index-page {
   margin-top: 25px;
+}
+
+.comment-btn {
+  background-color: #1e898b;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px;
 }
