@@ -4,6 +4,12 @@
 @import "new";
 @import "highlight";
 
+@import "components/card_category";
+@import "components/card_container";
+@import "components/card_product";
+@import "components/card-trip";
+@import "components/card";
+@import "components/cards-A";
 
 .link {
   font-family: 'Playfair Display SC', serif;
@@ -190,20 +196,21 @@
 
 .comment-form-inactive {
   visibility: hidden;
+}
 
 #B {
   font-size: 72px;
-  font-family: 'Playfair Display SC'
+  font-family: 'Playfair Display SC';
 
 }
 
 #C {
   font-size: 18px;
-  font-family: 'Playfair Display'
+  font-family: 'Playfair Display';
 
 }
 
 #D {
   font-size: 36px;
-  font-family: 'Playfair Display'
+  font-family: 'Playfair Display';
 }
