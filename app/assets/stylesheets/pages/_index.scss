@@ -95,6 +95,8 @@
 
 #comment-button {
   background-color: #1E898B !important;
+  border: none;
+  border-radius: 16px !important;
 }
 
 .comment-form {
@@ -143,4 +145,23 @@
   width: 100%;
   margin: 0;
   font-size: 12px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#action-text {
+  text-align: center;
+  color: #1E898B;
+}
+
+#action-button {
+  background-color: white !important;
+  border-color: #1E898B !important;
+  border-width: medium;
+  border-radius: 16px !important;
+  color: black;
 }

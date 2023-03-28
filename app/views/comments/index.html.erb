@@ -39,4 +39,13 @@
     </div>
   </div>
   <% end  %>
+  <!-- buttons -->
+  <h5 id="action-text">What are you inspired to do?</h5>
+  <br>
+  <div class="buttons-container">
+    <%= link_to "I'm content with my goal", goal_path(@goal.id), class: "btn btn-primary", id: "action-button" %>
+    <%= link_to "I want to update my goal", edit_goal_path(@goal.id), class: "btn btn-primary", id: "action-button" %>
+    <%= link_to "I've new insights for my goal",  new_goal_insight_path(@goal.id), class: "btn btn-primary", id: "action-button"%>
+    <%= link_to "I want to set a new goal",  new_goal_path, class: "btn btn-primary", id: "action-button"%>
+  </div>
 </div>
