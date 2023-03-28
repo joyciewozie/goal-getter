@@ -11,6 +11,26 @@
 @import "components/card";
 @import "components/cards-A";
 
+#A {
+  font-size: 50px;
+  font-family: 'Playfair Display SC';
+}
+
+#B {
+  font-size: 72px;
+  font-family: 'Playfair Display SC';
+}
+
+#C {
+  font-size: 18px;
+  font-family: 'Playfair Display';
+}
+
+#D {
+  font-size: 36px;
+  font-family: 'Playfair Display';
+}
+
 .link {
   font-family: 'Playfair Display SC', serif;
   text-decoration: none !important;
@@ -54,11 +74,6 @@
   max-width: 300px;
 }
 
-#A {
-  font-size: 50px;
-  font-family: 'Playfair Display SC'
-
-}
 
 // comments#index
 .comments-index-page {
@@ -196,21 +211,4 @@
 
 .comment-form-inactive {
   visibility: hidden;
-}
-
-#B {
-  font-size: 72px;
-  font-family: 'Playfair Display SC';
-
-}
-
-#C {
-  font-size: 18px;
-  font-family: 'Playfair Display';
-
-}
-
-#D {
-  font-size: 36px;
-  font-family: 'Playfair Display';
 }
