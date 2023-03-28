@@ -1,42 +1,48 @@
-<div class="collaborator-container-index">
-  <%# <h1>Hi <%= @user.name %>
+<div class="collaborator-container-index container">
+  <h2 id="B">collaborations:</h2>
+  <p id="C">Support your friends in their goal-getting journey by sharing your words of wisdom and encouragement with them.</p>
   <br>
-  <h2>collaborations:</h2>
-  <br>
-  <div class="d-flex">
-    <% @collaborators_accepted.each do |collab| %>
+  <h2 id="D">Goals I am collaborating on:</h2>
+  <div class="row g-3">
+    <% if @collaborators_accepted.nil? %>
+      <% @collaborators_accepted.each do |collaborator| %>
+        <div class="avatar-card">
+          <p><%= collaborator.goal.user.name %></p>
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+          <p class="goal-link"><strong><%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) %></strong></p>
+        </div>
+      <% end %>
+    <% else %>
       <div class="avatar-card">
-        <p><%= collab.goal.user.name %></p>
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-        <p class="goal-link"><strong><%= link_to collab.goal.name, goal_path(collab.goal.id) %></strong></p>
+        <p>You have no collaborators</p>
+        <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> %>
+        <%# <p class="goal-link"><strong><%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) ></strong></p> %>
       </div>
     <% end %>
   </div>
   <br>
-  <h2>Goals requesting your collaboration:</h2>
-  <div class="d-flex">
-    <br>
+  <h2 id="D">Goal collaboration requests:</h2>
+  <br>
+  <div class="row gx-3 gy-3">
     <% @collaborators.each do |collaborator| %>
-      <div class="avatar-card">
-        <% if collaborator.accepted == false %>
-          <p><strong><%= collaborator.goal.user.name %></strong></p>
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-          <p><%= collaborator.goal.name %></p>
-          <p><%= collaborator.goal.description %></p>
-          <p><%= collaborator.goal.user.email %></p>
-          <br>
+      <div class="col-4">
+        <div class="card p-0 card-trip-index none-shadow">
+          <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
+          <div class="card-content d-flex justify-content-between px-5 pt-2">
+            <h3><%= collaborator.goal.name %></h3>
+            <div class="card-user m-0 p-0">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
+              <p class="text-center"><strong><%= collaborator.goal.user.name %></strong></p>
+            </div>
+          </div>
+          <div class="card-button m-auto">
+            <%= simple_form_for collaborator do |f| %>
+              <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+              <%= f.submit "Accept", class: "btn-card px-4 py-1" %>
+            <% end %>
+          </div>
         </div>
-      <% end %>
-    </div>
-    <div class="collaborator-container-index">
-      <p><strong><%= collaborator.goal.name %></strong></p>
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-      <p><%= collaborator.goal.name %></p>
-      <p><%= collaborator.goal.description %></p>
-      <%= simple_form_for collaborator do |f| %>
-        <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
-        <%= f.submit "Accept", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
