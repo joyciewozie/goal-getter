@@ -30,7 +30,7 @@
 }
 
 .collaborator-container-index h2{
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display SC', serif;
 }
 
 .collaborator-container-index p {
@@ -179,6 +179,7 @@
   color: black;
 }
 
+
 .inactive {
   visibility: hidden;
 }
@@ -189,4 +190,20 @@
 
 .comment-form-inactive {
   visibility: hidden;
+
+#B {
+  font-size: 72px;
+  font-family: 'Playfair Display SC'
+
+}
+
+#C {
+  font-size: 18px;
+  font-family: 'Playfair Display'
+
+}
+
+#D {
+  font-size: 36px;
+  font-family: 'Playfair Display'
 }

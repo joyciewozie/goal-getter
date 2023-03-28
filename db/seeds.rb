@@ -18,11 +18,17 @@ User.destroy_all
 
 puts 'Creating user'
 user_one = User.create!(email: "jack@live.com", password: "123456", name: "Jack", gender: "Male", city: "Southampton", age: "25")
+user_one.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic3.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_two = User.create!(email: "rose@live.com", password: "123456", name: "Rose", gender: "Female", city: "Southampton", age: "24")
+user_two.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic4.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_three = User.create!(email: "caledon@live.com", password: "123456", name: "Caledon", gender: "Male", city: "Southampton", age: "25")
+user_three.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic1.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_four = User.create!(email: "brock@live.com", password: "123456", name: "Brock", gender: "Male", city: "Southampton", age: "30")
+user_four.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic2.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_five = User.create!(email: "margaret@live.com", password: "123456", name: "Margaret", gender: "Female", city: "Southampton", age: "35")
+user_five.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic6.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_six = User.create!(email: "edward@live.com", password: "123456", name: "Edward John Smith", gender: "Male", city: "Southampton", age: "50")
+user_six.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic5.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating goal'
 goal = Goal.create!(goal_type: "career", name: "Change jobs", description: "I'm bored at work and want to increase my income.", status: "in_progress", user_id: user_one.id)
