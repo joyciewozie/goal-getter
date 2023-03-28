@@ -27,6 +27,8 @@ user_six = User.create!(email: "edward@live.com", password: "123456", name: "Edw
 puts 'Creating goal'
 goal = Goal.create!(goal_type: "career", name: "Change jobs", description: "I'm bored at work and want to increase my income.", status: "in_progress", user_id: user_one.id)
 goal.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "career", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
+goal_two = Goal.create!(goal_type: "health", name: "Get swole", description: "Add 50 ibs of lean mass.", status: "in_progress", user_id: user_one.id)
+goal_two.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "health", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating insight'
 insight_one = Insight.create!(name: "Job search", summary: "Narrowing down the job search be filtering roles and companies", goal_id: goal.id)
