@@ -2,19 +2,39 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["button", "change"]
+  static targets = ["button", "first", "second", "third", "fourth"]
 
   connect() {
     console.log("Hello from insight button Stimulus controller")
   }
 
-  next(){
-    event.preventDefault()
-    console.log("next button hit")
-    // this.inputTarget.classList.remove("step")
-    this.changeTarget.classList.add("finish")
-    // document.getElementsByClassName("step").classlist.add("finish");
+  next(event){
+    console.log("NExt button clciked")
+    // event.preventDefault()
+    // find active span
+    fetch(
+      {
+        "answer" => {
+          "content" => "sfdsfdsfdsf",
+          "template_question_id" => "1"
+        }
+      }
+    )
+
+    const activeSpan = document.getElementsByClassName("span-active")[0]
+    activeSpan.classList.add("finish")
+    activeSpan.classList.remove("span-active")
+
+    // find the next span
+    console.log("active span", activeSpan)
+    const nextSpan = activeSpan.nextElementSibling
+    console.log("next span", nextSpan)
+    nextSpan.classList.add("span-active")
   }
+  // thirdPage() {
+  //   this.secondformTarget.classList.toggle('d-none')
+  //   this.thirdformTarget.classList.toggle('d-none')
+  // }
   // var currentTab = 0; // Current tab is set to be the first tab (0)
   // showTab(currentTab); // Display the current tab
 
