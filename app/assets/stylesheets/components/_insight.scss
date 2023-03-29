@@ -2,7 +2,6 @@
   background-image: linear-gradient(transparent 0%, transparent calc(65%), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
 }
 
-
 .insight-top {
   max-width: 300px;
 
@@ -113,7 +112,6 @@ hr {
   &:hover {
     background-color: lightgrey;
   }
-
 }
 
 .insight-row {
@@ -121,7 +119,6 @@ hr {
   grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
 }
-
 
 .insight-question {
   font-size: 24;

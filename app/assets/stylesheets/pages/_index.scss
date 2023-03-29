@@ -4,14 +4,7 @@
 @import "new";
 @import "highlight";
 
-@import "components/card_category";
-@import "components/card_container";
-@import "components/card_product";
-@import "components/card-trip";
-@import "components/card";
-@import "components/cards-A";
-
-#A {
+#A-goal {
   font-size: 50px;
   font-family: 'Playfair Display SC';
 }
@@ -74,6 +67,9 @@
   max-width: 300px;
 }
 
+#A-goal {
+  font-size: 50px;
+}
 
 // comments#index
 .comments-index-page {
@@ -119,8 +115,6 @@
   border: none;
   border-radius: 16px !important;
 }
-
-
 
 .comment-header-goal {
   text-align: center;
@@ -199,7 +193,6 @@
   border-radius: 16px !important;
   color: black;
 }
-
 
 .inactive {
   visibility: hidden;
