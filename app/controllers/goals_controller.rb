@@ -17,6 +17,8 @@ class GoalsController < ApplicationController
     @started = @goal.insights.where(status: "Getting started on goal")
     @progress = @goal.insights.where(status: "Making progress on goal")
     @closer = @goal.insights.where(status: "Getting closer to goal")
+    @check_if_goal_accomplished = goal_accomplished?
+    @no_insight = got_insights?
   end
 
   def new
@@ -58,5 +60,19 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).permit(:goal_type, :name, :description, :status, :photo)
+  end
+
+  def goal_accomplished?
+    if @goal.status == "Goal accomplished"
+      return true
+    else
+      return false
+    end
+  end
+
+  def got_insights?
+    if @insight.nil?
+      return true
+    end
   end
 end

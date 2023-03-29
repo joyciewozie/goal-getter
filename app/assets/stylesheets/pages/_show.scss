@@ -198,7 +198,25 @@ body {
     position: absolute;
     bottom: 32%;
     left: 80%;
-    color: #808080;
+    color: white;
+}
+
+#goal-not-accomplished {
+  position: absolute;
+  bottom: 32%;
+  left: 80%;
+  color: #808080;
+}
+
+#got-no-insight{
+  position: absolute;
+  bottom: 32%;
+  right: 80%;
+  color: white;
+}
+
+.got-insight{
+  visibility: hidden;
 }
 
 // all the books
