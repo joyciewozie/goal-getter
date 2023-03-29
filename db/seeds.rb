@@ -31,17 +31,17 @@ user_six = User.create!(email: "edward@live.com", password: "123456", name: "Edw
 user_six.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic5.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating goal'
-goal = Goal.create!(goal_type: "career", name: "Change jobs", description: "I'm bored at work and want to increase my income.", status: "in_progress", user_id: user_one.id)
+goal = Goal.create!(goal_type: "career", name: "Change jobs", description: "I'm bored at work and want to increase my income.", status: "Thinking about goal", user_id: user_one.id)
 goal.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "career", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
-goal_two = Goal.create!(goal_type: "health", name: "Get swole", description: "Add 50 ibs of lean mass.", status: "in_progress", user_id: user_one.id)
+goal_two = Goal.create!(goal_type: "health", name: "Get swole", description: "Add 50 ibs of lean mass.", status: "Getting started on goal", user_id: user_one.id)
 goal_two.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "health", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating insight'
-insight_one = Insight.create!(name: "Job search", summary: "Narrowing down the job search be filtering roles and companies", goal_id: goal.id)
+insight_one = Insight.create!(name: "Job search", summary: "Narrowing down the job search be filtering roles and companies", status: "Thinking about goal", goal_id: goal.id)
 insight_one.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "Job search", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
-insight_two = Insight.create!(name: "Trading bot", summary: "Earn passive income by using a DCA trading bot", goal_id: goal.id)
+insight_two = Insight.create!(name: "Trading bot", summary: "Earn passive income by using a DCA trading bot", status: "Getting started on goal", goal_id: goal.id)
 insight_two.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "stock trading", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
-insight_three = Insight.create!(name: "Rent out spare room", summary: "Rent out spare room for extra income", goal_id: goal.id)
+insight_three = Insight.create!(name: "Rent out spare room", summary: "Rent out spare room for extra income", status: "Making progress on goal", goal_id: goal.id)
 insight_three.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "Rental property", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating template_question'

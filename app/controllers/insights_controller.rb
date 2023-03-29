@@ -24,12 +24,14 @@ class InsightsController < ApplicationController
   # GET (/goals/:goal_id/insights/new)
   def new
     @insight = Insight.new
+    @insight.goal = @goal
   end
 
   # POST (/goals/:goal_id/insights)
   def create
     @insight = Insight.new(insight_params_new)
     @insight.goal = @goal
+    @insight.status = @goal.status
     # do api call to get image
     photo_url = Unsplash::Photo.random(count: 1, query: "#{@insight.name}", orientation: "landscape")[0].urls.regular
     @insight.photo.attach(io: URI.open(photo_url), filename: "image-#{Time.now.strftime("%s%L")}.png")
@@ -44,11 +46,11 @@ class InsightsController < ApplicationController
   private
 
   def insight_params
-    params.require(:insight).permit(:name, :summary, :goal_id, :photo)
+    params.require(:insight).permit(:name, :summary, :status, :goal_id, :photo)
   end
 
   def insight_params_new
-    params.require(:insight).permit(:name, :summary, :goal_id)
+    params.require(:insight).permit(:name, :summary, :goal_id, :status)
   end
 
   def set_goal

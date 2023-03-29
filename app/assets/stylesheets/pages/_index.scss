@@ -4,6 +4,25 @@
 @import "new";
 @import "highlight";
 
+#A-goal {
+  font-size: 50px;
+  font-family: 'Playfair Display SC';
+}
+
+#B {
+  font-size: 72px;
+  font-family: 'Playfair Display SC';
+}
+
+#C {
+  font-size: 18px;
+  font-family: 'Playfair Display';
+}
+
+#D {
+  font-size: 36px;
+  font-family: 'Playfair Display';
+}
 
 .link {
   font-family: 'Playfair Display SC', serif;
@@ -48,10 +67,8 @@
   max-width: 300px;
 }
 
-#A {
+#A-goal {
   font-size: 50px;
-  font-family: 'Playfair Display SC'
-
 }
 
 // comments#index
@@ -97,10 +114,6 @@
   background-color: #1E898B !important;
   border: none;
   border-radius: 16px !important;
-}
-
-.comment-form {
-  font-size: 150px;
 }
 
 .comment-header-goal {
@@ -153,6 +166,15 @@
   font-size: 12px;
 }
 
+#action-button-comment {
+  background-color: white !important;
+  border-color: #1E898B !important;
+  border-width: medium;
+  border-radius: 16px !important;
+  color: black;
+  margin-right: 16px;
+}
+
 .buttons-container {
   display: flex;
   flex-direction: row;
@@ -161,7 +183,7 @@
 
 #action-text {
   text-align: center;
-  color: #1E898B;
+  color: black;
 }
 
 #action-button {
@@ -172,21 +194,14 @@
   color: black;
 }
 
-
-#B {
-  font-size: 72px;
-  font-family: 'Playfair Display SC'
-
+.inactive {
+  visibility: hidden;
 }
 
-#C {
-  font-size: 18px;
-  font-family: 'Playfair Display'
-
+.active {
+  visibility: visible;
 }
 
-#D {
-  font-size: 36px;
-  font-family: 'Playfair Display'
-
+.comment-form-inactive {
+  visibility: hidden;
 }

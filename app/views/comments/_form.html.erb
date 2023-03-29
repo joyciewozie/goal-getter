@@ -4,7 +4,9 @@
   }) do |f| %>
   <%= f.input :content, label: "What are your thoughts?" %>
   <div class="d-flex justify-content-center">
-    <%= f.submit "Comment", class: "btn btn-primary", id: "comment-button" %>
+    <%= f.submit "Comment", class: "btn btn-primary", id: "action-button-comment" %>
+    <%= f.button :button, "Cancel", type: :button, data: { action: "click->comment-page#close", target: "cancel" }, class: "btn btn-primary", id: "action-button",
+        data: { action: "click->comment-page#close", target: "cancel" } %>
   </div>
   <%= f.association :answer, as: :hidden, input_html: {
     value: answer.id
