@@ -18,20 +18,20 @@
             <% controller.redirect_to goal_insight_comments_path(@goal.id, @insight.id) %>
         <% else %>
           <h5 class="question"><%= @answer.template_question.title %></h5>
-          <div id="insight-answer-form-text">
+          <div id="insight-answer-form-text" data-controller="insight-button">
           <%= simple_form_for([@goal, @insight, @answer]) do |f| %>
             <%= f.input :content, label: "Free write your thoughts. Let your intuition guide you, write out whatever comes to mind" %>
             <%= f.association :template_question, as: :hidden %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Next", class: "btn btn-primary", id: "form-button" %>
+            <%= f.submit "Next", class: "btn btn-primary", id: "form-button", data: { action: "click->insight-button#next"} %>
             </div>
           <% end %>
-          </div>
-          <div style="text-align:center;margin-top:40px;">
-            <span class="step active"></span>
-            <span class="step"></span>
-            <span class="step"></span>
-            <span class="step"></span>
+            <div style="text-align:center;margin-top:40px;">
+              <span class="step active" data-insight-button-target="change"></span>
+              <span class="step" data-insight-button-target="change"></span>
+              <span class="step" data-insight-button-target="change"></span>
+              <span class="step" data-insight-button-target="change"></span>
+            </div>
           </div>
         <% end %>
       </div>
