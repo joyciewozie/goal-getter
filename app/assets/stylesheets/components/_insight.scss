@@ -19,6 +19,7 @@
 }
 
 .insight-bg {
+  z-index: 98;
   transform: translateX(100%);
 
   &.show{
@@ -33,6 +34,7 @@ hr {
 }
 
 .modal-popleft {
+  z-index: 99;
   transform: translateX(100%);
   transition: 300ms;
 
@@ -173,7 +175,6 @@ hr {
     position: relative;
     height: 300px;
     width: 200px;
-
   }
 
   .collab-img {
