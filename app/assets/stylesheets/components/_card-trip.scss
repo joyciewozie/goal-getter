@@ -3,6 +3,9 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0 0 10px 10px;
+  height: 100%;
+  // padding:16px;
+  // margin: 5px;
 
 }
 
@@ -64,3 +67,7 @@
   text-decoration: none;
 }
 
+.card-trip-index.none-shadow p {
+  font-size: 18px;
+  font-family: 'Playfair Display';
+}
