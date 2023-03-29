@@ -94,3 +94,128 @@ body {
 .new-goal-header {
   font-family: 'Playfair Display SC', serif;
 }
+
+// Progress bookshelf
+.big-bookcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+// One section
+.one-bookcase-section{
+  display: flex;
+  flex-direction: column;
+}
+
+// background
+.status-cover-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.status-cover-plank {
+  height: 150px;
+  background-color: grey;
+}
+
+.status-cover-text {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+// Description
+.status-title-container{
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.status-title-plank {
+  height: 50px;
+  background-color: red;
+}
+.status-title-text {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+// Book
+.one-book {
+  position: absolute;
+  bottom: 0;
+}
+
+.book-top{
+  position: absolute;
+}
+
+.book-container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.book-cover {
+  height: 100px;
+  width: 25px;
+  background-color: peru;
+}
+
+.book-strip-one {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+}
+
+.book-strip-two {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+
+#goal-accomplished {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: black;
+}
+
+// all the books
+ul.horizontal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+ul.horizontal-list li {
+  position: relative;
+  margin: 1px;
+
+  &:hover{
+    .bookworm{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+// name of one insight
+.bookworm {
+  opacity: 0;
+  transform: translateX(-20px);
+  position: absolute;
+  // z-index: -1;
+  transition: 300ms;
+  width: 200px;
+  top: -1.5rem;
+  text-align: left;
+}
