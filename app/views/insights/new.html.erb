@@ -2,6 +2,7 @@
   <div class="new-insight-form">
     <h5 style="text-align: center" class="new-insight-header">New insight</h5>
     <br>
+    <%= @insight.status %>
     <%= render "form", goal: @goal, insight: @insight %>
   </div>
   <%= image_tag "new-insight.jpg", class: "new-insight-image" %>
