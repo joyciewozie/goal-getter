@@ -4,13 +4,8 @@
   <br>
   <h2 id="D">Goals I am collaborating on:</h2>
   <div class="row gx-5 gy-3">
-    <% if !@collaborators_accepted.nil? %>
+    <% if @collaborators_accepted.present? %>
       <% @collaborators_accepted.each do |collaborator| %>
-        <%# <div class="avatar-card">
-          <p><%= collaborator.goal.user.name</p> %>
-        <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-          <p class="goal-link"><strong><%= link_to collaborator.goal.name, goal_path(collaborator.goal.id) </strong></p>%>
-        <%# </div> %>
         <div class="col-4">
           <div class="card p-0 card-trip-index none-shadow">
             <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
@@ -23,9 +18,9 @@
             </div>
           </div>
         </div>
+      <%# <div class="col-4"> %>
       <% end %>
     <% else %>
-      <%# <div class="col-4"> %>
       <div class="avatar-card" id="no-collab-message">
         <%# <div class="card p-0 card-trip-index none-shadow" id="no-collab-message"> %>
         <h3>You have no collaborators</h3>
@@ -39,24 +34,34 @@
   <h2 id="D">Goal collaboration requests:</h2>
   <br>
   <div class="row gx-5 gy-3">
-    <% @collaborators.each do |collaborator| %>
-      <div class="col-4">
-        <div class="card p-0 card-trip-index none-shadow">
-          <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
-          <div class="card-content d-flex justify-content-between px-5 pt-2">
-            <h3><%= collaborator.goal.name %></h3>
-            <div class="card-user m-0 p-0">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
-              <p class="text-center"><%= collaborator.goal.user.name %></p>
+    <% if @collaboratorss.present? %>
+      <% @collaborators.each do |collaborator| %>
+        <div class="col-4">
+          <div class="card p-0 card-trip-index none-shadow">
+            <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
+            <div class="card-content d-flex justify-content-between px-5 pt-2">
+              <h3><%= collaborator.goal.name %></h3>
+              <div class="card-user m-0 p-0">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
+                <p class="text-center"><%= collaborator.goal.user.name %></p>
+              </div>
+            </div>
+            <div class="card-button m-auto">
+              <%= simple_form_for collaborator do |f| %>
+                <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+                <%= f.submit "Accept", class: "btn-card px-4 py-1" %>
+              <% end %>
             </div>
           </div>
-          <div class="card-button m-auto">
-            <%= simple_form_for collaborator do |f| %>
-              <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
-              <%= f.submit "Accept", class: "btn-card px-4 py-1" %>
-            <% end %>
-          </div>
         </div>
+    <% end %>
+      <% else %>
+      <div class="avatar-card" id="no-collab-message">
+        <%# <div class="card p-0 card-trip-index none-shadow" id="no-collab-message"> %>
+        <h3>You have no collaboration requests</h3>
+        <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> %>
+        <%# <p class="goal-link"><strong></strong></p> %>
+        <%# </div> %>
       </div>
     <% end %>
   </div>
