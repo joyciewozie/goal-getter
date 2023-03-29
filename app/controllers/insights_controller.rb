@@ -25,7 +25,6 @@ class InsightsController < ApplicationController
   def new
     @insight = Insight.new
     @insight.goal = @goal
-    @insight.status = @goal.status
   end
 
   # POST (/goals/:goal_id/insights)
