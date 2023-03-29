@@ -12,7 +12,7 @@
 }
 
 .insight-img {
-  max-height: 300px;
+  height: 216px;
   width: 300px;
   object-fit: cover;
   padding-bottom: 1rem;
@@ -85,11 +85,11 @@ hr {
 }
 
 #insight-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display SC', serif;
 }
 
 #insight-summary {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 // .insight-scroll::-webkit-scrollbar {
@@ -127,42 +127,74 @@ hr {
 }
 
 // .insight-answer {
-// }
+  // }
 
-.insight-comment-box {
-  display: flex;
-  gap: 10px;
-  border: 1px solid limegreen;
-}
+  .insight-comment-box {
+    display: flex;
+    gap: 10px;
+    border: 1px solid limegreen;
+  }
 
-.insight-user {
-  padding: 4px;
-}
+  .insight-user {
+    padding: 4px;
+  }
 
-.insight-comment {
-  flex-grow: 1;
-  padding: 4px;
-}
+  .insight-comment {
+    flex-grow: 1;
+    padding: 4px;
+  }
 
-.insight-index-card {
-  margin: 50px;
-}
+  .insight-index-card {
+    margin: 50px;
+  }
 
-.photo-insight-index {
-  max-height: 420px;
-  max-width: 720px;
-  margin: 25px;
-}
+  .photo-insight-index {
+    max-height: 420px;
+    max-width: 720px;
+    margin: 25px;
+  }
 
-.insight-title.index-page {
-  margin-top: 25px;
-}
+  .insight-title.index-page {
+    margin-top: 25px;
+  }
 
-.comment-btn {
-  background-color: #1e898b;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  border-radius: 8px;
-  padding: 10px;
-}
+  .comment-btn {
+    background-color: #1e898b;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .collab-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 300px;
+    width: 200px;
+
+  }
+
+  .collab-img {
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .collab-pic {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .profile-text {
+    // border: 1px solid grey;
+    top: 100%;
+    left: 50%;
+  }
