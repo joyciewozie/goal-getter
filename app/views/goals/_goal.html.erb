@@ -1,7 +1,9 @@
 <div class="col-4">
   <div class="card-trip-index none-shadow">
     <% if goal.photo.attached? %>
+      <%# <a href= goal_path(goal.id)> %>
       <%= cl_image_tag goal.photo.key %>
+      <%# </a> %>
     <% else %>
       <img src="./assets/images/demo-new-insight.jpg" />
     <% end %>
