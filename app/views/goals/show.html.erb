@@ -30,42 +30,67 @@
   <div class="big-bookcase">
      <!--Progress-->
     <div class="one-bookcase-section">
-        <div class="status-cover-container">
-          <div class="status-cover-plank"></div>
-          <div class="status-cover-text"><% @progress.each do |insight| %>
-            <%= insight.name%>
-            <% end %></div>
+      <div class="status-cover-container">
+        <div class="status-cover-plank"></div>
+        <div class="status-cover-text">
+        <ul class="horizontal-list">
+
+        <% @progress.each do |insight| %>
+          <li>
+            <div class="bookworm">
+              <%= insight.name%>
+            </div>
+
+            <div class="book-container">
+              <div class="book-cover" id="progress-colour"></div>
+              <div class="book-strip-one">---</div>
+              <div class="book-strip-two">---</div>
+            </div>
+          </li>
+        <% end %>
+
+        </ul>
+      </div>
         <!--closing div for status-cover-container-->
         </div>
           <div class="status-title-container">
             <div class="status-title-plank"></div>
-            <div class="status-title-text">Making progress</div>
+            <div class="status-title-text">Making progress on goal</div>
           <!--closing div for status-title-container-->
           </div>
     <!--closing div for one-bookcase-section-->
     </div>
 
-    <!--Closer-->
+     <!--Closer-->
     <div class="one-bookcase-section">
-        <div class="status-cover-container">
-          <div class="status-cover-plank"></div>
-          <div class="status-cover-text"><% @closer.each do |insight| %>
-            <%= insight.name%>
-            <% end %></div>
-              <div class="one-book">
-              <div class="book-container">
-                <div class="book-cover"></div>
-                <div class="book-strip-one">-</div>
-                <div class="book-strip-two">-</div>
-              </div>
-              </div>
+      <div class="status-cover-container">
+        <div id="goal-accomplished">Goal <br>accomplished</div>
+        <div class="status-cover-plank"></div>
+        <div class="status-cover-text">
+        <ul class="horizontal-list">
 
-          <div id="goal-accomplished">Goal accomplished</div>
+
+        <% @closer.each do |insight| %>
+          <li>
+            <div class="bookworm">
+              <%= insight.name%>
+            </div>
+
+            <div class="book-container">
+              <div class="book-cover" id="closer-colour"></div>
+              <div class="book-strip-one">---</div>
+              <div class="book-strip-two">---</div>
+            </div>
+          </li>
+        <% end %>
+
+        </ul>
+      </div>
         <!--closing div for status-cover-container-->
         </div>
           <div class="status-title-container">
             <div class="status-title-plank"></div>
-            <div class="status-title-text">Getting closer</div>
+            <div class="status-title-text">Getting closer to goal</div>
           <!--closing div for status-title-container-->
           </div>
     <!--closing div for one-bookcase-section-->
@@ -85,7 +110,7 @@
             </div>
 
             <div class="book-container">
-              <div class="book-cover"></div>
+              <div class="book-cover" id="thinking-colour"></div>
               <div class="book-strip-one">---</div>
               <div class="book-strip-two">---</div>
             </div>
@@ -104,18 +129,34 @@
     <!--closing div for one-bookcase-section-->
     </div>
 
-    <!--Started-->
-        <div class="one-bookcase-section">
-        <div class="status-cover-container">
-          <div class="status-cover-plank"></div>
-          <div class="status-cover-text"><% @started.each do |insight| %>
-            <%= insight.name%>
-            <% end %></div>
+     <!--Started-->
+    <div class="one-bookcase-section">
+      <div class="status-cover-container">
+        <div class="status-cover-plank"></div>
+        <div class="status-cover-text">
+        <ul class="horizontal-list">
+
+        <% @started.each do |insight| %>
+          <li>
+            <div class="bookworm">
+              <%= insight.name%>
+            </div>
+
+            <div class="book-container">
+              <div class="book-cover" id="started-colour"></div>
+              <div class="book-strip-one">---</div>
+              <div class="book-strip-two">---</div>
+            </div>
+          </li>
+        <% end %>
+
+        </ul>
+      </div>
         <!--closing div for status-cover-container-->
         </div>
           <div class="status-title-container">
             <div class="status-title-plank"></div>
-            <div class="status-title-text">Getting started</div>
+            <div class="status-title-text">Getting started on goal</div>
           <!--closing div for status-title-container-->
           </div>
     <!--closing div for one-bookcase-section-->
