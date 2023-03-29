@@ -121,7 +121,7 @@ hr {
 }
 
 .insight-question {
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -201,7 +201,7 @@ hr {
 .step {
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 0 3px;
   background-color: #bbbbbb;
   border: none;
   border-radius: 50%;
@@ -217,4 +217,32 @@ hr {
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #04AA6D;
+}
+
+.insight-divider {
+  height: 4px;
+  background-color: #000000;
+  margin: 25px 0px 25px 0px;
+}
+
+#insight-name {
+  font-size: 36px;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.insight-prompt {
+  padding-right: 50px;
+  flex-shrink: 5;
+}
+
+.insight-explainer {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.photo-qn-ans {
+  width: 70%;
+  // flex-grow: 2;
+  flex-basis: auto;
 }

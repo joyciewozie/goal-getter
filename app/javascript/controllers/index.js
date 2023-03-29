@@ -24,6 +24,3 @@ application.register("insight", InsightController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
-
-import InsightButtonController from "./insight_button_controller"
-application.register("insight-button", InsightButtonController)
