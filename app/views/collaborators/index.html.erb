@@ -4,7 +4,7 @@
   <br>
   <h2 id="D">Goals I am collaborating on:</h2>
   <div class="row gx-5 gy-3">
-    <% if !@collaborators_accepted.nil? %>
+    <% if @collaborators_accepted.any? %>
       <% @collaborators_accepted.each do |collaborator| %>
         <%# <div class="avatar-card">
           <p><%= collaborator.goal.user.name</p> %>
@@ -25,13 +25,8 @@
         </div>
       <% end %>
     <% else %>
-      <%# <div class="col-4"> %>
-      <div class="avatar-card" id="no-collab-message">
-        <%# <div class="card p-0 card-trip-index none-shadow" id="no-collab-message"> %>
-        <h3>You have no collaborators</h3>
-        <%# <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> %>
-        <%# <p class="goal-link"><strong></strong></p> %>
-        <%# </div> %>
+      <div class="empty-card">
+        <h3>You are not collaborating on any goals</h3>
       </div>
     <% end %>
   </div>
