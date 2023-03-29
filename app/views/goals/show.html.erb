@@ -27,21 +27,6 @@
 
 <%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
 
-
-<%# <div data-controller="highlight">
-  <p \" data-action="mouseup->highlight#selectText">
-    Email pop-ups should highlight a benefit Before we go into how your pop-up
-    should look, you have to understand that your pop-up is only as good as the
-    value it's offering. If you're not offering something that your visitors
-    genuinely care about, then nothing else matters.
-  </p>
-</div> %>
-
-
-
-
-
-
 <%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
 <div class="container-xxl d-flex p-3">
   <div class="insight-new p-2">
@@ -54,7 +39,7 @@
     </div>
 
     <%= link_to new_goal_insight_path(@goal.id) do %>
-      <p class="body-font mb-3 pb-2 fs-4"> Add Insight</p>
+      <p class="body-font mb-3 pb-2 fs-5"> Add Insight</p>
         <i class="fa-regular fa-square-plus fa-2xl insight-add"></i>
     <% end %>
   </div>
@@ -67,11 +52,28 @@
     <% end %>
   </div>
 </div>
-<br>
-<%# Collaborators flow %>
-<div class="d-flex p-3 container border shadow">
-  <%= render 'add_collaborators' %>
-  <%= render 'show_collaborators' %>
-</div>
 
+<br>
+
+<%# Collaborators flow %>
+<div class="container-xxl d-flex p-3 mb-3">
+  <div class="insight-new p-2">
+    <div class="heading-font fs-3">
+      Collabs
+    </div>
+
+    <div class="body-font fs-6">
+      Get a fresh set of perspectives from friends. Ask your friends to share their perspectives on your insights by adding them as a collaborator.
+    </div>
+
+    <div class="container insight-top p-0">
+      <%= render 'add_collaborators' %>
+    </div>
+  </div>
+
+  <div class="insight-scroll">
+    <% @collaborators.each do |collab| %>
+        <%= render 'show_collaborators', collab: collab %>
+    <% end %>
+  </div>
 </div>

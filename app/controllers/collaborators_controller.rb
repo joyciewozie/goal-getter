@@ -5,7 +5,6 @@ class CollaboratorsController < ApplicationController
     @user = current_user
     @collaborators_accepted = Collaborator.where(accepted: true, user: current_user)
     @collaborators = Collaborator.where(accepted: false, user: current_user)
-
   end
 
   def create

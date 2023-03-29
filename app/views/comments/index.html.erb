@@ -1,24 +1,54 @@
-<%= @goal.name %>
-<br>
-
-<% @insight.answers.each do |answer| %>
-<div class="comment-container" data-controller="insert-in-list">
-  <!-- Left div-->
-  <div class = "left-comment-container">
-      <%= answer.template_question.title %>
-      <br>
-      <%= answer.content %>
-      <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment %>
+<div class="comments-index-page">
+  <div class="comment-header-goal">
+    <h3><%= link_to @goal.name, goal_path(@goal.id), id: "goal-title"%></h3>
+    <%= @goal.description %> | <%= @goal.status %>
   </div>
-  <!-- Right div-->
-  <div class="right-comment-container">
-    <div data-insert-in-list-target="items">
-      <% answer.comments.each do |comment| %>
-        <%=  comment.user.name %>
-        <%= comment.content %>
+  <br>
+  <br>
+  <div class="comment-header-insight">
+    <h3><%= @goal.user.name %>'s insights inspired by: <%= @insight.name %></h3>
+    <p>Intention: <%= @insight.summary %></p>
+  </div>
+  <hr>
+  <br>
+
+  <% @insight.answers.each do |answer| %>
+  <div class="comment-container" data-controller="insert-in-list">
+    <!-- Left div-->
+    <div class = "left-comment-container" data-controller="comment-page">
+        <h5><%= answer.template_question.title %></h5>
+        <p><%= answer.content %></p>
+        <p class="btn btn-primary", id="form-button", data-action="click->comment-page#hide", data-comment-page-target="button"> Write a comment</p>
         <br>
-      <% end %>
+        <div class="comment-form-inactive", data-comment-page-target="input">
+        <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment%>
+        </div>
+        <br>
+        <br>
+    </div>
+    <!-- Right div-->
+    <div class="right-comment-container">
+      <div data-insert-in-list-target="items">
+        <% answer.comments.each do |comment| %>
+          <div class="comment-card-container">
+            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="comment-text-container">
+                <p><strong><%=  comment.user.name %></strong></p>
+                <p><%= comment.content %></p>
+              </div>
+          </div>
+          <% end %>
+      </div>
     </div>
   </div>
+  <% end  %>
+  <!-- buttons -->
+  <h5 id="action-text">What are you inspired to do?</h5>
+  <br>
+  <div class="buttons-container">
+    <%= link_to "Nothing", goal_path(@goal.id), class: "btn btn-primary", id: "form-button" %>
+    <%= link_to "Update my goal", edit_goal_path(@goal.id), class: "btn btn-primary", id: "form-button" %>
+    <%= link_to "Discover new insights",  new_goal_insight_path(@goal.id), class: "btn btn-primary", id: "form-button"%>
+    <%= link_to "Set a new goal",  new_goal_path, class: "btn btn-primary", id: "form-button"%>
+  </div>
 </div>
-<% end  %>

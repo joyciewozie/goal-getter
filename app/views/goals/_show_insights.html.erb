@@ -1,19 +1,17 @@
 
   <div data-controller="insight">
     <div class="container insight-top p-0">
-      <% # <div class="d-flex justify-content-end"> %>
-        <a data-action="click->insight#showInsights">
-          <% if insight.photo.attached? %>
-            <%= cl_image_tag insight.photo.key, class: "insight-img" %>
-          <% else %>
-            <%= image_tag "https://source.unsplash.com/random/?moutain", class: "insight-img" %>
-          <% end %>
-          <div align="left" class="p-2">
-            <h5 id='insight-name'><strong><%= insight.name %></strong></h5>
-            <p id='insight-summary'><%= insight.summary %></p>
-          </div>
-        </a>
-      <% # </div> %>
+      <a data-action="click->insight#showInsights">
+        <% if insight.photo.attached? %>
+          <%= cl_image_tag insight.photo.key, class: "insight-img" %>
+        <% else %>
+          <%= image_tag "https://source.unsplash.com/random/?moutain", class: "insight-img" %>
+        <% end %>
+        <div class="ps-3">
+          <h5 id='insight-name'><strong><%= insight.name %></strong></h5>
+          <p id='insight-summary'><%= insight.summary %></p>
+        </div>
+      </a>
     </div>
 
     <% # Insights Modal %>
@@ -24,48 +22,44 @@
         <% # To style %>
         <div class="insight-title">
           <div>
-            <p class="m-0 p-0"><strong><%= insight.name %></strong></p>
-            <p class="fs-6 m-0 p-0 fst-italic underline">Highlight specific text to save for future reference</p>
+            <h2 class="m-0 p-0 heading-font"><strong><%= insight.name.upcase %></strong></h2>
+            <p class="fs-6 m-0 p-0"> <%= insight.summary %></p>
           </div>
           <i data-action="click->insight#closeInsights" class="fa fa-times fa-2x modal-close"></i>
         </div>
         <hr>
+        <p class="fs-6 m-0 mb-3 p-0 fst-italic">
+          <span class="underline">Highlight specific text to save for future reference </span>
+        </p>
 
-        <div data-controller="highlight" class="d-flex flex-column border insight-content">
-        <div class="d-flex flex-column insight-content">
-          <% insight.answers.each do |answer| %>
-            <% # div for each qn, ans and comment %>
-            <div class="container m-2">
-              <div class="row">
-                <div class="col-8">
-                  <div class="d-flex flex-column p-2 fs-5">
-                    <div class="insight-question">
-                      <%= answer.template_question.title %>
+          <div class="d-flex flex-column">
+            <% insight.answers.each do |answer| %>
+              <% # div for each qn, ans and comment %>
+              <div class="container mt-2 mb-2">
+                <div class="d-flex flex-column pt-2 fs-5">
+                  <div class="insight-question body-font mt-2 mb-2">
+                    <%= answer.template_question.title %>
+                  </div>
+
+                  <div data-controller="highlight" data-highlight-goal-value="<%= @goal.id %>" data-highlight-answer-value="<%= answer.id %>">
+                    <div data-action="mouseup->highlight#selectText" data-highlight-target="content" class="insight-answer mb-4 mt-3">
+                        <%= sanitize answer.highlighted_content %>
+
                     </div>
-
-
-                    <div data-action="mouseup->highlight#selectText"
-                      data-controller="highlight"
-                      data-highlight-goal-value="<%= @goal.id %>"
-                      data-highlight-answer-value="<%= answer.id %>" class="insight-answer">
-                      <%= sanitize answer.highlighted_content %>
-                    </div>
-
-                    <div class="insight-answer">
-                      <%= answer.content %>
-                      <%= link_to "View comment(s)", goal_insight_comments_path(@goal.id, insight.id)  %>
+                    <div data-highlight-target="tooltip">
                     </div>
                   </div>
+
+                  <div class="mb-3">
+                    <%= link_to goal_insight_comments_path(@goal.id, insight.id), class:"comment-btn" do %>
+                    View <%= answer.comments.count %> comment(s)
+                    <% end %>
+                  </div>
                 </div>
-
-
-
+                <hr>
               </div>
-            </div>
-
-          <% end %>
-        </div>
-      </div>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
