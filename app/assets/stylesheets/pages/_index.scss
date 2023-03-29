@@ -4,7 +4,7 @@
 @import "new";
 @import "highlight";
 
-#A {
+#A-goal {
   font-size: 50px;
   font-family: 'Playfair Display SC';
 }
@@ -113,8 +113,6 @@
   border-radius: 16px !important;
 }
 
-
-
 .comment-header-goal {
   text-align: center;
 }
@@ -192,7 +190,6 @@
   border-radius: 16px !important;
   color: black;
 }
-
 
 .inactive {
   visibility: hidden;
