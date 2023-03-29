@@ -11,13 +11,14 @@
 }
 
 .insight-img {
-  max-height: 300px;
+  height: 216px;
   width: 300px;
   object-fit: cover;
   padding-bottom: 1rem;
 }
 
 .insight-bg {
+  z-index: 98;
   transform: translateX(100%);
 
   &.show{
@@ -32,6 +33,7 @@ hr {
 }
 
 .modal-popleft {
+  z-index: 99;
   transform: translateX(100%);
   transition: 300ms;
 
@@ -84,11 +86,11 @@ hr {
 }
 
 #insight-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display SC', serif;
 }
 
 #insight-summary {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 // .insight-scroll::-webkit-scrollbar {
@@ -123,62 +125,74 @@ hr {
   font-weight: bold;
 }
 
-.insight-comment-box {
-  display: flex;
-  gap: 10px;
-  border: 1px solid limegreen;
-}
+// .insight-answer {
+  // }
 
-.insight-user {
-  padding: 4px;
-}
+  .insight-comment-box {
+    display: flex;
+    gap: 10px;
+    border: 1px solid limegreen;
+  }
 
-.insight-comment {
-  flex-grow: 1;
-  padding: 4px;
-}
+  .insight-user {
+    padding: 4px;
+  }
 
-.insight-index-card {
-  margin: 50px;
-}
+  .insight-comment {
+    flex-grow: 1;
+    padding: 4px;
+  }
 
-.photo-insight-index {
-  max-height: 420px;
-  max-width: 720px;
-  margin: 25px;
-}
+  .insight-index-card {
+    margin: 50px;
+  }
 
-.insight-title.index-page {
-  margin-top: 25px;
-}
+  .photo-insight-index {
+    max-height: 420px;
+    max-width: 720px;
+    margin: 25px;
+  }
 
-.comment-btn {
-  background-color: #1e898b;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  border-radius: 8px;
-  padding: 10px;
-}
+  .insight-title.index-page {
+    margin-top: 25px;
+  }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
+  .comment-btn {
+    background-color: #1e898b;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px;
+  }
 
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
+  .collab-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 300px;
+    width: 200px;
+  }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
+  .collab-img {
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .collab-pic {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .profile-text {
+    // border: 1px solid grey;
+    top: 100%;
+    left: 50%;
+  }
