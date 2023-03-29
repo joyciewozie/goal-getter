@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AnimationController from "./animation_controller"
+application.register("animation", AnimationController)
+
 import CommentPageController from "./comment_page_controller"
 application.register("comment-page", CommentPageController)
 

@@ -56,13 +56,13 @@
 <br>
 
 <%# Collaborators flow %>
-<div class="container-xxl d-flex p-3 mb-3">
+<div class="container-xxl d-flex p-3 mb-3" data-controller="animation" data-animation-threshold-value="0.6">
   <div class="insight-new p-2">
-    <div class="heading-font fs-3">
+    <div class="heading-font fs-3" data-animation-target="fadeInRight">
       Collabs
     </div>
 
-    <div class="body-font fs-6">
+    <div class="body-font fs-6" data-animation-target="fadeInRight">
       Get a fresh set of perspectives from friends. Ask your friends to share their perspectives on your insights by adding them as a collaborator.
     </div>
 
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <div class="insight-scroll">
+  <div class="insight-scroll" data-animation-target="fadeInLeft">
     <% @collaborators.each do |collab| %>
         <%= render 'show_collaborators', collab: collab %>
     <% end %>
