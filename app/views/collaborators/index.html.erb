@@ -7,56 +7,63 @@
     <% if @collaborators_accepted.any? %>
       <% @collaborators_accepted.each do |collaborator| %>
         <div class="col-4">
-          <div class="card p-0 card-trip-index none-shadow">
-            <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
-            <div class="card-content d-flex justify-content-between px-5 pt-2">
-              <h3><%= collaborator.goal.name %></h3>
-              <div class="card-user m-0 p-0">
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
-                <p class="text-center"><%= collaborator.goal.user.name %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <%# <div class="col-4"> %>
-      <% end %>
-    <% else %>
-      <div class="empty-card">
-        <h3>You are not collaborating on any goals</h3>
-      </div>
-    <% end %>
-  </div>
-  <br>
-  <%# <div class="empty-card"> %>
-  <h2 id="D">Goal collaboration request(s):</h2>
-  <%# </div> %>
-  <br>
-  <div class="row gx-5 gy-3">
-    <% if @collaborators.any? %>
-      <% @collaborators.each do |collaborator| %>
-        <div class="col-4">
-          <div class="card p-0 card-trip-index none-shadow">
-            <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
-            <div class="card-content d-flex justify-content-between px-5 pt-2">
-              <h3><%= collaborator.goal.name %></h3>
-              <div class="card-user m-0 p-0">
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large m-0 mb-1" %>
-                <p class="text-center"><%= collaborator.goal.user.name %></p>
-              </div>
-            </div>
-            <div class="card-button m-auto">
-              <%= simple_form_for collaborator do |f| %>
-                <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
-                <%= f.submit "Accept", class: "btn-card px-4 py-1" %>
-              </div>
+          <div class="card-new p-0 card-trip-index none-shadow">
+            <%# <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
+            <% if collaborator.goal.photo.attached? %>
+              <%= image_tag collaborator.goal.photo, class:"card-bg-image" %>
+            <% else %>
+              <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg", class:"card-bg-image", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
+            <div class="card-content d-flex justify-content-between px-5 pt-2">
+              <h3><a href=<%= goal_path(collaborator.goal.id)%>><%= collaborator.goal.name %><a></h3>
+                <div class="card-user m-0 p-0">
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "m-0 mb-1 avatar-x-large" %>
+                  <p class="text-center"><%= collaborator.goal.user.name %></p>
+                </div>
+              </div>
+            </div>
           </div>
+          <%# <div class="col-4"> %>
+        <% end %>
+      <% else %>
+        <div class="empty-card">
+          <h3>You are not collaborating on any goals</h3>
         </div>
       <% end %>
-    <% else %>
-      <div class="empty-card">
-        <h3>You do not have any collaboration requests</h3>
-      </div>
-    <% end %>
+    </div>
+    <br>
+    <%# <div class="empty-card"> %>
+    <h2 id="D">Goal collaboration request(s):</h2>
+    <%# </div> %>
+    <br>
+    <div class="row gx-5 gy-3">
+      <% if @collaborators.any? %>
+        <% @collaborators.each do |collaborator| %>
+          <div class="col-4">
+            <div class="card-new p-0 card-trip-index none-shadow">
+              <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
+              <div class="card-content d-flex justify-content-between px-5 pt-2">
+                <h3><%= collaborator.goal.name %></h3>
+                <div class="card-user m-0 p-0">
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "m-0 mb-1 avatar-x-large" %>
+                  <p class="text-center"><%= collaborator.goal.user.name %></p>
+                </div>
+              </div>
+              <div class="card-button m-auto pb-2">
+                <%= simple_form_for collaborator do |f| %>
+                  <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
+                  <div class="d-grid gap-2">
+                    <%= f.submit "Accept", class: "btn btn-primary px-4 py-1" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="empty-card">
+          <h3>You do not have any collaboration requests</h3>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>

@@ -16,5 +16,15 @@
   background-color: #1E898B;
   color: white;
   border: 0;
-  margin-top: -40px;
+  height:32px;
+}
+
+.btn-primary {
+  background: #1E898B;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.btn-primary:hover {
+  background: #053f40;
 }
