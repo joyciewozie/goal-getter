@@ -166,19 +166,20 @@ hr {
   padding: 10px;
 }
 
-.collab-card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 300px;
-  width: 200px;
-}
+  .collab-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 15px;
+  }
 
-.collab-img {
-  height: 150px;
-  width: 200px;
-  object-fit: cover;
-}
+  .collab-img {
+    height: 150px;
+    width: 300px;
+    object-fit: cover;
+  }
 
 .collab-pic {
   position: absolute;

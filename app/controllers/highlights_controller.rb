@@ -2,7 +2,8 @@ class HighlightsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    @highlights = Highlight.all
+    @goals = Goal.all.where(user: current_user)
+    @highlights = Highlight.all.where(goal: @goals)
     # render json: {}
   end
 
