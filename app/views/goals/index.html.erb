@@ -10,7 +10,10 @@
 <div class="container py-5">
   <div class="row gx-3 gy-3">
     <h4 id="A-goal"> Goals </h4>
-    <%= link_to "Add new goal", new_goal_path %>
+    <a href="<%= new_goal_path %>" id="goal-new-link">
+      <i class="fa-regular fa-square-plus fa-xl goal-add"></i>
+    <%# <% end %>
+    </a>
     <%= render @goals %>
   </div>
 </div>
