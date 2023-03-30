@@ -3,10 +3,10 @@
 <div class="container-xxl d-flex flex-row">
   <div class="card-trip">
     <%# <img src="./assets/images/job_change.jpg" /> %>
-    <% if @goal.photo.attached?%>
+    <% if @goal.photo.attached? %>
         <%= cl_image_tag @goal.photo.key, class: "img-fluid" %>
     <% else %>
-        <%= cl_image_tag "goal-page.jpeg", class: "img-fluid" %>
+        <%= image_tag "/assets/goal-page.jpg", class: "img-fluid" %>
      <% end %>
     <div class="card-trip-infos">
       <div>

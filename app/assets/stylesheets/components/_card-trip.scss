@@ -3,6 +3,9 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0 0 10px 10px;
+  // height: 100%;
+  // padding:16px;
+  // margin: 5px;
 
   img {
     height: 200px;
@@ -34,7 +37,6 @@
   margin: 0;
 }
 
-
 .card-trip-index .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -49,7 +51,6 @@
   top: -20px;
   width: 40px;
 }
-
 
 .card-trip-index.none-shadow {
   box-shadow: none;

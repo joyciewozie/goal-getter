@@ -121,78 +121,128 @@ hr {
 }
 
 .insight-question {
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
 }
 
 // .insight-answer {
   // }
 
-  .insight-comment-box {
-    display: flex;
-    gap: 10px;
-    border: 1px solid limegreen;
-  }
+.insight-comment-box {
+  display: flex;
+  gap: 10px;
+  border: 1px solid limegreen;
+}
 
-  .insight-user {
-    padding: 4px;
-  }
+.insight-user {
+  padding: 4px;
+}
 
-  .insight-comment {
-    flex-grow: 1;
-    padding: 4px;
-  }
+.insight-comment {
+  flex-grow: 1;
+  padding: 4px;
+}
 
-  .insight-index-card {
-    margin: 50px;
-  }
+.insight-index-card {
+  margin: 50px;
+}
 
-  .photo-insight-index {
-    max-height: 420px;
-    max-width: 720px;
-    margin: 25px;
-  }
+.photo-insight-index {
+  max-height: 420px;
+  max-width: 720px;
+  margin: 25px;
+}
 
-  .insight-title.index-page {
-    margin-top: 25px;
-  }
+.insight-title.index-page {
+  margin-top: 25px;
+}
 
-  .comment-btn {
-    background-color: #1e898b;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    border-radius: 8px;
-    padding: 10px;
-  }
+.comment-btn {
+  background-color: #1e898b;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px;
+}
 
-  .collab-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 300px;
-    width: 200px;
-  }
+.collab-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 300px;
+  width: 200px;
+}
 
-  .collab-img {
-    height: 150px;
-    width: 200px;
-    object-fit: cover;
-  }
+.collab-img {
+  height: 150px;
+  width: 200px;
+  object-fit: cover;
+}
 
-  .collab-pic {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.collab-pic {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .profile-text {
-    // border: 1px solid grey;
-    top: 100%;
-    left: 50%;
-  }
+.profile-text {
+  // border: 1px solid grey;
+  top: 100%;
+  left: 50%;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.span-active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+.insight-divider {
+  height: 4px;
+  background-color: #000000;
+  margin: 25px 0px 25px 0px;
+}
+
+#insight-name {
+  font-size: 36px;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.insight-prompt {
+  padding-right: 50px;
+  flex-shrink: 5;
+}
+
+.insight-explainer {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.photo-qn-ans {
+  width: 70%;
+  // flex-grow: 2;
+  flex-basis: auto;
+}

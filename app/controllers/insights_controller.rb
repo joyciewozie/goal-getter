@@ -10,11 +10,11 @@ class InsightsController < ApplicationController
   def show
     @insight = Insight.find(params[:id])
     @goal = @insight.goal
-    answers = TemplateQuestion.where(goal_type: @goal.goal_type)
+    @answers = TemplateQuestion.where(goal_type: @goal.goal_type)
               # @insight.answers.pluck(:template_question_id) returns an array of template question id that has been answered
               .where.not(id: @insight.answers.pluck(:template_question_id))
               .map { |tq| Answer.new(template_question: tq) }
-    @answer = answers.first
+    @answer = @answers.first
   end
 
   # def answers
