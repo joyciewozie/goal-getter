@@ -25,9 +25,9 @@ user_three = User.create!(email: "caledon@live.com", password: "123456", name: "
 user_three.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic1.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 user_four = User.create!(email: "brock@live.com", password: "123456", name: "Brock", gender: "Male", city: "Southampton", age: "30")
 user_four.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic2.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
-user_five = User.create!(email: "margaret@live.com", password: "123456", name: "Margaret", gender: "Female", city: "Southampton", age: "35")
+user_five = User.create!(email: "joyce@live.com", password: "123456", name: "Joyce", gender: "Female", city: "Southampton", age: "35")
 user_five.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic6.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
-user_six = User.create!(email: "edward@live.com", password: "123456", name: "Edward John Smith", gender: "Male", city: "Southampton", age: "50")
+user_six = User.create!(email: "ashley@live.com", password: "123456", name: "Ashley", gender: "Male", city: "Southampton", age: "50")
 user_six.photo.attach(io: File.open("app/assets/images/blankprofilepics/profilepic5.jpg"), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating goal'
@@ -45,14 +45,18 @@ insight_three = Insight.create!(name: "Rent out spare room", summary: "Rent out 
 insight_three.photo.attach(io: URI.open(Unsplash::Photo.random(count: 1, query: "Rental property", orientation: "landscape")[0].urls.regular), filename: "image-#{Time.now.strftime("%s%L")}.png")
 
 puts 'Creating template_question'
-template_question_one = TemplateQuestion.create!(title: "Why do you want a change?", goal_type: "career")
+template_question_one = TemplateQuestion.create!(title: "What kind of change are you looking for?", goal_type: "career")
 template_question_two = TemplateQuestion.create!(title: "Why are you looking for this change?", goal_type: "career")
 template_question_three = TemplateQuestion.create!(title: "What is holding you back?", goal_type: "career")
-template_question_four = TemplateQuestion.create!(title: "What will happen if your change succeeds?", goal_type: "career")
-template_question_five = TemplateQuestion.create!(title: "Why do you think the problem has occurred?", goal_type: "health")
-template_question_six = TemplateQuestion.create!(title: "What do you think is the possible impact of the problem on your life?", goal_type: "health")
-template_question_seven = TemplateQuestion.create!(title: "How do you think you can change the problem one step at a time?", goal_type: "health")
-template_question_eight = TemplateQuestion.create!(title: "What do you think are the potential hurdles in your way of problem-solving?", goal_type: "health")
+template_question_four = TemplateQuestion.create!(title: "What will happen if you succeed in making the change?", goal_type: "career")
+template_question_five = TemplateQuestion.create!(title: "What kind of change are you looking for?", goal_type: "health")
+template_question_six = TemplateQuestion.create!(title: "What kind of challenges do you face for the change you want?", goal_type: "health")
+template_question_seven = TemplateQuestion.create!(title: "What steps can you take to make the change?", goal_type: "health")
+template_question_eight = TemplateQuestion.create!(title: "What will happen if you succeed in making the change?", goal_type: "health")
+template_question_nine = TemplateQuestion.create!(title: "What kind of change are you looking for?", goal_type: "romance")
+template_question_ten = TemplateQuestion.create!(title: "Why are you looking for this change?", goal_type: "romance")
+template_question_eleven = TemplateQuestion.create!(title: "What is holding you back?", goal_type: "romance")
+template_question_twelve = TemplateQuestion.create!(title: "What will happen if you succeed in making the change?", goal_type: "romance")
 
 puts 'Creating answer'
 answer_one = Answer.create!(content: "Because talking to dumb people every day make me hate humanity", insight_id: insight_one.id, template_question: template_question_one)
