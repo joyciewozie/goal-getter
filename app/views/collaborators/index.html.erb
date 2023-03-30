@@ -50,7 +50,11 @@
               <div class="card-content d-flex justify-content-between px-5 pt-2">
                 <h3><%= collaborator.goal.name %></h3>
                 <div class="card-user m-0 p-0">
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "m-0 mb-1 avatar-x-large" %>
+                  <% if collaborator.goal.user.photo.attached? %>
+                    <%= image_tag collaborator.goal.user.photo, class:"m-0 mb-1 avatar-x-large" %>
+                  <% else %>
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class:"m-0 mb-1 avatar-x-large" %>
+                  <% end %>
                   <p class="text-center"><%= collaborator.goal.user.name %></p>
                 </div>
               </div>
