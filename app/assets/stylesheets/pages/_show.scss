@@ -249,3 +249,51 @@ ul.horizontal-list li {
   top: -1.5rem;
   text-align: left;
 }
+
+.goal-banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goal-banner-text {
+  padding-top: 20px;
+  flex-shrink: 5;
+}
+
+.goal-banner-image {
+  flex-basis: auto;
+  flex-grow: 3;
+  width: 66%;
+  object-fit: cover;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 25px;
+
+  img {
+    aspect-ratio: 16/9;
+  }
+}
+
+.goal-header {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 64px;
+}
+
+.goal-banner-update{
+  font-size: 18px;
+}
+
+.goal-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+.library-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.library-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
