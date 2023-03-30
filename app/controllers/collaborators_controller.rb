@@ -16,11 +16,11 @@ class CollaboratorsController < ApplicationController
     @collaborator.user = @user
     # goal_id assigned to collaborator instance
     @collaborator.goal = @goal
+
     if @collaborator.save
-      redirect_to goal_path(@goal.id), notice: "Collaborator added!"
+      redirect_to goal_path(@goal.id, :anchor => "collab-anchor"), alert: "Collaborator added!"
     else
-      redirect_to goal_path(@goal.id), notice: "Try again!"
-      # render "../views/goals/_collaborators.html.erb ", status: :unprocessable_entity
+      redirect_to goal_path(@goal.id, :anchor => "collab-anchor"), alert: "Try again!"
     end
   end
 

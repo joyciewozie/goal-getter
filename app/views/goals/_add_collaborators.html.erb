@@ -1,4 +1,4 @@
-<div data-controller="modal">
+ <div data-controller="modal">
 
   <a data-action="click->modal#showModal">
     <p class="body-font mb-3 pb-2 fs-5 text-center"> Add Collaborators </p>
@@ -24,7 +24,7 @@
       </div>
       <hr>
       <div>
-        <%= simple_form_for([@goal, @collaborator], html: { id: "simple-form"}) do |f| %>
+        <%= simple_form_for([@goal, @collaborator], html: { data: {turbo: false}, id: "simple-form"}) do |f| %>
           <%= f.input :user, as: :text, placeholder: 'tom@email.com', input_html: { value: @user.nil? ? "" : @user.email } %>
           <%= f.submit "Add User", class: "btn btn-primary modal-submit-btn" %>
         <% end %>
