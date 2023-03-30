@@ -37,7 +37,7 @@ export default class extends Controller {
         `
         <div id="tooltip" style="${style}">
           <div data-action="click->highlight#saveText" class="tooltiptext">
-            <a><i class="fa fa-copy"></i> Save text</a>
+            <a><i class="fa fa-copy fa-xs"></i> Save text</a>
           </div>
         </div>
         `

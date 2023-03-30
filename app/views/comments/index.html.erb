@@ -15,11 +15,14 @@
   <% @insight.answers.each do |answer| %>
   <div class="comment-container" data-controller="insert-in-list">
     <!-- Left div-->
-    <div class = "left-comment-container">
+    <div class = "left-comment-container" data-controller="comment-page">
         <h5><%= answer.template_question.title %></h5>
         <p><%= answer.content %></p>
+        <p class="btn btn-primary", id="form-button", data-action="click->comment-page#hide", data-comment-page-target="button"> Write a comment</p>
         <br>
-        <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment, class: "comment-form" %>
+        <div class="comment-form-inactive", data-comment-page-target="input">
+        <%= render "form", goal: @goal, insight: @insight, answer: answer, comment: @comment%>
+        </div>
         <br>
         <br>
     </div>
@@ -28,7 +31,11 @@
       <div data-insert-in-list-target="items">
         <% answer.comments.each do |comment| %>
           <div class="comment-card-container">
-            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <% if comment.user.photo.attached? %>
+                <%= image_tag comment.user.photo, class: "avatar" %>
+                <% else %>
+                <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+              <% end %>
               <div class="comment-text-container">
                 <p><strong><%=  comment.user.name %></strong></p>
                 <p><%= comment.content %></p>
@@ -43,9 +50,9 @@
   <h5 id="action-text">What are you inspired to do?</h5>
   <br>
   <div class="buttons-container">
-    <%= link_to "I'm content with my goal", goal_path(@goal.id), class: "btn btn-primary", id: "action-button" %>
-    <%= link_to "I want to update my goal", edit_goal_path(@goal.id), class: "btn btn-primary", id: "action-button" %>
-    <%= link_to "I've new insights for my goal",  new_goal_insight_path(@goal.id), class: "btn btn-primary", id: "action-button"%>
-    <%= link_to "I want to set a new goal",  new_goal_path, class: "btn btn-primary", id: "action-button"%>
+    <%= link_to "Nothing", goal_path(@goal.id), class: "btn btn-primary", id: "form-button" %>
+    <%= link_to "Update my goal", edit_goal_path(@goal.id), class: "btn btn-primary", id: "form-button" %>
+    <%= link_to "Discover new insights",  new_goal_insight_path(@goal.id), class: "btn btn-primary", id: "form-button"%>
+    <%= link_to "Set a new goal",  new_goal_path, class: "btn btn-primary", id: "form-button"%>
   </div>
 </div>

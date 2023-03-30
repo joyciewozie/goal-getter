@@ -1,13 +1,15 @@
 <div class="banner">
   <div class="container">
+  <div class="fade-in-left">
     <h2><%=current_user.name %></h2>
     <%# <a class="btn btn-flat" href="#"> %>
     <p>You are a goal getter.</P>
   </div>
+  </div>
 </div>
 <div class="container py-5">
   <div class="row gx-3 gy-3">
-    <h4 id="A"> Goals </h4>
+    <h4 id="A-goal"> Goals </h4>
     <%= link_to "Add new goal", new_goal_path %>
     <%= render @goals %>
   </div>

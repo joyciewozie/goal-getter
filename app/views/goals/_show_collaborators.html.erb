@@ -1,11 +1,27 @@
-  <div class="insight-card border">
-    <% if collab.user.photo.attached? %>
-      <%= image_tag collab.user.photo, class: "avatar-large" %>
-    <% else %>              
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+  <div class="collab-card border ms-2 me-2">
+
+    <%# top half %>
+    <% if @goal.photo.attached? %>
+      <%= cl_image_tag @goal.photo.key, class: "collab-img" %>
+    <% else %>
+      <%= cl_image_tag "goal-page.jpeg", class: "collab-img" %>
     <% end %>
-    <div class="profile-text p-2">
-      <p class="m-0"><strong><%= collab.user.name %></strong></p>
+    <%# bottom half %>
+
+    <div class="collab-pic">
+      <% if collab.user.photo.attached? %>
+        <%= image_tag collab.user.photo, class: "avatar-large" %>
+      <% else %>
+        <img class="avatar-large" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <% end %>
+
+      <p class="m-0 mt-2"><strong><%= collab.user.name %></strong></p>
       <p class="m-0"><%= collab.user.email %></p>
+
     </div>
+
+
+
+
+
   </div>

@@ -1,33 +1,44 @@
 <div class="insights-container">
 
-     <h2><%= link_to @goal.name, goal_path(@goal.id), id: "goal-link" %></h2>
-     <p><%= @goal.description %></p>
+  <h4><%= link_to @goal.name, goal_path(@goal.id), id: "goal-link" %> | <%= @goal.description %></h4>
 
-    <div class="insights-details-container">
-      <h1><%= @insight.name%></h1>
-
-      <div class="photo-qn-ans">
-        <% if @insight.photo.attached?%>
-          <%= cl_image_tag @insight.photo.key, class: "answer-photo" %>
-        <% else %>
-          <%= image_tag "https://images.unsplash.com/photo-1676477242103-552c19a3e935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", class: "answer-photo" %>
-        <% end %>
-        <br>
-        <br>
-        <% if @answer.nil? %>
-            <% controller.redirect_to goal_insight_comments_path(@goal.id, @insight.id) %>
-        <% else %>
-          <h5 class="question"><%= @answer.template_question.title %></h5>
-          <div id="insight-answer-form-text">
+  <div class="insights-details-container">
+    <div class="insight-prompt">
+      <h1 id="insight-name"><%= @insight.name %></h1>
+      <p class="insight-explainer"><%= @insight.summary  %></p>
+      <div class="insight-divider"></div>
+      <p class="insight-explainer">Free write your thoughts. Let your intuition guide you, write out whatever comes to mind</p>
+    </div>
+    <div class="photo-qn-ans">
+      <% if @insight.photo.attached?%>
+        <%= cl_image_tag @insight.photo.key, class: "answer-photo" %>
+      <% else %>
+        <%= image_tag "insight_show.jpg", class: "answer-photo" %>
+      <% end %>
+      <br>
+      <br>
+      <% if @answer.nil? %>
+        <% controller.redirect_to goal_insight_comments_path(@goal.id, @insight.id) %>
+      <% else %>
+        <h5 class="question"><%= @answer.template_question.title %></h5>
+        <div id="insight-answer-form-text" data-controller="insight-button">
           <%= simple_form_for([@goal, @insight, @answer]) do |f| %>
-            <%= f.input :content, label: "Free write your thoughts. Let your intuition guide you, write out whatever comes to mind" %>
+            <%= f.input :content, label: false %>
             <%= f.association :template_question, as: :hidden %>
             <div class="d-flex justify-content-center">
-            <%= f.submit "Next", class: "btn btn-primary", id: "form-button" %>
+              <%= f.submit "Next", class: "btn btn-primary", id: "form-button" %>
             </div>
           <% end %>
+          <div style="text-align:center;margin-top:40px;" >
+            <% (4-@answers.count).times do %>
+              <span class="step finish"></span>
+            <% end %>
+            <% @answers.count.times do %>
+              <span class="step"></span>
+            <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
+  </div>
 </div>

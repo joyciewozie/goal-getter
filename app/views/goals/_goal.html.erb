@@ -1,9 +1,14 @@
 <div class="col-4">
   <div class="card-trip-index none-shadow">
     <% if goal.photo.attached? %>
-      <%= cl_image_tag goal.photo.key %>
+      <%= link_to goal_path(goal) do %>
+        <%= cl_image_tag goal.photo.key %>
+      <% end %>
     <% else %>
-      <img src="./assets/images/demo-new-insight.jpg" />
+      <%# <img src="./assets/images/demo-new-insight.jpg" /> %>
+      <%= link_to goal_path(goal) do %>
+        <%= image_tag "/assets/goal-page.jpg" %>
+        <% end %>
     <% end %>
     <div class="card-trip-infos">
       <div>

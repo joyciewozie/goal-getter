@@ -2,7 +2,6 @@
   background-image: linear-gradient(transparent 0%, transparent calc(65%), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
 }
 
-
 .insight-top {
   max-width: 300px;
 
@@ -12,13 +11,14 @@
 }
 
 .insight-img {
-  max-height: 300px;
+  height: 216px;
   width: 300px;
   object-fit: cover;
   padding-bottom: 1rem;
 }
 
 .insight-bg {
+  z-index: 98;
   transform: translateX(100%);
 
   &.show{
@@ -33,6 +33,7 @@ hr {
 }
 
 .modal-popleft {
+  z-index: 99;
   transform: translateX(100%);
   transition: 300ms;
 
@@ -85,11 +86,11 @@ hr {
 }
 
 #insight-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display SC', serif;
 }
 
 #insight-summary {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 // .insight-scroll::-webkit-scrollbar {
@@ -111,7 +112,6 @@ hr {
   &:hover {
     background-color: lightgrey;
   }
-
 }
 
 .insight-row {
@@ -120,14 +120,13 @@ hr {
   grid-gap: 8px;
 }
 
-
 .insight-question {
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
 }
 
 // .insight-answer {
-// }
+  // }
 
 .insight-comment-box {
   display: flex;
@@ -165,4 +164,85 @@ hr {
   font-weight: 500;
   border-radius: 8px;
   padding: 10px;
+}
+
+.collab-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 300px;
+  width: 200px;
+}
+
+.collab-img {
+  height: 150px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.collab-pic {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-text {
+  // border: 1px solid grey;
+  top: 100%;
+  left: 50%;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.span-active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+.insight-divider {
+  height: 4px;
+  background-color: #000000;
+  margin: 25px 0px 25px 0px;
+}
+
+#insight-name {
+  font-size: 36px;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.insight-prompt {
+  padding-right: 50px;
+  flex-shrink: 5;
+}
+
+.insight-explainer {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.photo-qn-ans {
+  width: 70%;
+  // flex-grow: 2;
+  flex-basis: auto;
 }
