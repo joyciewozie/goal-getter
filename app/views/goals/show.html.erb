@@ -1,46 +1,206 @@
 <div class="goal-show-container">
 
-<div class="container-xxl d-flex flex-row">
-  <div class="card-trip">
-    <%# <img src="./assets/images/job_change.jpg" /> %>
-    <% if @goal.photo.attached?%>
+  <div class="container-xxl goal-banner">
+    <div class="goal-banner-text">
+      <h2 class="goal-header"><%= @goal.name %></h2>
+      <%= link_to "Update goal",  edit_goal_path(@goal.id), class: "goal-banner-update" %>
+      <p class="goal-body"><%= @goal.description %> | <%= @goal.status %></p>
+    </div>
+
+    <div class="goal-banner-image">
+      <%# <img src="./assets/images/job_change.jpg" /> %>
+      <% if @goal.photo.attached? %>
         <%= cl_image_tag @goal.photo.key, class: "img-fluid" %>
-    <% else %>
-        <%= cl_image_tag "goal-page.jpeg", class: "img-fluid" %>
-     <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @goal.name %></h2>
-        <%= link_to "Edit",  edit_goal_path(@goal.id)  %>
+      <% else %>
+        <%= image_tag "/assets/goal-page.jpg", class: "img-fluid" %>
+      <% end %>
+    </div>
+  </div>
+
+<!-- status tracker -->
+
+  <div class="container-xxl">
+    <div>
+      <h3 class="library-header">Library of wisdom
+      </h3>
+      <p class="library-body">When a new insight is created, a book will be added to the library
+      </p>
+    </div>
+  </div>
+    <div class="big-bookcase container-xxl">
+      <!--Progress-->
+      <div class="one-bookcase-section">
+        <div class="status-cover-container">
+          <div class="status-cover-plank">
+          </div>
+          <div class="status-cover-text">
+          <ul class="horizontal-list">
+          <% @progress.each do |insight| %>
+            <li>
+              <div class="bookworm">
+                <%= insight.name%>
+              </div>
+              <div class="book-container">
+                <div class="book-cover" id="progress-colour">
+                </div>
+                <div class="book-strip-one">---
+                </div>
+                <div class="book-strip-two">---
+                </div>
+              </div>
+            </li>
+          <% end %>
+          </ul>
+          </div>
+          <!--closing div for status-cover-container-->
+        </div>
+        <div class="status-title-container">
+          <div class="status-title-plank">
+          </div>
+          <div class="status-title-text">Making progress on goal
+          </div>
+        <!--closing div for status-title-container-->
+        </div>
+      <!--closing div for one-bookcase-section-->
       </div>
-    </div>
-  </div>
-  <div>
-    <div class="card-goal image margin">
-      <p><%= @goal.description %></p>
-    </div>
-    <div class="card-goal image_two">
-      <p><%= @goal.status %></p>
-    </div>
-  </div>
-</div>
 
-<%# <%= link_to "New Insight",  goal_insight_path(@goal) %>
+      <!--Closer-->
+      <div class="one-bookcase-section">
+        <div class="status-cover-container">
+          <% if @check_if_goal_accomplished %>
+            <div id="goal-accomplished">Goal <br>accomplished
+            </div>
+            <% else %>
+            <div id="goal-not-accomplished">Goal <br>accomplished
+            </div>
+          <% end %>
+          <div class="status-cover-plank">
+          </div>
+          <div class="status-cover-text">
+          <ul class="horizontal-list">
+          <% @closer.each do |insight| %>
+            <li>
+              <div class="bookworm">
+                <%= insight.name%>
+              </div>
+              <div class="book-container">
+                <div class="book-cover" id="closer-colour">
+                /div>
+                <div class="book-strip-one">---
+                </div>
+                <div class="book-strip-two">---
+                </div>
+              </div>
+            </li>
+          <% end %>
+          </ul>
+          </div>
+          <!--closing div for status-cover-container-->
+        </div>
+          <div class="status-title-container">
+            <div class="status-title-plank">
+            </div>
+              <div class="status-title-text">Getting closer to goal
+              </div>
+          <!--closing div for status-title-container-->
+          </div>
+      <!--closing div for one-bookcase-section-->
+        </div>
 
-<%# <%= link_to "Write your way",  new_goal_answer_path(@goal.id)  %>
+      <!--Thinking-->
+      <div class="one-bookcase-section">
+        <div class="status-cover-container">
+          <% if @no_insight %>
+            <div id="got-no-insight">Goal begins
+            </div>
+            <% else %>
+            <div id="got-insight">Goal has started
+            </div>
+          <% end %>
+          <div class="status-cover-plank">
+          </div>
+          <div class="status-cover-text">
+            <ul class="horizontal-list">
+            <% @thinking.each do |insight| %>
+              <li>
+                <div class="bookworm">
+                  <%= insight.name%>
+                </div>
+                <div class="book-container">
+                  <div class="book-cover" id="thinking-colour">
+                  </div>
+                  <div class="book-strip-one">---
+                  </div>
+                  <div class="book-strip-two">---
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+          <!--closing div for status-cover-container-->
+        </div>
+          <div class="status-title-container">
+            <div class="status-title-plank">
+            </div>
+            <div class="status-title-text">Thinking about goal
+            </div>
+          <!--closing div for status-title-container-->
+          </div>
+      <!--closing div for one-bookcase-section-->
+        </div>
+
+      <!--Started-->
+      <div class="one-bookcase-section">
+        <div class="status-cover-container">
+          <div class="status-cover-plank">
+          </div>
+          <div class="status-cover-text">
+            <ul class="horizontal-list">
+            <% @started.each do |insight| %>
+              <li>
+                <div class="bookworm">
+                  <%= insight.name%>
+                </div>
+                <div class="book-container">
+                  <div class="book-cover" id="started-colour">
+                  </div>
+                  <div class="book-strip-one">---
+                  </div>
+                  <div class="book-strip-two">---
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+          <!--closing div for status-cover-container-->
+        </div>
+        <div class="status-title-container">
+          <div class="status-title-plank">
+          </div>
+          <div class="status-title-text">Getting started on goal
+          </div>
+        <!--closing div for status-title-container-->
+        </div>
+        <!--closing div for one-bookcase-section-->
+      </div>
+    <!--closing div for bookcase-->
+  </div>
+
+
+<!-- Insights section -->
 <div class="container-xxl d-flex p-3">
   <div class="insight-new p-2">
     <div class="heading-font fs-3">
       Insights
     </div>
-
     <div class="body-font fs-6">
       Get in touch with your inner self through free-writing. Respond to prompts that are designed to inspire you in your goal-setting journey.
     </div>
-
     <%= link_to new_goal_insight_path(@goal.id) do %>
       <p class="body-font mb-3 pb-2 fs-5"> Add Insight</p>
-        <i class="fa-regular fa-square-plus fa-2xl insight-add"></i>
+      <i class="fa-regular fa-square-plus fa-2xl insight-add"></i>
     <% end %>
   </div>
 
@@ -73,7 +233,7 @@
 
   <div class="insight-scroll" data-animation-target="fadeInLeft">
     <% @collaborators.each do |collab| %>
-        <%= render 'show_collaborators', collab: collab %>
+      <%= render 'show_collaborators', collab: collab %>
     <% end %>
   </div>
 </div>
