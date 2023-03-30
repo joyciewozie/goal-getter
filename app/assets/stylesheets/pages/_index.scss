@@ -205,3 +205,17 @@
 .comment-form-inactive {
   visibility: hidden;
 }
+
+#goal-new-link {
+  text-decoration: none;
+  color: black !important;
+
+ :hover {
+    text-decoration: underline;
+  }
+  margin-bottom: 2%;
+}
+
+.goal-add {
+  float: left;
+}
