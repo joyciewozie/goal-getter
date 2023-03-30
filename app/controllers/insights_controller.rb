@@ -38,7 +38,6 @@ class InsightsController < ApplicationController
     if @insight.save
       redirect_to goal_insight_path(@goal.id, @insight.id)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end

@@ -64,7 +64,11 @@
      <!--Closer-->
     <div class="one-bookcase-section">
       <div class="status-cover-container">
-        <div id="goal-accomplished">Goal <br>accomplished</div>
+        <% if @check_if_goal_accomplished %>
+          <div id="goal-accomplished">Goal <br>accomplished</div>
+          <% else %>
+          <div id="goal-not-accomplished">Goal <br>accomplished</div>
+        <% end %>
         <div class="status-cover-plank"></div>
         <div class="status-cover-text">
         <ul class="horizontal-list">
@@ -90,7 +94,7 @@
         </div>
           <div class="status-title-container">
             <div class="status-title-plank"></div>
-            <div class="status-title-text">Getting closer to goal</div>
+              <div class="status-title-text">Getting closer to goal</div>
           <!--closing div for status-title-container-->
           </div>
     <!--closing div for one-bookcase-section-->
@@ -99,6 +103,11 @@
     <!--Thinking-->
     <div class="one-bookcase-section">
       <div class="status-cover-container">
+        <% if @no_insight %>
+          <div id="got-no-insight">Goal begins</div>
+          <% else %>
+          <div id="got-insight">Goal has started</div>
+        <% end %>
         <div class="status-cover-plank"></div>
         <div class="status-cover-text">
         <ul class="horizontal-list">
