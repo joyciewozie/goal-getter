@@ -13,7 +13,7 @@
       <p class="goal-body"><%= @goal.description %> | <%= @goal.status %></p>
     </div>
 
-    <div class="goal-banner-image">
+    <div class="goal-show-banner-image">
       <%# <img src="./assets/images/job_change.jpg" /> %>
       <% if @goal.photo.attached? %>
         <%= cl_image_tag @goal.photo.key, class: "img-fluid" %>
