@@ -205,3 +205,27 @@
 .comment-form-inactive {
   visibility: hidden;
 }
+
+#goal-new-link {
+  background-color: #1E898B;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  margin: 15px;
+  font-size: 20px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #1e898b;
+    border: 1px solid white;
+    font-weight: bold;
+  }
+}
+
+.goal-add {
+  float: left;
+}

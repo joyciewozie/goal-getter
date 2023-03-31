@@ -7,4 +7,5 @@ class Insight < ApplicationRecord
   validates :name, presence: true
   validates :summary, presence: true
   validates :status, presence: true
+
 end

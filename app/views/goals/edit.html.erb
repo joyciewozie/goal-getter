@@ -1,4 +1,14 @@
-<div class=form>
-<h5 style="text-align: center">Edit</h5>
-  <%= render "form", goal: @goal, desc_label: "What do you want from this goal?" %>
+<div class="new-goal-container">
+  <div class="new-goal-form">
+    <h5 style="text-align: center" class="new-goal-header">Edit</h5>
+    <br>
+    <%= render "edit_form", goal: @goal, desc_label: "What do you want from this goal?" %>
+  </div>
+  <div class="goal-banner-image">
+    <% if @goal.photo.attached? %>
+      <%= cl_image_tag @goal.photo.key %>
+    <% else %>
+      <%= image_tag "/assets/goal-page.jpg" %>
+    <% end %>
+  </div>
 </div>

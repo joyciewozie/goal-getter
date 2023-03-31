@@ -97,6 +97,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 0px;
+  padding-right: 35px;
 }
 
 // One section
@@ -289,7 +290,7 @@ ul.horizontal-list li {
 
 .goal-body {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .library-header {
@@ -300,4 +301,16 @@ ul.horizontal-list li {
 .library-body {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
+}
+
+#goal-insight-container {
+  margin-top: 3%;
+}
+
+#add-collaborators-link:hover {
+  text-decoration: underline;
+}
+
+.container-xxl {
+  margin-top: 20px;
 }

@@ -11,10 +11,13 @@
         <% end %>
     <% end %>
     <div class="card-trip-infos">
-      <div>
-        <h2><%= link_to goal.name, goal_path(goal.id), class: "goal-link" %></h2>
-        <p><%= goal.description %></p>
-      </div>
+        <div class="">
+          <h2><%= link_to goal.name, goal_path(goal.id), class: "goal-link" %></h2>
+          <p><%= goal.description %></p>
+        </div>
+        <div class="">
+          <%= goal.goal_icon.html_safe %>
+        </div>
     </div>
   </div>
 </div>

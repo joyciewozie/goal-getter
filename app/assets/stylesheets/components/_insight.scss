@@ -247,3 +247,12 @@ hr {
   // flex-grow: 2;
   flex-basis: auto;
 }
+
+#insight-new-link {
+  text-decoration: none;
+  color: black !important;
+
+ :hover {
+    text-decoration: underline;
+  }
+}
