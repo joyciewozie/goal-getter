@@ -15,8 +15,16 @@
       <% else %>
         <%= image_tag "insight_show.jpg", class: "answer-photo" %>
       <% end %>
-      <br>
-      <br>
+      <%# <br> %>
+      <div style="text-align:center;margin-top:40px;" >
+        <% (4-@answers.count).times do %>
+          <span class="step finish"></span>
+        <% end %>
+        <% @answers.count.times do %>
+          <span class="step"></span>
+        <% end %>
+      </div>
+      <%# <br> %>
       <% if @answer.nil? %>
         <% controller.redirect_to goal_insight_comments_path(@goal.id, @insight.id) %>
       <% else %>
@@ -29,14 +37,6 @@
               <%= f.submit "Next", class: "btn btn-primary", id: "form-button" %>
             </div>
           <% end %>
-          <div style="text-align:center;margin-top:40px;" >
-            <% (4-@answers.count).times do %>
-              <span class="step finish"></span>
-            <% end %>
-            <% @answers.count.times do %>
-              <span class="step"></span>
-            <% end %>
-          </div>
         </div>
       <% end %>
     </div>

@@ -201,11 +201,11 @@ hr {
 /* Make circles that indicate the steps of the form: */
 .step {
   height: 15px;
-  width: 15px;
+  width: 23%;
   margin: 0 3px;
   background-color: #bbbbbb;
   border: none;
-  border-radius: 50%;
+  border-radius: 3px;
   display: inline-block;
   opacity: 0.5;
 }
@@ -217,7 +217,7 @@ hr {
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #04AA6D;
+  background-color: #1E898B;
 }
 
 .insight-divider {
