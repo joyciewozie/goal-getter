@@ -209,13 +209,19 @@
     </div>
   </div>
 
-  <div class="insight-scroll">
-    <% @goal.insights.each do |insight| %>
-      <div class="insight-card">
-        <%= render 'show_insights', insight: insight %>
-      </div>
-    <% end %>
-  </div>
+  <% if @insights.any? %>
+    <div class="insight-scroll">
+      <% @goal.insights.each do |insight| %>
+        <div class="insight-card">
+          <%= render 'show_insights', insight: insight %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="insight-scroll" data-animation-target="fadeInLeft">
+      <h3 class="empty-collab fs-4">You have no insight for this goal, add one to get started.</h3>
+    </div>
+  <% end %>
 </div>
 
 <br>
@@ -236,9 +242,15 @@
     </div>
   </div>
   <%# data-animation-target="fadeInRight" %>
-  <div class="insight-scroll" data-animation-target="fadeInLeft">
-    <% @collaborators.each do |collab| %>
-      <%= render 'show_collaborators', collab: collab %>
-    <% end %>
-  </div>
+  <% if @collaborators.any? %>
+    <div class="insight-scroll" data-animation-target="fadeInLeft">
+      <% @collaborators.each do |collab| %>
+        <%= render 'show_collaborators', collab: collab %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="insight-scroll" data-animation-target="fadeInLeft">
+      <h3 class="empty-collab fs-4">You have no collaborator for this goal, add one to get started.</h3>
+    </div>
+  <% end %>
 </div>
