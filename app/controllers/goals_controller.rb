@@ -71,7 +71,7 @@ class GoalsController < ApplicationController
   end
 
   def got_insights?
-    if @insights.nil?
+    if @insight.nil?
       return true
     else
       return false
