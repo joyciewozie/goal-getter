@@ -8,12 +8,16 @@
   </div>
 </div>
 <div class="container py-5">
-  <div class="row gx-3 gy-3">
-    <h4 id="A-goal"> Goals </h4>
-    <a href="<%= new_goal_path %>" id="goal-new-link">
-      <i class="fa-regular fa-square-plus fa-xl goal-add"></i>
-    <%# <% end %>
-    </a>
-    <%= render @goals %>
-  </div>
+  <%# <div class="row gx-3 gy-3"> %>
+    <div class="d-flex justify-content-between">
+      <h4 id="A-goal"> Goals </h4>
+      <a href="<%= new_goal_path %>" id="goal-new-link">
+      Add new goal
+      </a>
+    </div>
+
+    <div class="card-trip-container">
+      <%= render @goals %>
+    </div>
+  <%# </div> %>
 </div>
