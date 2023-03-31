@@ -158,7 +158,7 @@ hr {
 }
 
 .comment-btn {
-  background-color: #1e898b;
+  background-color: #1E898B;
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -210,14 +210,10 @@ hr {
   opacity: 0.5;
 }
 
-/* Mark the active step: */
-.step.span-active {
-  opacity: 1;
-}
-
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #1E898B;
+  opacity: 0.75;
 }
 
 .insight-divider {
