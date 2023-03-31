@@ -7,6 +7,10 @@ class Goal < ApplicationRecord
 
   validates :goal_type, :name, :description, :status, presence: true
 
+  def accomplished?
+    status == "Goal accomplished"
+  end
+
   def goal_icon
     case goal_type
     when "career"
