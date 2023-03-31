@@ -8,14 +8,17 @@
       <% @collaborators_accepted.each do |collaborator| %>
         <div class="col-4">
           <div class="card-new p-0 card-trip-index none-shadow">
-            <%# <%= image_tag "demo-new-insight.jpg", class:"card-bg-image" %>
             <% if collaborator.goal.photo.attached? %>
               <%= image_tag collaborator.goal.photo, class:"card-bg-image" %>
             <% else %>
               <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg", class:"card-bg-image", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="card-content d-flex justify-content-between px-5 pt-2">
-              <h3><a href=<%= goal_path(collaborator.goal.id)%>><%= collaborator.goal.name %><a></h3>
+              <h3>
+                <a href=<%= goal_path(collaborator.goal.id)%>>
+                      <%= collaborator.goal.name %>
+                    </a>
+                </h3>
                 <div class="card-user m-0 p-0">
                   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "m-0 mb-1 avatar-x-large" %>
                   <p class="text-center"><%= collaborator.goal.user.name %></p>
@@ -23,7 +26,6 @@
               </div>
             </div>
           </div>
-          <%# <div class="col-4"> %>
         <% end %>
       <% else %>
         <div class="empty-card">
