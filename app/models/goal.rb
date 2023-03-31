@@ -6,6 +6,7 @@ class Goal < ApplicationRecord
   has_one_attached :photo
 
   validates :goal_type, :name, :description, :status, presence: true
+
   def accomplished?
     status == "Goal accomplished"
   end

@@ -55,7 +55,7 @@
 }
 
 #form-button {
-  background-color: #1e898b !important;
+  background-color: #1E898B !important;
   border: none;
   text-align: center;
   border-radius: 12px !important;
@@ -264,18 +264,35 @@ ul.horizontal-list li {
   padding-top: 20px;
   flex-shrink: 5;
 }
-.goal-banner-image-card{
-  width: 66vw;
+
+.goal-show-banner-image {
   flex-basis: auto;
   flex-grow: 3;
-  // margin: 25px;
-  object-fit: contain;
+  width: 66%;
+  object-fit: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 25px;
+  img {
+    aspect-ratio: 16 / 9;
+  }
 }
+
+// .goal-banner-image-card{
+//   height: auto; 
+//   width: auto; 
+//   max-width: 66%; 
+//   flex-basis: auto;
+//   flex-grow: 3;
+//   border-radius: 32px;
+// }
 
 .goal-banner-image {
   object-fit: contain;
   border-radius: 32px;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4 / 3;
+  overflow:hidden;
+  width: 100%;
 }
 
 .goal-header {
