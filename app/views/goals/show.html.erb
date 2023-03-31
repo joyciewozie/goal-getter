@@ -71,7 +71,7 @@
       <!--Closer-->
       <div class="one-bookcase-section">
         <div class="status-cover-container">
-          <% if @check_if_goal_accomplished %>
+          <% if @goal.accomplished? %>
             <div id="goal-accomplished">Goal <br>accomplished
             </div>
             <% else %>
@@ -114,12 +114,10 @@
       <!--Thinking-->
       <div class="one-bookcase-section">
         <div class="status-cover-container">
-          <% if @no_insight %>
-            <div id="got-no-insight">Goal begins
-            </div>
+          <% if @insights.empty? %>
+            <div id="got-no-insight">Goal begins</div>
             <% else %>
-            <div id="got-insight">
-            </div>
+            <div id="got-insight"></div>
           <% end %>
           <div class="status-cover-plank">
           </div>
