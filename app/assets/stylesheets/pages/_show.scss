@@ -258,19 +258,18 @@ ul.horizontal-list li {
   padding-top: 20px;
   flex-shrink: 5;
 }
-
-.goal-banner-image {
+.goal-banner-image-card{
+  width: 66vw;
   flex-basis: auto;
   flex-grow: 3;
-  width: 66%;
-  object-fit: cover;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 25px;
+  // margin: 25px;
+  object-fit: contain;
+}
 
-  img {
-    aspect-ratio: 16/9;
-  }
+.goal-banner-image {
+  object-fit: contain;
+  border-radius: 32px;
+  aspect-ratio: 16/9;
 }
 
 .goal-header {
