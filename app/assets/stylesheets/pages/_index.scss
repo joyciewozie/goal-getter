@@ -168,11 +168,11 @@
 }
 
 #action-button-comment {
-  background-color: white !important;
-  border-color: #1E898B !important;
+  background-color: #1E898B !important;
+  color: white;
+  border-color: white !important;
   border-width: medium;
   border-radius: 16px !important;
-  color: black;
   margin-right: 16px;
 }
 
@@ -188,11 +188,11 @@
 }
 
 #action-button {
-  background-color: white !important;
-  border-color: #1E898B !important;
+  background-color: #1E898B !important;
+  color: white;
+  border-color: white !important;
   border-width: medium;
   border-radius: 16px !important;
-  color: black;
 }
 
 .inactive {
