@@ -4,11 +4,11 @@
     <br>
     <%= render "edit_form", goal: @goal, desc_label: "What do you want from this goal?" %>
   </div>
-  <div class="goal-banner-image">
+  <div class="goal-banner-image-card">
     <% if @goal.photo.attached? %>
-      <%= cl_image_tag @goal.photo.key %>
+      <%= cl_image_tag @goal.photo.key, class: "goal-banner-image" %>
     <% else %>
-      <%= image_tag "/assets/goal-page.jpg" %>
+      <%= image_tag "/assets/goal-page.jpg", class: "goal-banner-image" %>
     <% end %>
   </div>
 </div>

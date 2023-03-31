@@ -86,7 +86,7 @@ hr {
 }
 
 #insight-name {
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 #insight-summary {
@@ -158,7 +158,7 @@ hr {
 }
 
 .comment-btn {
-  background-color: #1e898b;
+  background-color: #1E898B;
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -200,24 +200,20 @@ hr {
 
 /* Make circles that indicate the steps of the form: */
 .step {
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 23%;
   margin: 0 3px;
   background-color: #bbbbbb;
   border: none;
-  border-radius: 50%;
+  border-radius: 3px;
   display: inline-block;
   opacity: 0.5;
 }
 
-/* Mark the active step: */
-.step.span-active {
-  opacity: 1;
-}
-
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #04AA6D;
+  background-color: #1E898B;
+  opacity: 0.75;
 }
 
 .insight-divider {
@@ -228,7 +224,7 @@ hr {
 
 #insight-name {
   font-size: 36px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .insight-prompt {

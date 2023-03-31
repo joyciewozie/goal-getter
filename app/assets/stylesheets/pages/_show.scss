@@ -4,7 +4,7 @@
 }
 
 .insights-container h1 {
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .insights-container h2 {
@@ -25,7 +25,7 @@
 }
 
 .insights-container p {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 
@@ -46,12 +46,12 @@
 .question {
   margin-top: 36px;
   margin-bottom: 36px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 32px;
 }
 
 #insight-answer-form-text{
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 #form-button {
@@ -264,19 +264,18 @@ ul.horizontal-list li {
   padding-top: 20px;
   flex-shrink: 5;
 }
-
-.goal-banner-image {
+.goal-banner-image-card{
+  width: 66vw;
   flex-basis: auto;
   flex-grow: 3;
-  width: 66%;
-  object-fit: cover;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 25px;
+  // margin: 25px;
+  object-fit: contain;
+}
 
-  img {
-    aspect-ratio: 16/9;
-  }
+.goal-banner-image {
+  object-fit: contain;
+  border-radius: 32px;
+  aspect-ratio: 16/9;
 }
 
 .goal-header {
@@ -313,4 +312,9 @@ ul.horizontal-list li {
 
 .container-xxl {
   margin-top: 20px;
+}
+
+.add-button {
+  margin-top: 24px;
+  margin-left: 20px;
 }
