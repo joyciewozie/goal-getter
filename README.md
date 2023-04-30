@@ -8,11 +8,11 @@ Goal-Getter is a Ruby on Rails web app designed to help young adults develop a m
 
 The app was built using the following technologies:
 
-Ruby:  A dynamic, open source programming language with a focus on simplicity and productivity.
-Ruby on Rails: A server-side web application framework written in Ruby
-Javascript(ES6): A general purpose scripting language that conforms to the ECMAScript specification
-AJAX: Allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes.
-PostgreSQL: An advanced general-purpose object-relational database management system
+ - Ruby:  A dynamic, open source programming language with a focus on simplicity and productivity.
+ - Ruby on Rails: A server-side web application framework written in Ruby
+ - Javascript(ES6): A general purpose scripting language that conforms to the ECMAScript specification
+ - AJAX: Allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes.
+ - PostgreSQL: An advanced general-purpose object-relational database management system
 
 ## Features
 
